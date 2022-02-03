@@ -12,7 +12,6 @@ public:
 
     ResourceBall(const FieldCoord &source);
     void create(const size_t amount);
-    Resource::Types getType();
 
 private:
     FieldCoord source = ValuesAndTypes::noneFieldCell;
@@ -22,7 +21,6 @@ private:
     FieldCoord destinationNode = ValuesAndTypes::noneFieldCell;
     FieldCoord currentNode = ValuesAndTypes::noneFieldCell;
     Azimuth movementAzimuth = ValuesAndTypes::none;
-    Resource::Types type = Resource::Types::none;
 
     void findDestinationNode();
     void findDestination();

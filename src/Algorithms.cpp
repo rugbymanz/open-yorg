@@ -20,14 +20,3 @@ double Algorithms::calculateDistance(const FieldCoord &from, const FieldCoord &t
 // FieldCoord Algorithms::toFieldCoord(const sf::Vector2f &floatFieldCoord);
 
 // Resource Algorithms::enumToClass(const Resource::Types type);
-
-Building Algorithms::enumToClass(const Building::Types type){
-    switch(type){
-    case Building::Types::base:
-        return Base();
-        break;
-    default:
-        assert(0 && "Invalid BuildingType");
-        break;
-    }
-}

@@ -10,13 +10,6 @@
 
 class Enemy: public CanMove, public CanHaveHp, public CanDamage, public sf::CircleShape, public Drawable{
 public:
-    enum class Types{
-        casual,
-        N,
-
-        none
-    };
-
     Enemy(const FieldCoord &spawnPosition);
 
     void goTo();

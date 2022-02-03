@@ -3,7 +3,6 @@
 #include "Building/Base.hpp"
 
 Base::Base(){
-    type = Building::Types::base;
 }
 
 void Base::draw(){

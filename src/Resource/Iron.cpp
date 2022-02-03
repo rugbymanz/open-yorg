@@ -2,5 +2,4 @@
 
 Iron::Iron(){
     // renderTexture.draw("R");
-    type = Resource::Types::iron;
 }

@@ -2,5 +2,4 @@
 
 Wood::Wood(){
     // renderTexture.draw("R");
-    type = Resource::Types::wood;
 }

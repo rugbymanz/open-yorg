@@ -7,6 +7,7 @@
 #include "Input.hpp"
 #include "Game.hpp"
 #include "Algorithms.hpp"
+#include "Building/Base.hpp"
 
 void Input::process(const sf::Event &event){
     // if(std::string stringInput = getString(); isInputEntered(stringInput))
@@ -48,12 +49,12 @@ void Input::processStdin(){
 
     if(operation == "build"){
         if(parameter == "base")
-            Game::gameElements.field.set(position, Algorithms::enumToClass(Building::Types::base));
+            Game::gameElements.field.set(position, Base());
     }
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return (Game::gameElements.field.get(position).type ==  FieldCell::Types::none);
+    // return (Game::gameElements.field.get(position).type ==  FieldCell::Types::none);
 }
 
 void Input::processMouseClick(const sf::Event &event){

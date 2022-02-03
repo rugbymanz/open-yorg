@@ -42,16 +42,16 @@ void ResourceBall::findDestinationNode(){
 }
 
 void ResourceBall::findDestination(){
-    if(type == Resource::Types::crystal){
-        destination = Game::gameElements.field.basePosition;
-    }
+    // if(type == Resource::Types::crystal){
+    //     destination = Game::gameElements.field.basePosition;
+    // }
     // ...
 }
 
 void ResourceBall::increaseResource(){
-    if(type == Resource::Types::crystal){
-        static_cast<Base&>(Game::gameElements.field.get( (Game::gameElements.field.basePosition) ) ).storage++;
-    }
+    // if(type == Resource::Types::crystal){
+    //     static_cast<Base&>(Game::gameElements.field.get( (Game::gameElements.field.basePosition) ) ).storage++;
+    // }
     // ...
 }
 
