@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+
+clear && cd ./build && cmake --build . && ./open-yorg
