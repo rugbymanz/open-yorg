@@ -2159,6 +2159,7 @@
 											"model": {
 												"$ref": "AAAAAAF+StiupdgYsgg="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 6205,
 											"top": 409,
@@ -2178,10 +2179,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 424,
+											"top": 409,
 											"width": 297.12744140625,
 											"height": 13,
-											"text": "«void»-processStdin(const string& stringInput)",
+											"text": "«void»-processStdin()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2193,9 +2194,10 @@
 											"model": {
 												"$ref": "AAAAAAF+WH0Ebx2Lmk8="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 439,
+											"top": 424,
 											"width": 297.12744140625,
 											"height": 13,
 											"text": "«bool»-isInputEntered(const string& stringInput)",
@@ -2212,7 +2214,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 454,
+											"top": 424,
 											"width": 297.12744140625,
 											"height": 13,
 											"text": "«bool»-isValidBuildingPosition(FieldCoord position)",
@@ -2247,7 +2249,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 469,
+											"top": 439,
 											"width": 297.12744140625,
 											"height": 13,
 											"text": "-processMouseWheel(const Event& event)",
@@ -2264,7 +2266,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 484,
+											"top": 454,
 											"width": 297.12744140625,
 											"height": 13,
 											"text": "-processArows(const Event& event)",
@@ -2281,7 +2283,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 6205,
-											"top": 499,
+											"top": 469,
 											"width": 297.12744140625,
 											"height": 13,
 											"text": "-processMouseClick(const Event& event)",
@@ -2292,7 +2294,7 @@
 									"left": 6200,
 									"top": 387,
 									"width": 307.12744140625,
-									"height": 130
+									"height": 100
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -22554,18 +22556,7 @@
 							},
 							"name": "processStdin",
 							"stereotype": "void",
-							"visibility": "private",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF+fU/nUtCATtw=",
-									"_parent": {
-										"$ref": "AAAAAAF+StoPu9npnxw="
-									},
-									"name": "const string& stringInput",
-									"type": ""
-								}
-							]
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLOperation",
@@ -23456,7 +23447,8 @@
 							},
 							"name": "field[fieldLength][fieldWidth]",
 							"stereotype": "FieldCell*",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",

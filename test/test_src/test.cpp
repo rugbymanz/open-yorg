@@ -10,15 +10,9 @@
 #include "Input.hpp"
 #include "Game.hpp"
 
-TEST_CASE( "getString()" ) {
+TEST_CASE() {
     Game game(nullptr);
-    SECTION("test"){
-        REQUIRE(game.input.getString() == "test");
-    }
     
-    SECTION("game g"){
-        REQUIRE(game.input.getString() == "game g");
-    }
 
     // REQUIRE(  == 1 );
 }

@@ -9,9 +9,8 @@
 #include "Algorithms.hpp"
 
 void Input::process(const sf::Event &event){
-    if(std::string stringInput = getString(); isInputEntered(stringInput)){
-        processStdin(stringInput);
-    }
+    // if(std::string stringInput = getString(); isInputEntered(stringInput))
+    processStdin();
     // else if(MouseWheel scroll){
     //     processMouseWheel(event)
     // }
@@ -23,20 +22,18 @@ void Input::process(const sf::Event &event){
     // }
 }
 
-std::string Input::getString(){
-    std::string input;
-    std::cin >> input;
-    return input;
+// std::string Input::getString(){
+//     std::string input;
+//     std::cin >> input;
+//     return input;
 
-}
+// }
 
-bool Input::isInputEntered(const std::string &stringInput){
-        return stringInput.length();
-}
+// bool Input::isInputEntered(const std::string &stringInput){
+//         return stringInput.length();
+// }
 
-void Input::processStdin(const std::string &stringInput){
-    std::stringstream input = std::stringstream(stringInput);
-
+void Input::processStdin(){
     const FieldCoord &position = Game::interface.selectedCell;
 
     if (!isValidBuildingPosition(position)){
@@ -44,10 +41,10 @@ void Input::processStdin(const std::string &stringInput){
     }
 
     std::string operation;
-    input >> operation;
+    std::cin >> operation;
     
     std::string parameter;
-    input >> parameter;
+    std::cin >> parameter;
 
     if(operation == "build"){
         if(parameter == "base")
