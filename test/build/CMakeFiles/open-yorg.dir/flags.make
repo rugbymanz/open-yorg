@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alex/coding/c++/open-yorg/test/.././include -I/home/alex/coding/c++/open-yorg/test/.././test/test_include
+CXX_INCLUDES = -I/home/alex/coding/c++/open-yorg/open-yorg/test/.././include -I/home/alex/coding/c++/open-yorg/open-yorg/test/./test_include
 
 CXX_FLAGS = -g -Wall -pedantic -Wextra -std=gnu++20
 

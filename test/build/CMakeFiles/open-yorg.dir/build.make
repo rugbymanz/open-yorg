@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex/coding/c++/open-yorg/test
+CMAKE_SOURCE_DIR = /home/alex/coding/c++/open-yorg/open-yorg/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex/coding/c++/open-yorg/test/build
+CMAKE_BINARY_DIR = /home/alex/coding/c++/open-yorg/open-yorg/test/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/open-yorg.dir/depend.make
@@ -69,34 +69,546 @@ include CMakeFiles/open-yorg.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/open-yorg.dir/flags.make
 
-CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o: CMakeFiles/open-yorg.dir/flags.make
-CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o: /home/alex/coding/c++/open-yorg/src/Input.cpp
-CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o -c /home/alex/coding/c++/open-yorg/src/Input.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp
 
-CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/src/Input.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.i
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.i
 
-CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/src/Input.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.s
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.s
+
+CMakeFiles/open-yorg.dir/test_src/test.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/test_src/test.cpp.o: ../test_src/test.cpp
+CMakeFiles/open-yorg.dir/test_src/test.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/open-yorg.dir/test_src/test.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/test_src/test.cpp.o -MF CMakeFiles/open-yorg.dir/test_src/test.cpp.o.d -o CMakeFiles/open-yorg.dir/test_src/test.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/test/test_src/test.cpp
+
+CMakeFiles/open-yorg.dir/test_src/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/test_src/test.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/test/test_src/test.cpp > CMakeFiles/open-yorg.dir/test_src/test.cpp.i
+
+CMakeFiles/open-yorg.dir/test_src/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/test_src/test.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/test/test_src/test.cpp -o CMakeFiles/open-yorg.dir/test_src/test.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.s
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o: CMakeFiles/open-yorg.dir/flags.make
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o: /home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o: CMakeFiles/open-yorg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o -MF CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o.d -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o -c /home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp > CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.i
+
+CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp -o CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.s
 
 # Object files for target open-yorg
 open__yorg_OBJECTS = \
-"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o"
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o" \
+"CMakeFiles/open-yorg.dir/test_src/test.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o" \
+"CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o"
 
 # External object files for target open-yorg
 open__yorg_EXTERNAL_OBJECTS =
 
-open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/src/Input.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Base.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Building.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Cannon.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Building/Mine.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullet.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/Bullets.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBall.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Bullet/CannonBalls.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanDamage.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanHaveHp.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanMove.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Can/CanStore.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/CasualEnemy.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemies.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Enemy/Enemy.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Field.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/FieldCell.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/PathSearchField.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Field/Road.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Crystal.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Iron.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Resource.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBall.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/ResourceBalls.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Resource/Wood.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/test_src/test.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Algorithms.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Clock.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Game.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/GameElements.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Input.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/Interface.cpp.o
+open-yorg: CMakeFiles/open-yorg.dir/home/alex/coding/c++/open-yorg/open-yorg/src/ValuesAndTypes.cpp.o
 open-yorg: CMakeFiles/open-yorg.dir/build.make
 open-yorg: /usr/lib/libsfml-graphics.so
 open-yorg: /usr/lib/libsfml-system.so
 open-yorg: /usr/lib/libsfml-window.so
 open-yorg: CMakeFiles/open-yorg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/coding/c++/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable open-yorg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable open-yorg"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/open-yorg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +620,6 @@ CMakeFiles/open-yorg.dir/clean:
 .PHONY : CMakeFiles/open-yorg.dir/clean
 
 CMakeFiles/open-yorg.dir/depend:
-	cd /home/alex/coding/c++/open-yorg/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/coding/c++/open-yorg/test /home/alex/coding/c++/open-yorg/test /home/alex/coding/c++/open-yorg/test/build /home/alex/coding/c++/open-yorg/test/build /home/alex/coding/c++/open-yorg/test/build/CMakeFiles/open-yorg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alex/coding/c++/open-yorg/open-yorg/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/coding/c++/open-yorg/open-yorg/test /home/alex/coding/c++/open-yorg/open-yorg/test /home/alex/coding/c++/open-yorg/open-yorg/test/build /home/alex/coding/c++/open-yorg/open-yorg/test/build /home/alex/coding/c++/open-yorg/open-yorg/test/build/CMakeFiles/open-yorg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/open-yorg.dir/depend
 
