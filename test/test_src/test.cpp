@@ -10,9 +10,9 @@
 #include "Input.hpp"
 #include "Game.hpp"
 
-TEST_CASE() {
+TEST_CASE("isValidBuildingPosition") {
     Game game(nullptr);
-    
+    REQUIRE(game.input.isValidBuildingPosition(FieldCoord(1, 1)) == true );
 
     // REQUIRE(  == 1 );
 }

@@ -15,7 +15,7 @@ int main(){
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            // game.input.proccess(event)
+            game.input.process(event);
         }
 
         window.clear(sf::Color::White);
