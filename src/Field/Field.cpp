@@ -31,8 +31,9 @@ void Field::draw(){
     //     cell.draw()
 }
 
-void Field::set(const FieldCoord& fieldCoord, const FieldCell *const fieldCell){
-    // field[fieldCoord.x][fieldCoord.y] = fieldCell
+void Field::set(const FieldCoord& fieldCoord, FieldCell *const fieldCell){
+    delete field[fieldCoord.x][fieldCoord.y];
+    field[fieldCoord.x][fieldCoord.y] = fieldCell;
     // field[fieldCoord.x][fieldCoord.y].setCoord(fieldCoord)
     // switch(fieldCell.type){
     // case FieldCellType::building:

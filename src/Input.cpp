@@ -49,12 +49,12 @@ void Input::processStdin(){
 
     if(operation == "build"){
         if(parameter == "base")
-            Game::gameElements.field.set(position, Base());
+            Game::gameElements.field.set(position, new Base);
     }
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return Game::gameElements.field.get(position).isEmpty;
+    return !Game::gameElements.field.get(position).isEmpty;
 }
 
 void Input::processMouseClick(const sf::Event &event){
