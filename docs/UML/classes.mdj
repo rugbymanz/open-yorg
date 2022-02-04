@@ -645,6 +645,24 @@
 											"height": 13,
 											"text": "+getType()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF+wcBVitOmb9o=",
+											"_parent": {
+												"$ref": "AAAAAAF+Ngr/4N/UnB0="
+											},
+											"model": {
+												"$ref": "AAAAAAF+wcBVXtOjzak="
+											},
+											"visible": false,
+											"font": "Arial;13;2",
+											"left": 1629,
+											"top": 57,
+											"width": 307.4677734375,
+											"height": 13,
+											"text": "+d()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
@@ -5578,6 +5596,24 @@
 											"width": 318,
 											"height": 13,
 											"text": "+FieldCoord getCoord()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF+wcLOYviHRkA=",
+											"_parent": {
+												"$ref": "AAAAAAF+WMPchJtaoPA="
+											},
+											"model": {
+												"$ref": "AAAAAAF+wcLOAvh7sHg="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1341,
+											"top": 1369,
+											"width": 318,
+											"height": 13,
+											"text": "«virtual»+FieldCell* createNew()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -19875,6 +19911,15 @@
 								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
 							},
 							"name": "getType"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF+wcBVXtOjzak=",
+							"_parent": {
+								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
+							},
+							"name": "d",
+							"isAbstract": true
 						}
 					]
 				},
@@ -21587,7 +21632,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF+WMPcgptR6zU="
 							},
-							"name": "bool isEmpty"
+							"name": "bool isEmpty",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -21664,6 +21710,15 @@
 								"$ref": "AAAAAAF+WMPcgptR6zU="
 							},
 							"name": "FieldCoord getCoord"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF+wcLOAvh7sHg=",
+							"_parent": {
+								"$ref": "AAAAAAF+WMPcgptR6zU="
+							},
+							"name": "FieldCell* createNew",
+							"stereotype": "virtual"
 						}
 					]
 				},
