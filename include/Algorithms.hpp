@@ -5,5 +5,5 @@
 namespace Algorithms{
     double calculateAzimuth(const FieldCoord &from, const FieldCoord &to);
     double calculateDistance(const FieldCoord &from, const FieldCoord &to);
-    FieldCoord toFieldCoord(const sf::Vector2f &floatFieldCoord);
+    FieldCoord mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoord);
 }

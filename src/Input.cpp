@@ -57,22 +57,22 @@ bool Input::isValidBuildingPosition(const FieldCoord &position){
     return Game::gameElements.field.get(position).isEmpty;
 }
 
-void Input::processMouseClick(const sf::Event &event){
+void Input::processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton){
     // Game.interface.selectCell(toFieldCoord(Mose::getPosition()));
 }
 
-void Input::processMouseWheelScroll(const sf::Event &event){
-    double zoom = - event.mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
+void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll){
+    double zoom = - mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
     sf::View view = Game::window->getView();
     view.zoom(1 + zoom);
     Game::window->setView(view);
 }
 
 // must be reworked
-void Input::processKeys(const sf::Event &event){
+void Input::processKeys(const sf::Event::KeyEvent &key){
     sf::View view = Game::window->getView();
 
-    switch(event.key.code){
+    switch(key.code){
     case sf::Keyboard::Key::Left:
         view.move(-ValuesAndTypes::viewMoveSpeed, 0);
         break;
@@ -90,5 +90,16 @@ void Input::processKeys(const sf::Event &event){
     }
 
     Game::window->setView(view);
+}
+
+void Input::processMouseLeftClick(const sf::Vector2i &clickPosition){
+    sf::Vector2f floatCoord = Game::window->mapPixelToCoords(clickPosition);
+    FieldCoord fieldCell = Algorithms::mapVector2fToFieldCoord(floatCoord);
+    std::cerr << std::endl << fieldCell.x << ' ' << fieldCell.y << ' ';
+
+    if( (fieldCell.x < ValuesAndTypes::Field::fieldLength - 1 && floatCoord.x >= 0) && (fieldCell.y < ValuesAndTypes::Field::fieldWidth - 1 && floatCoord.y >= 0) )
+        Game::interface.selectCell(fieldCell); 
+    else
+        std::cerr << "out of field bounds" << std::endl;
 }
 

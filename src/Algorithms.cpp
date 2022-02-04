@@ -17,6 +17,11 @@ double Algorithms::calculateDistance(const FieldCoord &from, const FieldCoord &t
     
 }
 
-// FieldCoord Algorithms::toFieldCoord(const sf::Vector2f &floatFieldCoord);
+FieldCoord Algorithms::mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoord){
+    int x = floatFieldCoord.x / ValuesAndTypes::Field::cellLength;
+    int y = floatFieldCoord.y / ValuesAndTypes::Field::cellWidth;
+
+    return FieldCoord(x, y);
+}
 
 // Resource Algorithms::enumToClass(const Resource::Types type);

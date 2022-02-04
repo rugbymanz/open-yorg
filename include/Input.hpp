@@ -11,7 +11,8 @@ public:
 private:
     void processStdin();
     bool isValidBuildingPosition(const FieldCoord &position);
-    void processMouseWheelScroll(const sf::Event &event);
-    void processMouseClick(const sf::Event &event);
-    void processKeys(const sf::Event &event);
+    void processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll);
+    void processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton);
+    void processKeys(const sf::Event::KeyEvent &key);
+    void processMouseLeftClick(const sf::Vector2i &clickPosition);
 };

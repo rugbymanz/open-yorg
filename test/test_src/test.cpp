@@ -14,6 +14,7 @@
 #include "Field/EmptyFieldCell.hpp"
 
 using namespace std;
+using namespace sf;
 
 
 
@@ -27,8 +28,6 @@ TEST_CASE("main") {
         {
             *col = new EmptyFieldCell;
             (*col)->setCoord({int(row - game.gameElements.field.field.begin()), int(col - row->begin() )});
-            // sf::Vector2f coord = (*col)->getPosition();
-            // cout << coord.x << ' ' << coord.y << endl;
         }
     }
     
@@ -41,10 +40,14 @@ TEST_CASE("main") {
                 window.close();
 
             if(event.type == sf::Event::EventType::MouseWheelScrolled)
-                game.input.processMouseWheelScroll(event);
+                game.input.processMouseWheelScroll(event.mouseWheelScroll);
 
             if(event.type == sf::Event::EventType::KeyPressed)
-                game.input.processKeys(event);
+                game.input.processKeys(event.key);
+
+            if(event.type == sf::Event::EventType::MouseButtonReleased)
+                if(event.mouseButton.button == Mouse::Button::Left)
+                    game.input.processMouseLeftClick({event.mouseButton.x, event.mouseButton.y});
         }
 
         window.clear(sf::Color::White);
