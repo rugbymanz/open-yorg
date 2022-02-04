@@ -54,7 +54,7 @@ void Input::processStdin(){
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return !Game::gameElements.field.get(position).isEmpty;
+    return Game::gameElements.field.get(position).isEmpty;
 }
 
 void Input::processMouseClick(const sf::Event &event){

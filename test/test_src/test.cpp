@@ -13,7 +13,7 @@
 
 using namespace std;
 
-TEST_CASE("isValidBuildingPosition") {
+TEST_CASE("main") {
     Game game(nullptr);
 
     for (auto iterator1 = game.gameElements.field.field.begin(); iterator1 < game.gameElements.field.field.end(); iterator1++)
@@ -30,12 +30,17 @@ TEST_CASE("isValidBuildingPosition") {
         for(int j = 0; j < ValuesAndTypes::Field::fieldWidth; j++){
             FieldCoord fieldCell(i, j);
 
-                REQUIRE(game.input.isValidBuildingPosition(fieldCell) == false);
+                REQUIRE(game.input.isValidBuildingPosition(fieldCell) == true);
 
 
                 REQUIRE(game.gameElements.field.get(fieldCell).isEmpty == true);
         }
     }
 
+    FieldCoord cellToSelect(1, 2);
+    game.interface.selectCell(cellToSelect);
+    REQUIRE(game.interface.selectedCell == cellToSelect);
+
+    game.input.processStdin();
    
 }
