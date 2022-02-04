@@ -9,12 +9,10 @@ public:
     bool isEmpty = false;
 
     FieldCell();
-    void setBorderColor(const sf::Color color);
     void setCoord(const FieldCoord &fieldCoord);
     FieldCoord getCoord();
+    virtual void draw();
 
 private:
     FieldCoord coord = ValuesAndTypes::noneFieldCell;
-
-    void draw();
 };

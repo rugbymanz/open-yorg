@@ -5,9 +5,9 @@ Field::Field(){
 
     field.resize(ValuesAndTypes::Field::fieldLength);
 
-    for(auto iterator1 = field.begin(); iterator1 < field.end(); iterator1++){
-        iterator1->resize(ValuesAndTypes::Field::fieldWidth);
-        for(auto iterator2 = iterator1->begin(); iterator2 < iterator1->end(); iterator2++){
+    for(auto row = field.begin(); row < field.end(); row++){
+        row->resize(ValuesAndTypes::Field::fieldWidth);
+        for(auto col = row->begin(); col < row->end(); col++){
             // cellType = rand();
             // if(cellType != FieldCellType::none)
             //     placeNew(FieldCell(row, column), toResource(cellType))
@@ -27,8 +27,11 @@ void Field::update(){
 }
 
 void Field::draw(){
-    // foreach cell
-    //     cell.draw()
+    for(auto &row: field){
+        for(auto &col: row){
+            col->draw();
+        }
+    }
 }
 
 void Field::set(const FieldCoord& fieldCoord, FieldCell *const fieldCell){

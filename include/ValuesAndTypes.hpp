@@ -17,6 +17,8 @@ struct ValuesAndTypes{
 
         static const int cellLength = 20;
         static const int cellWidth = 20;
+
+        static const int cellOutlineThickness = 1;
     };
 
     struct Colors{
@@ -30,4 +32,6 @@ struct ValuesAndTypes{
     };
 
     static constexpr double speed = 1;
+    static const double zoomSpeed;
+    static const double viewMoveSpeed;
 };

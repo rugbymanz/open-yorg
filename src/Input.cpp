@@ -61,13 +61,23 @@ void Input::processMouseClick(const sf::Event &event){
     // Game.interface.selectCell(toFieldCoord(Mose::getPosition()));
 }
 
-//must be reworked
-// void processMouseWheel(const sf::Event &event){
-//     operations += Operation(OperationType::zoom, zoom);
-// }
+void Input::processMouseWheelScroll(const sf::Event &event){
+    double zoom = event.mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
+    sf::View view = Game::window->getView();
+    view.zoom(1 + zoom);
+    Game::window->setView(view);
+}
 
-//must be reworked
-// void processArrows(const sf::Event &event);
-//     operations += Operation(OperationType::moveView, Vector2f())
-// }
+// must be reworked
+void Input::processKeys(const sf::Event &event){
+    sf::View view = Game::window->getView();
+
+    switch(event.key.code){
+    case sf::Keyboard::Key::Left:
+        view.move(-ValuesAndTypes::viewMoveSpeed, 0);
+        break;
+    case sf::Keyboard::Key::Right:
+
+    }
+}
 

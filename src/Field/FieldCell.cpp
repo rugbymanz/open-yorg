@@ -2,6 +2,8 @@
 
 FieldCell::FieldCell(){
     setSize({ValuesAndTypes::Field::cellLength, ValuesAndTypes::Field::cellWidth});
+    setOutlineColor(ValuesAndTypes::Colors::normal);
+    setOutlineThickness(ValuesAndTypes::Field::cellOutlineThickness);
     // image.create(2000, 2000, Color::White);
     // text.loadFromImage(image);
     // setTexture(&text);
@@ -22,8 +24,4 @@ FieldCoord FieldCell::getCoord(){
 void FieldCell::draw(){
     // image.create(Settings::Field::cellLength, Settings::Field::cellWidth, Color::White);
     // text.loadFromImage(image);
-}
-
-void FieldCell::setBorderColor(const sf::Color color){
-
 }

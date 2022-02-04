@@ -8,5 +8,4 @@ class Building: public FieldCell, public CanHaveHp{
 public:
 
 private:
-    void draw();
 };

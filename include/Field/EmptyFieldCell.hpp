@@ -5,4 +5,5 @@
 class EmptyFieldCell: public FieldCell{
 public:
     EmptyFieldCell();
+    void draw()override;
 };
