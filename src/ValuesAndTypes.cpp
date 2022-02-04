@@ -7,4 +7,4 @@ const sf::Color ValuesAndTypes::Colors::selected = sf::Color::Blue;
 const sf::Color ValuesAndTypes::Colors::normal = sf::Color::Black;
 
 const double ValuesAndTypes::zoomSpeed = 0.1;
-const double ValuesAndTypes::viewMoveSpeed = 5;
+const double ValuesAndTypes::viewMoveSpeed = 20;

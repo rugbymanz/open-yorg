@@ -62,7 +62,7 @@ void Input::processMouseClick(const sf::Event &event){
 }
 
 void Input::processMouseWheelScroll(const sf::Event &event){
-    double zoom = event.mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
+    double zoom = - event.mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
     sf::View view = Game::window->getView();
     view.zoom(1 + zoom);
     Game::window->setView(view);
@@ -77,7 +77,18 @@ void Input::processKeys(const sf::Event &event){
         view.move(-ValuesAndTypes::viewMoveSpeed, 0);
         break;
     case sf::Keyboard::Key::Right:
-
+        view.move(ValuesAndTypes::viewMoveSpeed, 0);
+        break;
+    case sf::Keyboard::Key::Down:
+        view.move(0, ValuesAndTypes::viewMoveSpeed);
+        break;
+    case sf::Keyboard::Key::Up:
+        view.move(0, -ValuesAndTypes::viewMoveSpeed);
+        break;
+    default:
+        std::cerr << std::endl << "detected unrecognized Key event" << std::endl;
     }
+
+    Game::window->setView(view);
 }
 

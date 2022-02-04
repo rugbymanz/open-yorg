@@ -31,27 +31,6 @@ TEST_CASE("main") {
             // cout << coord.x << ' ' << coord.y << endl;
         }
     }
-
-    for(int i = 0; i < ValuesAndTypes::Field::fieldLength; i++){
-        for(int j = 0; j < ValuesAndTypes::Field::fieldWidth; j++){
-            FieldCoord fieldCell(i, j);
-
-                REQUIRE(game.input.isValidBuildingPosition(fieldCell) == true);
-
-
-                REQUIRE(game.gameElements.field.get(fieldCell).isEmpty == true);
-        }
-    }
-
-    for (auto row = game.gameElements.field.field.begin(); row < game.gameElements.field.field.end(); row++)
-    {
-        for (auto col = row->begin(); col < row->end(); col++)
-        {
-            FieldCoord fieldCoord = (*col)->getCoord();
-
-            REQUIRE(fieldCoord == FieldCoord(int(row - game.gameElements.field.field.begin()), int(col - row->begin() )));
-        }
-    }
     
     while (window.isOpen())
     {
@@ -65,7 +44,7 @@ TEST_CASE("main") {
                 game.input.processMouseWheelScroll(event);
 
             if(event.type == sf::Event::EventType::KeyPressed)
-                game.input.processArrows(event);
+                game.input.processKeys(event);
         }
 
         window.clear(sf::Color::White);
