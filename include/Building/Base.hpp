@@ -5,7 +5,7 @@
 
 class Base: public Building, public CanStore{
 public:
-    Base();
+    Base(const FieldCoord &fieldCoord);
 
     void draw();
 };

@@ -10,47 +10,17 @@
 #include "Building/Base.hpp"
 
 void Input::process(const sf::Event &event){
-    // if(std::string stringInput = getString(); isInputEntered(stringInput))
-    processStdin();
-    // else if(MouseWheel scroll){
-    //     processMouseWheel(event)
-    // }
-    // else if(arrowKey pressed){
-    //     processArrows(event)
-    // }
-    // else if(event.type == sf::Event::MouseButtonReleased){
-    //     processMouseClick(event);
-    // }
-}
+    if (event.type == sf::Event::Closed)
+        Game::window->close();
 
-// std::string Input::getString(){
-//     std::string input;
-//     std::cin >> input;
-//     return input;
+    if (event.type == sf::Event::EventType::MouseWheelScrolled)
+        Game::input.processMouseWheelScroll(event.mouseWheelScroll);
 
-// }
+    if (event.type == sf::Event::EventType::KeyPressed)
+        Game::input.processKeys(event.key);
 
-// bool Input::isInputEntered(const std::string &stringInput){
-//         return stringInput.length();
-// }
-
-void Input::processStdin(){
-    const FieldCoord &position = Game::interface.selectedCell;
-
-    if (!isValidBuildingPosition(position)){
-        assert(0 && "Invalid building postion");
-    }
-
-    std::string operation;
-    std::cin >> operation;
-    
-    std::string parameter;
-    std::cin >> parameter;
-
-    if(operation == "build"){
-        if(parameter == "base")
-            Game::gameElements.field.set(position, new Base);
-    }
+    if (event.type == sf::Event::EventType::MouseButtonReleased)
+        processMouseClick(event.mouseButton);
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
@@ -58,7 +28,8 @@ bool Input::isValidBuildingPosition(const FieldCoord &position){
 }
 
 void Input::processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton){
-    // Game.interface.selectCell(toFieldCoord(Mose::getPosition()));
+    if (mouseButton.button == sf::Mouse::Button::Left)
+        Game::input.processMouseLeftClick({mouseButton.x, mouseButton.y});
 }
 
 void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll){
@@ -68,7 +39,16 @@ void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mous
     Game::window->setView(view);
 }
 
-// must be reworked
+void Input::build(const sf::Event::KeyEvent &key){
+    const FieldCoord &position = Game::interface.selectedCell;
+
+    if (!isValidBuildingPosition(position)){
+        assert(0 && "Invalid building postion");
+    }
+    if(Game::interface.selectedCell != ValuesAndTypes::noneFieldCell)
+        Game::gameElements.field.set(new Base{Game::interface.selectedCell});
+}
+
 void Input::processKeys(const sf::Event::KeyEvent &key){
     sf::View view = Game::window->getView();
 
@@ -84,6 +64,9 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
         break;
     case sf::Keyboard::Key::Up:
         view.move(0, -ValuesAndTypes::viewMoveSpeed);
+        break;
+    case sf::Keyboard::Key::B:
+        build(key);
         break;
     default:
         std::cerr << std::endl << "detected unrecognized Key event" << std::endl;

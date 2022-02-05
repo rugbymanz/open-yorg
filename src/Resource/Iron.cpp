@@ -1,5 +1,5 @@
 #include "Resource/Iron.hpp"
 
-Iron::Iron(){
+Iron::Iron(const FieldCoord &fieldCoord): Resource{fieldCoord}{
     // renderTexture.draw("R");
 }

@@ -2,7 +2,7 @@
 
 #include "Building/Base.hpp"
 
-Base::Base(){
+Base::Base(const FieldCoord &fieldCoord): Building{fieldCoord}{
 }
 
 void Base::draw(){

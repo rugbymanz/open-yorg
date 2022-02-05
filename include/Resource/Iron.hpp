@@ -4,5 +4,5 @@
 
 class Iron: public Resource{
 public:
-    Iron();
+    Iron(const FieldCoord &fieldCoord);
 };

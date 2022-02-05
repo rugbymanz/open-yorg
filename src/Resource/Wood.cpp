@@ -1,5 +1,5 @@
 #include "Resource/Wood.hpp"
 
-Wood::Wood(){
+Wood::Wood(const FieldCoord &fieldCoord): Resource{fieldCoord}{
     // renderTexture.draw("R");
 }

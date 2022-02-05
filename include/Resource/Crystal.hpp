@@ -4,5 +4,5 @@
 
 class Crystal: public Resource{
 public:
-    Crystal();
+    Crystal(const FieldCoord &fieldCoord);
 };

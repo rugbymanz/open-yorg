@@ -19,9 +19,8 @@ public:
     void tick();
     void update();
     void draw();
-    void set(const FieldCoord &fieldCoord, FieldCell *const fieldCell);
+    void set(FieldCell *const fieldCell);
     FieldCell& get(const FieldCoord &fieldCoord);
-    std::vector<std::reference_wrapper<FieldCell> >& operator[] (const int index);
 
 private:
     std::vector< std::vector<FieldCell*> > field;

@@ -6,6 +6,6 @@
 
 class Building: public FieldCell, public CanHaveHp{
 public:
-
+    Building(const FieldCoord &fieldCoord);
 private:
 };

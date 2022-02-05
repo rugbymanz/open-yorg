@@ -23,32 +23,14 @@ TEST_CASE("main") {
     Game game(&window);
 
     for (auto row = game.gameElements.field.field.begin(); row < game.gameElements.field.field.end(); row++)
-    {
         for (auto col = row->begin(); col < row->end(); col++)
-        {
-            *col = new EmptyFieldCell;
-            (*col)->setCoord({int(row - game.gameElements.field.field.begin()), int(col - row->begin() )});
-        }
-    }
+            *col = new EmptyFieldCell({int(row - game.gameElements.field.field.begin()), int(col - row->begin() )});
     
     while (window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-
-            if(event.type == sf::Event::EventType::MouseWheelScrolled)
-                game.input.processMouseWheelScroll(event.mouseWheelScroll);
-
-            if(event.type == sf::Event::EventType::KeyPressed)
-                game.input.processKeys(event.key);
-
-            if(event.type == sf::Event::EventType::MouseButtonReleased)
-                if(event.mouseButton.button == Mouse::Button::Left)
-                    game.input.processMouseLeftClick({event.mouseButton.x, event.mouseButton.y});
-        }
+            game.input.process(event);
 
         window.clear(sf::Color::White);
         Game::gameElements.field.draw();

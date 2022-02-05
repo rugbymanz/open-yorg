@@ -1,9 +1,12 @@
 #include "Field/FieldCell.hpp"
 
-FieldCell::FieldCell(){
+FieldCell::FieldCell(const FieldCoord &fieldCoord){
+    setCoord(fieldCoord);
     setSize({ValuesAndTypes::Field::cellLength, ValuesAndTypes::Field::cellWidth});
     setOutlineColor(ValuesAndTypes::Colors::normal);
     setOutlineThickness(ValuesAndTypes::Field::cellOutlineThickness);
+
+    
     // image.create(2000, 2000, Color::White);
     // text.loadFromImage(image);
     // setTexture(&text);

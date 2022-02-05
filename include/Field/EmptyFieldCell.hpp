@@ -4,6 +4,6 @@
 
 class EmptyFieldCell: public FieldCell{
 public:
-    EmptyFieldCell();
+    EmptyFieldCell(const FieldCoord &fieldCoord);
     void draw()override;
 };

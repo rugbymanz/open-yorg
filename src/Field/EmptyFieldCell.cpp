@@ -1,7 +1,7 @@
 #include "Field/EmptyFieldCell.hpp"
 #include "Game.hpp"
 
-EmptyFieldCell::EmptyFieldCell(){
+EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoord}{
     isEmpty = true;
 }
 

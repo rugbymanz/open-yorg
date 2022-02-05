@@ -4,5 +4,5 @@
 
 class Wood: public Resource{
 public:
-    Wood();
+    Wood(const FieldCoord &fieldCoord);
 };
