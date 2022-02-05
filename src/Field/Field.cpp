@@ -27,11 +27,9 @@ void Field::update(){
 }
 
 void Field::draw(){
-    for(auto &row: field){
-        for(auto &col: row){
-            col->draw();
-        }
-    }
+        for(auto &row: field)
+            for(auto &col: row)
+                col->draw();
 }
 
 void Field::set(const FieldCoord& fieldCoord, FieldCell *const fieldCell){

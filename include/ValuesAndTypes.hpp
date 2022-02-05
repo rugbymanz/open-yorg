@@ -18,7 +18,7 @@ struct ValuesAndTypes{
         static const int cellLength = 20;
         static const int cellWidth = 20;
 
-        static const int cellOutlineThickness = 1;
+        static const int cellOutlineThickness = -1;
     };
 
     struct Colors{

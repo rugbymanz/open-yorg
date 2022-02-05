@@ -97,7 +97,7 @@ void Input::processMouseLeftClick(const sf::Vector2i &clickPosition){
     FieldCoord fieldCell = Algorithms::mapVector2fToFieldCoord(floatCoord);
     std::cerr << std::endl << fieldCell.x << ' ' << fieldCell.y << ' ';
 
-    if( (fieldCell.x < ValuesAndTypes::Field::fieldLength - 1 && floatCoord.x >= 0) && (fieldCell.y < ValuesAndTypes::Field::fieldWidth - 1 && floatCoord.y >= 0) )
+    if( (fieldCell.x < ValuesAndTypes::Field::fieldLength && floatCoord.x >= 0) && (fieldCell.y < ValuesAndTypes::Field::fieldWidth && floatCoord.y >= 0) )
         Game::interface.selectCell(fieldCell); 
     else
         std::cerr << "out of field bounds" << std::endl;
