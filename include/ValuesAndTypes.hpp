@@ -23,7 +23,8 @@ struct ValuesAndTypes{
 
     struct Colors{
         static const sf::Color selected;
-        static const sf::Color normal;
+        static const sf::Color unselected;
+        static const sf::Color background;
     };
 
     struct Clock{

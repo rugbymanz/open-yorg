@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
 #include "ValuesAndTypes.hpp"
 
@@ -13,6 +14,9 @@ public:
     FieldCoord getCoord();
     virtual void draw();
 
-private:
+protected:
+    sf::Texture texture;
     FieldCoord coord = ValuesAndTypes::noneFieldCell;
+
+private:
 };
