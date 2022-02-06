@@ -4,18 +4,18 @@
 #include <SFML/Graphics/Texture.hpp>
 
 #include "ValuesAndTypes.hpp"
+#include "Drawable.hpp"
 
-class FieldCell: public sf::RectangleShape{
+class FieldCell: public sf::RectangleShape, public Drawable{
 public:
     bool isEmpty = false;
 
     FieldCell(const FieldCoord &fieldCoord);
     void setCoord(const FieldCoord &fieldCoord);
     FieldCoord getCoord();
-    virtual void draw();
+    void draw()override;
 
 protected:
-    sf::Texture texture;
     FieldCoord coord = ValuesAndTypes::noneFieldCell;
 
 private:

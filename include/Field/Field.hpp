@@ -21,6 +21,7 @@ public:
     void draw();
     void set(FieldCell *const fieldCell);
     FieldCell& get(const FieldCoord &fieldCoord);
+    ~Field();
 
 private:
     std::vector< std::vector<FieldCell*> > field;

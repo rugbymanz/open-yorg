@@ -7,5 +7,5 @@ class Base: public Building, public CanStore{
 public:
     Base(const FieldCoord &fieldCoord);
 
-    void draw();
+    void draw()override;
 };

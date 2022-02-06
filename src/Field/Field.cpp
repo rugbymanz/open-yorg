@@ -1,6 +1,10 @@
 #include "Field/Field.hpp"
 
+#include <assert.h>
+#include <iostream>
 Field::Field(){
+    std::cout <<std::endl << ValuesAndTypes::noneFieldCell.x << ' ' <<  ValuesAndTypes::noneFieldCell.y << std::endl;
+    assert(0);
     srand(time(0));
 
     field.resize(ValuesAndTypes::Field::fieldLength);
@@ -53,4 +57,10 @@ void Field::set(FieldCell *const fieldCell){
 
 FieldCell& Field::get(const FieldCoord &fieldCoord){
     return *field[fieldCoord.x][fieldCoord.y];
+}
+
+Field::~Field(){
+    for(auto &row: field)
+        for(auto &col: row)
+            delete col;
 }

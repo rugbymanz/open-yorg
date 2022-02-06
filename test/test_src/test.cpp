@@ -26,6 +26,8 @@ TEST_CASE("main") {
         for (auto col = row->begin(); col < row->end(); col++)
             *col = new EmptyFieldCell({int(row - game.gameElements.field.field.begin()), int(col - row->begin() )});
     
+    REQUIRE(ValuesAndTypes::noneFieldCell.x == -1);
+
     while (window.isOpen())
     {
         sf::Event event;
