@@ -11,7 +11,8 @@ void Interface::update(){
 }
 
 void Interface::selectCell(const FieldCoord &selection){
-    Game::gameElements.field.get(selectedCell).setOutlineColor(ValuesAndTypes::Colors::unselected);
+    if(selectedCell != ValuesAndTypes::noneFieldCell)
+        Game::gameElements.field.get(selectedCell).setOutlineColor(ValuesAndTypes::Colors::unselected);
     Game::gameElements.field.get(selection).setOutlineColor(ValuesAndTypes::Colors::selected);
     selectedCell = selection;
 }

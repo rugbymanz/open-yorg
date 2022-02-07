@@ -1,10 +1,6 @@
 #include "Field/Field.hpp"
 
-#include <assert.h>
-#include <iostream>
 Field::Field(){
-    std::cout <<std::endl << ValuesAndTypes::noneFieldCell.x << ' ' <<  ValuesAndTypes::noneFieldCell.y << std::endl;
-    assert(0);
     srand(time(0));
 
     field.resize(ValuesAndTypes::Field::fieldLength);

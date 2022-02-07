@@ -10,11 +10,11 @@
 
 class Game{
 public:
+    static ValuesAndTypes valuesAndTypes;
     static Input input;
     static sf::RenderWindow *window;
     static GameElements gameElements;
     static Interface interface;
-    static ValuesAndTypes valuesAndTypes;
     static Clock clock;
 
     Game(sf::RenderWindow *const renderWindow);

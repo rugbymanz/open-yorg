@@ -6,7 +6,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(program_name open-yorg)
 set(source_dir .././src)
 set(include_dir .././include ./test_include)
-set(compile_options -Wall -pedantic -Wextra)
+set(compile_options -g -O0 -Wall -pedantic -Wextra)
 
 project(${program_name} LANGUAGES CXX)
 
