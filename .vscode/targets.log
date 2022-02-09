@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Feb  7 00:31:38 2022
+# Make data base, printed on Thu Feb 10 00:24:01 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c1196588-b079-47d3-80d7-c75393436791.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e123699e-d845-424f-b2eb-396303c9c38d.sock
 # environment
 LC_NAME = ru_RU.UTF-8
 # environment
@@ -79,7 +79,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXtVCeUP/agent.954
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXX6qno0P/agent.981
 # default
 .SHELLFLAGS := -c
 # environment
@@ -97,13 +97,13 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 23613
+VSCODE_PID = 2079
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/smallhouse:@/tmp/.ICE-unix/903,unix/smallhouse:/tmp/.ICE-unix/903
+SESSION_MANAGER = local/smallhouse:@/tmp/.ICE-unix/930,unix/smallhouse:/tmp/.ICE-unix/930
 # automatic
 *F = $(notdir $*)
 # environment
@@ -179,7 +179,7 @@ MAKE_VERSION := 4.3
 # environment
 LC_MEASUREMENT = ru_RU.UTF-8
 # environment
-SSH_AGENT_PID = 955
+SSH_AGENT_PID = 982
 # environment
 _ = /usr/bin/make
 # environment
@@ -209,6 +209,10 @@ PAPERSIZE = a4
 # default
 SUFFIXES := 
 # environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/alex
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
@@ -219,7 +223,7 @@ GDMSESSION = xfce
 # environment
 LC_IDENTIFICATION = ru_RU.UTF-8
 # variable set hash-table stats:
-# Load=103/1024=10%, Rehash=0, Collisions=7/130=5%
+# Load=105/1024=10%, Rehash=0, Collisions=7/132=5%
 
 # Pattern-specific Variable Values
 
@@ -284,7 +288,8 @@ GNUmakefile:
 
 # strcache performance: lookups = 25 / hit rate = 12%
 # hash-table stats:
+ 
 # Load=22/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Mon Feb  7 00:31:38 2022
+# Finished Make data base on Thu Feb 10 00:24:01 2022
 
  

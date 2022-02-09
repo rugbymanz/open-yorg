@@ -1,10 +1,10 @@
 #include "Game.hpp"
 
+ValuesAndTypes Game::valuesAndTypes;
 Input Game::input;
 sf::RenderWindow *Game::window = nullptr;
 GameElements Game::gameElements;
 Interface Game::interface;
-ValuesAndTypes Game::valuesAndTypes;
 Clock Game::clock;
 
 void Game::tick(){
