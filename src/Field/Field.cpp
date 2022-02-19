@@ -1,4 +1,5 @@
 #include "Field/Field.hpp"
+#include <time.h>
 
 Field::Field(){
     srand(time(0));
