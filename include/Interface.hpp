@@ -4,11 +4,11 @@
 
 class Interface{
 public:
-    FieldCoord selectedCell = ValuesAndTypes::noneFieldCell;
+    static FieldCoord selectedCell;
 
     void tick();
     void update();
-    void selectCell(const FieldCoord &selection);
+    static void selectCell(const FieldCoord &selection);
 
 private:
 };

@@ -7,11 +7,11 @@
 
 class CanDamage{
 public:
-    double damageRadius = ValuesAndTypes::none;
-    double fireRate = ValuesAndTypes::none;
+    double damageRadius = NONE;
+    double fireRate = NONE;
     sf::Clock clock;
-    double damage = ValuesAndTypes::none;
-    sf::Vector2f aim = ValuesAndTypes::noneVector2f;
+    double damage = NONE;
+    sf::Vector2f aim = NONE_VECTOR2F;
 
     virtual void update();
     virtual void findAim();

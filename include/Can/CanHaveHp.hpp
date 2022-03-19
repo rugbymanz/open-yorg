@@ -9,5 +9,5 @@ public:
     void varyHp();
 
 private:
-    double hp = ValuesAndTypes::none;
+    double hp = NONE;
 };

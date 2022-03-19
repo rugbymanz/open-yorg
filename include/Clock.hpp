@@ -16,7 +16,7 @@ public:
     TimeOfDay getTimeOfDay() const;
 
 private:
-    sf::Time time = sf::seconds(ValuesAndTypes::none);
+    sf::Time time = sf::seconds(NONE);
     TimeOfDay timeOfDay = TimeOfDay::day;
     
     void switchTime();

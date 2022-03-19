@@ -2,18 +2,18 @@
 
 FieldCell::FieldCell(const FieldCoord &fieldCoord){
     setCoord(fieldCoord);
-    setSize({ValuesAndTypes::Field::cellLength, ValuesAndTypes::Field::cellWidth});
-    setOutlineColor(ValuesAndTypes::Colors::unselected);
-    setOutlineThickness(ValuesAndTypes::Field::cellOutlineThickness);
+    setSize({CELL_LENGTH, CELL_WIDTH});
+    setOutlineColor(UNSELECTED);
+    setOutlineThickness(CELL_OUTLINE_THICKNESS);
 
     sf::Image image;
-    image.create(ValuesAndTypes::Field::cellLength, ValuesAndTypes::Field::cellWidth, ValuesAndTypes::Colors::background);
+    image.create(CELL_LENGTH, CELL_WIDTH, BACKGROUND);
     texture.loadFromImage(image);
     setTexture(&texture);
 }
 
 void FieldCell::setCoord(const FieldCoord &fieldCoord){
-    setPosition(fieldCoord.x * ValuesAndTypes::Field::cellLength, fieldCoord.y * ValuesAndTypes::Field::cellWidth);
+    setPosition(fieldCoord.x * CELL_LENGTH, fieldCoord.y * CELL_WIDTH);
     coord = fieldCoord;
 }
 

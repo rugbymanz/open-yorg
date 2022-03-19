@@ -1,38 +1,28 @@
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
-#include <SFML/Graphics/Color.hpp>
 
 using FieldCoord = sf::Vector2i;
 using Azimuth = double;
 
-struct ValuesAndTypes{
-    static constexpr int none = -1;
-    static const FieldCoord noneFieldCell;
-    static const sf::Vector2f noneVector2f;
+#define NONE -1
+#define NONE_FIELD_CELL FieldCoord(-1, -1) 
+#define NONE_VECTOR2F sf::Vector2f(-1, -1)
 
-    struct Field{
-        static const int fieldLength = 20;
-        static const int fieldWidth = 20;
+#define SELECTED sf::Color::Blue
+#define UNSELECTED sf::Color::Black
+#define BACKGROUND sf::Color::Cyan
 
-        static const int cellLength = 20;
-        static const int cellWidth = 20;
+#define ZOOM_SPEED 0.1
+#define SPEED 1
+#define VIEW_MOVE_SPEED 20
 
-        static const int cellOutlineThickness = -1;
-    };
+#define FIELD_LENGTH 20
+#define FIELD_WIDTH 20
 
-    struct Colors{
-        static const sf::Color selected;
-        static const sf::Color unselected;
-        static const sf::Color background;
-    };
+#define CELL_LENGTH 20
+#define CELL_WIDTH 20
+#define CELL_OUTLINE_THICKNESS -1
 
-    struct Clock{
-        static constexpr double dayDuration = none;
-        static constexpr double nightDuration = none;
-    };
-
-    static constexpr double speed = 1;
-    static const double zoomSpeed;
-    static const double viewMoveSpeed;
-};
+#define DAY_DURATION NONE
+#define NIGHT_DURATION NONE

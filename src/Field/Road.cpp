@@ -7,5 +7,5 @@ void Road::update(){
 }
 
 FieldCoord Road::findPath(const FieldCoord &source, const FieldCoord &destination){
-    return ValuesAndTypes::noneFieldCell;
+    return NONE_FIELD_CELL;
 }

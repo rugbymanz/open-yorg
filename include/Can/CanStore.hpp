@@ -4,5 +4,5 @@
 
 class CanStore{
 public:
-    double storage = ValuesAndTypes::none;
+    double storage = NONE;
 };

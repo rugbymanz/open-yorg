@@ -11,7 +11,7 @@
 
 class Field{
 public:
-    FieldCoord basePosition = ValuesAndTypes::noneFieldCell;
+    static FieldCoord basePosition;
     Road road;
     PathSearchField pathSearchField;
 
@@ -19,10 +19,10 @@ public:
     void tick();
     void update();
     void draw();
-    void set(FieldCell *const fieldCell);
-    FieldCell& get(const FieldCoord &fieldCoord);
+    static void set(FieldCell *const fieldCell);
+    static FieldCell &get(const FieldCoord &fieldCoord);
     ~Field();
 
 private:
-    std::vector< std::vector<FieldCell*> > field;
+    static std::vector< std::vector<FieldCell*> > field;
 };

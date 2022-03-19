@@ -14,7 +14,7 @@ ResourceBall::ResourceBall(const FieldCoord &source): source{source}, destinatio
 
 void ResourceBall::create(const size_t amount){
     findDestination();
-    Game::gameElements.resourceBalls.append(amount, *this);
+    ResourceBalls::append(amount, *this);
 }
 
 void ResourceBall::update(){
@@ -37,7 +37,7 @@ void ResourceBall::update(){
 }
 
 void ResourceBall::findDestinationNode(){
-    destinationNode = Game::gameElements.field.road.findPath(currentNode, destination);
+    destinationNode = Road::findPath(currentNode, destination);
     movementAzimuth = Algorithms::calculateAzimuth(currentNode, destinationNode);
 }
 

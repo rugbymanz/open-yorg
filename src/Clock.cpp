@@ -7,12 +7,9 @@ void Clock::tick(){
 }
 
 bool Clock::needToSwitch(){
-#define COMPARE(timeOfDay_) timeOfDay == TimeOfDay::timeOfDay_ && getElapsedTime().asSeconds() > ValuesAndTypes::Clock::timeOfDay_##Duration
-
-    if(COMPARE(day) || COMPARE(night)){
-        
-#undef COMPARE
-        return true;
+    if(timeOfDay == TimeOfDay::day && getElapsedTime().asSeconds() > DAY_DURATION || 
+       timeOfDay == TimeOfDay::night && getElapsedTime().asSeconds() > NIGHT_DURATION){
+            return true;
     }
     
     return false;

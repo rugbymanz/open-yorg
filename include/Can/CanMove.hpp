@@ -7,6 +7,6 @@ public:
     void setAzimuth(const Azimuth azimuth);
 
 private:
-    double speed = ValuesAndTypes::none;
-    Azimuth movementAzimuth = ValuesAndTypes::none;
+    double speed = NONE;
+    Azimuth movementAzimuth = NONE;
 };

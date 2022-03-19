@@ -217,7 +217,6 @@
     <ClCompile Include="src\Resource\ResourceBall.cpp" />
     <ClCompile Include="src\Resource\ResourceBalls.cpp" />
     <ClCompile Include="src\Resource\Wood.cpp" />
-    <ClCompile Include="src\ValuesAndTypes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

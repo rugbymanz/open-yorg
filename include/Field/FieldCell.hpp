@@ -16,7 +16,7 @@ public:
     void draw()override;
 
 protected:
-    FieldCoord coord = ValuesAndTypes::noneFieldCell;
+    FieldCoord coord = NONE_FIELD_CELL;
 
 private:
 };

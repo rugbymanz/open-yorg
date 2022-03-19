@@ -4,11 +4,11 @@
 #include "Game.hpp"
 
 Base::Base(const FieldCoord &fieldCoord): Building{fieldCoord}{
-    if(Game::gameElements.field.basePosition != ValuesAndTypes::noneFieldCell){
-        printf("\nbasePos = %d %d\n", Game::gameElements.field.basePosition.x, Game::gameElements.field.basePosition.y);
+    if(Field::basePosition != NONE_FIELD_CELL){
+        printf("\nbasePos = %d %d\n", Field::basePosition.x, Field::basePosition.y);
         assert(0 && "Base has yet been built");
     }
-    Game::gameElements.field.basePosition = coord;
+    Field::basePosition = coord;
 }
 
 void Base::draw(){

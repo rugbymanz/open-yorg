@@ -4,7 +4,7 @@
 
 class Road{
 public:
-    FieldCoord findPath(const FieldCoord &source, const FieldCoord &destination);
+    static FieldCoord findPath(const FieldCoord &source, const FieldCoord &destination);
 
     void tick();
 

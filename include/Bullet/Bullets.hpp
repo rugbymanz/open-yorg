@@ -7,8 +7,8 @@
 class Bullets{
 public:
     void tick();
-    void append(const Bullet &bullet);
+    static void append(const Bullet &bullet);
 
 private:
-    std::forward_list<Bullet> bullets;
+    static std::forward_list<Bullet> bullets;
 };

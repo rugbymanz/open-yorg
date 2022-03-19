@@ -14,39 +14,39 @@ void Input::process(const sf::Event &event){
         Game::window->close();
 
     if (event.type == sf::Event::EventType::MouseWheelScrolled)
-        Game::input.processMouseWheelScroll(event.mouseWheelScroll);
+        processMouseWheelScroll(event.mouseWheelScroll);
 
     if (event.type == sf::Event::EventType::KeyPressed)
-        Game::input.processKeys(event.key);
+        processKeys(event.key);
 
     if (event.type == sf::Event::EventType::MouseButtonReleased)
         processMouseClick(event.mouseButton);
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return Game::gameElements.field.get(position).isEmpty;
+    return Field::get(position).isEmpty;
 }
 
 void Input::processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton){
     if (mouseButton.button == sf::Mouse::Button::Left)
-        Game::input.processMouseLeftClick({mouseButton.x, mouseButton.y});
+        processMouseLeftClick({mouseButton.x, mouseButton.y});
 }
 
 void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll){
-    double zoom = - mouseWheelScroll.delta * ValuesAndTypes::zoomSpeed;
+    double zoom = - mouseWheelScroll.delta * ZOOM_SPEED;
     sf::View view = Game::window->getView();
     view.zoom(1 + zoom);
     Game::window->setView(view);
 }
 
 void Input::build(const sf::Event::KeyEvent &key){
-    const FieldCoord &position = Game::interface.selectedCell;
+    const FieldCoord &position = Interface::selectedCell;
 
     if (!isValidBuildingPosition(position)){
         assert(0 && "Invalid building postion");
     }
-    if(Game::interface.selectedCell != ValuesAndTypes::noneFieldCell)
-        Game::gameElements.field.set(new Base{Game::interface.selectedCell});
+    if(Interface::selectedCell != NONE_FIELD_CELL)
+        Field::set(new Base{Interface::selectedCell});
 }
 
 void Input::processKeys(const sf::Event::KeyEvent &key){
@@ -54,16 +54,16 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
 
     switch(key.code){
     case sf::Keyboard::Key::Left:
-        view.move(-ValuesAndTypes::viewMoveSpeed, 0);
+        view.move(-VIEW_MOVE_SPEED, 0);
         break;
     case sf::Keyboard::Key::Right:
-        view.move(ValuesAndTypes::viewMoveSpeed, 0);
+        view.move(VIEW_MOVE_SPEED, 0);
         break;
     case sf::Keyboard::Key::Down:
-        view.move(0, ValuesAndTypes::viewMoveSpeed);
+        view.move(0, VIEW_MOVE_SPEED);
         break;
     case sf::Keyboard::Key::Up:
-        view.move(0, -ValuesAndTypes::viewMoveSpeed);
+        view.move(0, -VIEW_MOVE_SPEED);
         break;
     case sf::Keyboard::Key::B:
         build(key);
@@ -80,8 +80,8 @@ void Input::processMouseLeftClick(const sf::Vector2i &clickPosition){
     FieldCoord fieldCell = Algorithms::mapVector2fToFieldCoord(floatCoord);
     std::cerr << std::endl << fieldCell.x << ' ' << fieldCell.y << ' ';
 
-    if( (fieldCell.x < ValuesAndTypes::Field::fieldLength && floatCoord.x >= 0) && (fieldCell.y < ValuesAndTypes::Field::fieldWidth && floatCoord.y >= 0) )
-        Game::interface.selectCell(fieldCell); 
+    if( (fieldCell.x < FIELD_LENGTH && floatCoord.x >= 0) && (fieldCell.y < FIELD_WIDTH && floatCoord.y >= 0) )
+        Interface::selectCell(fieldCell); 
     else
         std::cerr << "out of field bounds" << std::endl;
 }

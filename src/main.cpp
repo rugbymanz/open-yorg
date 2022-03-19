@@ -15,7 +15,7 @@ int main(){
 
         window.clear(sf::Color::White);
 
-        // game.tick()
+        game.tick();
 
         window.display();
     }

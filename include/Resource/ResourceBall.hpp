@@ -14,13 +14,13 @@ public:
     void create(const size_t amount);
 
 private:
-    FieldCoord source = ValuesAndTypes::noneFieldCell;
-    FieldCoord sourceNode = ValuesAndTypes::noneFieldCell;
-    FieldCoord destination = ValuesAndTypes::noneFieldCell;
-    FieldCoord nextNode = ValuesAndTypes::noneFieldCell;
-    FieldCoord destinationNode = ValuesAndTypes::noneFieldCell;
-    FieldCoord currentNode = ValuesAndTypes::noneFieldCell;
-    Azimuth movementAzimuth = ValuesAndTypes::none;
+    FieldCoord source = NONE_FIELD_CELL;
+    FieldCoord sourceNode = NONE_FIELD_CELL;
+    FieldCoord destination = NONE_FIELD_CELL;
+    FieldCoord nextNode = NONE_FIELD_CELL;
+    FieldCoord destinationNode = NONE_FIELD_CELL;
+    FieldCoord currentNode = NONE_FIELD_CELL;
+    Azimuth movementAzimuth = NONE;
 
     void findDestinationNode();
     void findDestination();

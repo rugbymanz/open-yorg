@@ -6,8 +6,8 @@
 
 class ResourceBalls{
 public:
-    void tikc();
-    void append(const size_t amount, const ResourceBall &resourceBall);
+    void tick();
+    static void append(const size_t amount, const ResourceBall &resourceBall);
     
 private:
     std::vector<ResourceBall> resourceBalls;

@@ -1,14 +1,20 @@
-#include "Field/Field.hpp"
 #include <time.h>
+
+#include "Field/Field.hpp"
+#include "Field/EmptyFieldCell.hpp"
+
+FieldCoord Field::basePosition = NONE_FIELD_CELL;
+std::vector< std::vector<FieldCell *> > Field::field;
 
 Field::Field(){
     srand(time(0));
 
-    field.resize(ValuesAndTypes::Field::fieldLength);
+    field.resize(FIELD_LENGTH);
 
     for(auto row = field.begin(); row < field.end(); row++){
-        row->resize(ValuesAndTypes::Field::fieldWidth);
+        row->resize(FIELD_WIDTH);
         for(auto col = row->begin(); col < row->end(); col++){
+            *col = new EmptyFieldCell({ int(row - field.begin()), int(col - row->begin()) });
             // cellType = rand();
             // if(cellType != FieldCellType::none)
             //     placeNew(FieldCell(row, column), toResource(cellType))
