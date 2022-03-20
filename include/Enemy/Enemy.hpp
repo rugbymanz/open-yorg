@@ -5,10 +5,10 @@
 #include "Can/CanMove.hpp"
 #include "Can/CanHaveHp.hpp"
 #include "Can/CanDamage.hpp"
-#include "Drawable.hpp"
+#include "Graphical.hpp"
 
 
-class Enemy: public CanMove, public CanHaveHp, public CanDamage, public sf::CircleShape, public Drawable{
+class Enemy: public CanMove, public CanHaveHp, public CanDamage, public sf::CircleShape, public Graphical {
 public:
     Enemy(const FieldCoord &spawnPosition);
 

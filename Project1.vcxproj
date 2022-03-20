@@ -162,7 +162,7 @@
     <ClInclude Include="include\Can\CanMove.hpp" />
     <ClInclude Include="include\Can\CanStore.hpp" />
     <ClInclude Include="include\Clock.hpp" />
-    <ClInclude Include="include\Drawable.hpp" />
+    <ClInclude Include="include\Graphical.hpp" />
     <ClInclude Include="include\Enemy\CasualEnemy.hpp" />
     <ClInclude Include="include\Enemy\Enemies.hpp" />
     <ClInclude Include="include\Enemy\Enemy.hpp" />
@@ -198,6 +198,7 @@
     <ClCompile Include="src\Can\CanMove.cpp" />
     <ClCompile Include="src\Can\CanStore.cpp" />
     <ClCompile Include="src\Clock.cpp" />
+    <ClCompile Include="src\Graphical.cpp" />
     <ClCompile Include="src\Enemy\CasualEnemy.cpp" />
     <ClCompile Include="src\Enemy\Enemies.cpp" />
     <ClCompile Include="src\Enemy\Enemy.cpp" />

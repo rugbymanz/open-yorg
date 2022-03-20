@@ -1,4 +1,5 @@
 #include "Field/FieldCell.hpp"
+#include "SFML/Graphics/Sprite.hpp"
 
 FieldCell::FieldCell(const FieldCoord &fieldCoord){
     setCoord(fieldCoord);
@@ -8,8 +9,10 @@ FieldCell::FieldCell(const FieldCoord &fieldCoord){
 
     sf::Image image;
     image.create(CELL_LENGTH, CELL_WIDTH, BACKGROUND);
-    texture.loadFromImage(image);
-    setTexture(&texture);
+    backgroundTexture.loadFromImage(image);
+    renderTexture.create(backgroundTexture.getSize().x, backgroundTexture.getSize().y);
+    renderTexture.draw(sf::Sprite(backgroundTexture));
+    setTexture(&renderTexture.getTexture());
 }
 
 void FieldCell::setCoord(const FieldCoord &fieldCoord){
@@ -22,6 +25,7 @@ FieldCoord FieldCell::getCoord(){
 }
 
 void FieldCell::draw(){
+    Graphical::draw();
     // image.create(Settings::Field::cellLength, Settings::Field::cellWidth, Color::White);
     // text.loadFromImage(image);
 }

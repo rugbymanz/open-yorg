@@ -8,6 +8,7 @@
 #include "Game.hpp"
 #include "Algorithms.hpp"
 #include "Building/Base.hpp"
+#include "Resource/Crystal.hpp"
 
 void Input::process(const sf::Event &event){
     if (event.type == sf::Event::Closed)
@@ -39,14 +40,21 @@ void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mous
     Game::window->setView(view);
 }
 
-void Input::build(const sf::Event::KeyEvent &key){
+void Input::build(const sf::Keyboard::Key &key){
     const FieldCoord &position = Interface::selectedCell;
 
     if (!isValidBuildingPosition(position)){
         assert(0 && "Invalid building postion");
     }
-    if(Interface::selectedCell != NONE_FIELD_CELL)
-        Field::set(new Base{Interface::selectedCell});
+    if (Interface::selectedCell != NONE_FIELD_CELL) 
+        switch (key) {
+        case sf::Keyboard::B:
+            Field::set(new Base{ Interface::selectedCell });
+            break;
+        case sf::Keyboard::C:
+            Field::set(new Crystal{ Interface::selectedCell });
+            break;
+        }
 }
 
 void Input::processKeys(const sf::Event::KeyEvent &key){
@@ -66,7 +74,9 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
         view.move(0, -VIEW_MOVE_SPEED);
         break;
     case sf::Keyboard::Key::B:
-        build(key);
+    //fall-through
+    case sf::Keyboard::Key::C:
+        build(key.code);
         break;
     default:
         std::cerr << std::endl << "detected unrecognized Key event" << std::endl;

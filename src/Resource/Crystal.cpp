@@ -1,5 +1,12 @@
 #include "Resource/Crystal.hpp"
+#include "Game.hpp"
 
 Crystal::Crystal(const FieldCoord &fieldCoord): Resource{fieldCoord}{
-    // renderTexture.draw("R");
+    text.setString("C");
+    renderTexture.draw(text);
+}
+
+void Crystal::draw() {
+    Resource::draw();
+    Game::window->draw(*this);
 }

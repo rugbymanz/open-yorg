@@ -3,10 +3,10 @@
 #include <SFML/Graphics/CircleShape.hpp>
 
 #include "Can/CanMove.hpp"
-#include "Drawable.hpp"
+#include "Graphical.hpp"
 #include "Resource/Resource.hpp"
 
-class ResourceBall: public CanMove, public Drawable, public sf::CircleShape{
+class ResourceBall: public CanMove, public Graphical, public sf::CircleShape{
 public:
     bool isSupposedToBeDeleted = false;
 

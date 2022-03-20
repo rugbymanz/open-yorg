@@ -14,5 +14,5 @@ private:
     void processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton);
     void processKeys(const sf::Event::KeyEvent &key);
     void processMouseLeftClick(const sf::Vector2i &clickPosition);
-    void build(const sf::Event::KeyEvent &key);
+    void build(const sf::Keyboard::Key &key);
 };

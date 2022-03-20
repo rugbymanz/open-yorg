@@ -4,9 +4,9 @@
 #include <SFML/Graphics/Texture.hpp>
 
 #include "ValuesAndTypes.hpp"
-#include "Drawable.hpp"
+#include "Graphical.hpp"
 
-class FieldCell: public sf::RectangleShape, public Drawable{
+class FieldCell: public sf::RectangleShape, public Graphical{
 public:
     bool isEmpty = false;
 

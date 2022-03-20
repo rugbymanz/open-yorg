@@ -25,6 +25,9 @@
 //     erased = true;
 // }
 
+Bullet::Bullet(const Bullet &bullet) {
+}
+
 void Bullet::draw(){
     
 }

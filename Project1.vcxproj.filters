@@ -102,7 +102,7 @@
     <ClInclude Include="include\Clock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Drawable.hpp">
+    <ClInclude Include="include\Graphical.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Game.hpp">
@@ -219,6 +219,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphical.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

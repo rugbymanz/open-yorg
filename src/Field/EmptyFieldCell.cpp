@@ -8,5 +8,6 @@ EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoo
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Texture.hpp>
 void EmptyFieldCell::draw(){
+    FieldCell::draw();
     Game::window->draw(*this);
 }
