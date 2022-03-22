@@ -6344,7 +6344,7 @@
 											"top": 1286,
 											"width": 535,
 											"height": 13,
-											"text": "«adjacency_list»+road",
+											"text": "«ListGraph»+road",
 											"horizontalAlignment": 0
 										},
 										{
@@ -14082,11 +14082,30 @@
 									"model": {
 										"$ref": "AAAAAAF+k6bhCa8BNb4="
 									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF/sn3lrOZe+Gk=",
+											"_parent": {
+												"$ref": "AAAAAAF+k6bhC68JnLw="
+											},
+											"model": {
+												"$ref": "AAAAAAF/sn3laeZDJFc="
+											},
+											"font": "Arial;13;0",
+											"left": 1781,
+											"top": 1286,
+											"width": 190,
+											"height": 13,
+											"text": "«GridGraph»+pathSearchField",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 1776,
 									"top": 1281,
 									"width": 200,
-									"height": 10
+									"height": 23
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -14099,7 +14118,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1776,
-									"top": 1291,
+									"top": 1304,
 									"width": 200,
 									"height": 10
 								},
@@ -18761,7 +18780,8 @@
 								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
 							},
 							"name": "Texture backgroundTexture",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -18770,7 +18790,8 @@
 								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
 							},
 							"name": "RenderTexture renderTexture",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -18779,7 +18800,8 @@
 								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
 							},
 							"name": "Text text",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -18788,7 +18810,8 @@
 								"$ref": "AAAAAAF+Ngr/3t/LvQ8="
 							},
 							"name": "Font font",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -19731,7 +19754,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF+ykPNjVzktOc="
 									},
-									"name": "const sfKeyboardKeyt &key"
+									"name": "const sfKeyboardKeyt &key",
+									"type": ""
 								}
 							]
 						}
@@ -21015,8 +21039,7 @@
 								"$ref": "AAAAAAF+WT1XAgNGPgA="
 							},
 							"name": "road",
-							"stereotype": "adjacency_list",
-							"type": ""
+							"stereotype": "ListGraph"
 						},
 						{
 							"_type": "UMLPort",
@@ -22971,6 +22994,17 @@
 								},
 								"aggregation": "composite"
 							}
+						}
+					],
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF/sn3laeZDJFc=",
+							"_parent": {
+								"$ref": "AAAAAAF+k6bhCa8BNb4="
+							},
+							"name": "pathSearchField",
+							"stereotype": "GridGraph"
 						}
 					]
 				},
