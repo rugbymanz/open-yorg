@@ -5,14 +5,14 @@
 #include "Building/Base.hpp"
 #include "Game.hpp"
 
-Base::Base(const Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
+Base::Base(Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
     text.setString("B");
     renderTexture.draw(text);
-    if(Field::basePosition != NONE_FIELD_CELL){
-        printf("\nbasePos = %d %d\n", Field::basePosition.x, Field::basePosition.y);
+    if(field.basePosition != NONE_FIELD_CELL){
+        printf("\nbasePos = %d %d\n", field.basePosition.x, field.basePosition.y);
         assert(0 && "Base has yet been built");
     }
-    Field::basePosition = coord;
+    field.basePosition = coord;
 }
 
 void Base::draw(){

@@ -3,9 +3,11 @@
 #include "Building/Building.hpp"
 #include "Can/CanStore.hpp"
 
+class Field;
+
 class Base: public Building, public CanStore{
 public:
-    Base(const FieldCoord &fieldCoord);
+    Base(Field &field, const FieldCoord &fieldCoord);
 
     void draw()override;
 };

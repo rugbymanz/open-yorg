@@ -3,10 +3,7 @@
 #include "Field/Field.hpp"
 #include "Field/EmptyFieldCell.hpp"
 
-FieldCoord Field::basePosition = NONE_FIELD_CELL;
-std::vector< std::vector<FieldCell *> > Field::field;
-
-Field::Field(){
+Field::Field() : pathSearchField{*this} {
     srand(time(0));
 
     field.resize(FIELD_LENGTH);

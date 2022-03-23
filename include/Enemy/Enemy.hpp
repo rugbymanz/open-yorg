@@ -9,9 +9,11 @@
 #include "Can/CanDamage.hpp"
 #include "Graphical.hpp"
 
+class PathSearchField;
+
 class Enemy: public CanMove, public CanHaveHp, public CanDamage, public sf::CircleShape, public Graphical {
 public:
-    Enemy(const FieldCoord &spawnPosition);
+    Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField);
 
     void attack();
 

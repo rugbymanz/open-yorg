@@ -4,11 +4,22 @@
 
 #include "ValuesAndTypes.hpp"
 
+class Field;
+class Interface;
+class Enemies;
+class PathSearchField;
+
 class Input{
 public:
+    Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies);
     void process(const sf::Event &event);
 
 private:
+    Field &field;
+    Interface &interface;
+    Enemies &enemies;
+    PathSearchField &pathSearchField;
+
     bool isValidBuildingPosition(const FieldCoord &position);
     void processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll);
     void processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton);

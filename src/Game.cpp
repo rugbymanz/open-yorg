@@ -8,6 +8,11 @@ void Game::tick(){
     // clock.tick()
 }
 
-Game::Game(sf::RenderWindow *const window){
+Game::Game(sf::RenderWindow *const window) : input{ gameElements.field, 
+                                                    interface, 
+                                                    gameElements.field.pathSearchField, 
+                                                    gameElements.enemies,
+                                                  },
+                                             interface { gameElements.field } {
     this->window = window;
 }

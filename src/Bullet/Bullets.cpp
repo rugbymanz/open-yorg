@@ -1,7 +1,5 @@
 #include "Bullet/Bullets.hpp"
 
-std::forward_list<Bullet> Bullets::bullets;
-
 void Bullets::append(const Bullet &bullet){
     bullets.push_front(bullet);
 }

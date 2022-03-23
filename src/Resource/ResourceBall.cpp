@@ -5,16 +5,16 @@
 #include "Algorithms.hpp"
 #include "Building/Base.hpp"
 
-ResourceBall::ResourceBall(const FieldCoord &source): source{source}, destination{source}, destinationNode{source}{
+ResourceBall::ResourceBall(Road &road, const FieldCoord &source) : road{road}, source { source }, destination{ source }, destinationNode{ source }{
     // if(const FieldCell &fieldCell = Game::gameElements.field.get(source); fieldCell.type == FieldCell::Types::buidling)
     //     if(Building building = static_cast<Building&>(fieldCell); building.type == Building::Types::Mine)
     //         if(Mine mine = static_cast<Mine&>(fieldCell); mine.type == Mine::Types::crystal)
     //             type = Resource::Types::crystal;
 }
 
-void ResourceBall::create(const size_t amount){
+void ResourceBall::create(ResourceBalls &resourceBalls, const size_t amount){
     findDestination();
-    ResourceBalls::append(amount, *this);
+    resourceBalls.append(amount, *this);
 }
 
 void ResourceBall::update(){
@@ -37,7 +37,7 @@ void ResourceBall::update(){
 }
 
 void ResourceBall::findDestinationNode(){
-    destinationNode = Road::findPath(currentNode, destination);
+    destinationNode = road.findPath(currentNode, destination);
     movementAzimuth = Algorithms::calculateAzimuth(currentNode, destinationNode);
 }
 

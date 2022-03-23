@@ -6,6 +6,8 @@
 
 #include "ValuesAndTypes.hpp"
 
+class Field;
+
 class PathSearchField{
 public:
     enum class Walkability{
@@ -13,11 +15,12 @@ public:
         unwalkable
     };
 
-    PathSearchField();
+    PathSearchField(Field &field);
     lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path generatePath(const FieldCoord &source);
 
 private:
-    std::vector< std::vector<lemon::ListGraph::NodeIt> > field;
-    lemon::ListGraph pathSearchField;
-    lemon::ListGraph::NodeMap<int> nodeMap{ pathSearchField };
+    std::vector< std::vector<lemon::ListGraph::NodeIt> > nodeField;
+    lemon::ListGraph graphField;
+    lemon::ListGraph::NodeMap<int> nodeMap{ graphField };
+    Field &field;
 };

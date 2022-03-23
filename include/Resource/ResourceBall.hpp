@@ -6,14 +6,18 @@
 #include "Graphical.hpp"
 #include "Resource/Resource.hpp"
 
+class ResourceBalls;
+class Road;
+
 class ResourceBall: public CanMove, public Graphical, public sf::CircleShape{
 public:
     bool isSupposedToBeDeleted = false;
 
-    ResourceBall(const FieldCoord &source);
-    void create(const size_t amount);
+    ResourceBall(Road &road, const FieldCoord &source);
+    void create(ResourceBalls &resourceBalls, const size_t amount);
 
 private:
+    Road &road;
     FieldCoord source = NONE_FIELD_CELL;
     FieldCoord sourceNode = NONE_FIELD_CELL;
     FieldCoord destination = NONE_FIELD_CELL;

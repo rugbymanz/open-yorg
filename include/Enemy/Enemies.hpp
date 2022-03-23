@@ -9,5 +9,6 @@ public:
     std::forward_list<Enemy*> enemies;
 
     Enemies();
+    Enemy *append(Enemy *enemy);
     void tick();
 };

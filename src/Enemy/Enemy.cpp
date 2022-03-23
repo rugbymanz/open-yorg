@@ -2,7 +2,7 @@
 #include "Field/PathSearchField.hpp"
 #include "Algorithms.hpp"
 
-Enemy::Enemy(const FieldCoord &spawnPosition) : path{ PathSearchField::generatePath(spawnPosition) } {
+Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) : path{ pathSearchField.generatePath(spawnPosition) } {
     currentPosition = Algorithms::mapFieldCoordToVector2f(spawnPosition);
 }
 

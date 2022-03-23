@@ -11,6 +11,11 @@
 #include "Resource/Crystal.hpp"
 #include "Enemy/CasualEnemy.hpp"
 
+Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies) : interface {interface}, 
+                                                                                                       pathSearchField {pathSearchField},
+                                                                                                       field{field},
+                                                                                                       enemies{ enemies }{}
+
 void Input::process(const sf::Event &event){
     if (event.type == sf::Event::Closed)
         Game::window->close();
@@ -26,7 +31,7 @@ void Input::process(const sf::Event &event){
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return Field::get(position).isEmpty;
+    return field.get(position).isEmpty;
 }
 
 void Input::processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton){
@@ -42,21 +47,21 @@ void Input::processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mous
 }
 
 void Input::build(const sf::Keyboard::Key &key){
-    const FieldCoord &position = Interface::selectedCell;
+    const FieldCoord &position = interface.selectedCell;
 
     if (!isValidBuildingPosition(position)){
         assert(0 && "Invalid building postion");
     }
-    if (Interface::selectedCell != NONE_FIELD_CELL) 
+    if (interface.selectedCell != NONE_FIELD_CELL)
         switch (key) {
         case sf::Keyboard::B:
-            Field::set(new Base{ Interface::selectedCell });
+            field.set(new Base{ field, interface.selectedCell });
             break;
         case sf::Keyboard::C:
-            Field::set(new Crystal{ Interface::selectedCell });
+            field.set(new Crystal{ interface.selectedCell });
             break;
         case sf::Keyboard::E:
-            new CasualEnemy(Interface::selectedCell);
+            new CasualEnemy{ interface.selectedCell, enemies, pathSearchField };
             break;
         }
 }
@@ -96,7 +101,7 @@ void Input::processMouseLeftClick(const sf::Vector2i &clickPosition){
     std::cerr << std::endl << fieldCell.x << ' ' << fieldCell.y << ' ';
 
     if( (fieldCell.x < FIELD_LENGTH && floatCoord.x >= 0) && (fieldCell.y < FIELD_WIDTH && floatCoord.y >= 0) )
-        Interface::selectCell(fieldCell); 
+        interface.selectCell(fieldCell); 
     else
         std::cerr << "out of field bounds" << std::endl;
 }
