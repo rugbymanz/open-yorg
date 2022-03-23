@@ -9,6 +9,7 @@
 #include "Algorithms.hpp"
 #include "Building/Base.hpp"
 #include "Resource/Crystal.hpp"
+#include "Enemy/CasualEnemy.hpp"
 
 void Input::process(const sf::Event &event){
     if (event.type == sf::Event::Closed)
@@ -54,6 +55,9 @@ void Input::build(const sf::Keyboard::Key &key){
         case sf::Keyboard::C:
             Field::set(new Crystal{ Interface::selectedCell });
             break;
+        case sf::Keyboard::E:
+            new CasualEnemy(Interface::selectedCell);
+            break;
         }
 }
 
@@ -76,6 +80,7 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
     case sf::Keyboard::Key::B:
     //fall-through
     case sf::Keyboard::Key::C:
+    case sf::Keyboard::Key::E:
         build(key.code);
         break;
     default:

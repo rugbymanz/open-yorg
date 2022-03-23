@@ -4,11 +4,11 @@
 
 class Interface{
 public:
-    static FieldCoord selectedCell;
+    FieldCoord selectedCell;
 
     void tick();
     void update();
-    static void selectCell(const FieldCoord &selection);
+    void selectCell(const FieldCoord &selection);
 
 private:
 };

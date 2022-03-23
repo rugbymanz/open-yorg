@@ -5,7 +5,7 @@
 #include "Building/Base.hpp"
 #include "Game.hpp"
 
-Base::Base(const FieldCoord &fieldCoord): Building{fieldCoord}{
+Base::Base(const Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
     text.setString("B");
     renderTexture.draw(text);
     if(Field::basePosition != NONE_FIELD_CELL){

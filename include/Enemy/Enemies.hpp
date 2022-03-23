@@ -6,7 +6,8 @@
 
 class Enemies{
 public:
-    std::forward_list<Enemy> enemies;
+    std::forward_list<Enemy*> enemies;
 
+    Enemies();
     void tick();
 };

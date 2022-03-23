@@ -24,4 +24,18 @@ FieldCoord Algorithms::mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoo
     return FieldCoord(x, y);
 }
 
+sf::Vector2f Algorithms::mapFieldCoordToVector2f(const FieldCoord &fieldCoord) {
+    int x = fieldCoord.x * CELL_LENGTH;
+    int y = fieldCoord.y * CELL_WIDTH;
+
+    return sf::Vector2f(x, y);
+}
+
+int Algorithms::mapFieldCoordToFlatIndex(const FieldCoord &fieldCoord) {
+    return fieldCoord.y * fieldCoord.x + fieldCoord.y;
+}
+
+FieldCoord Algorithms::mapFlatIndexToFieldCoord(const int index) {
+    return FieldCoord(index / CELL_LENGTH, index % CELL_WIDTH);
+}
 // Resource Algorithms::enumToClass(const Resource::Types type);
