@@ -7,11 +7,6 @@ FieldCell::FieldCell(const FieldCoord &fieldCoord){
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
 
-    sf::Image image;
-    image.create(CELL_LENGTH, CELL_WIDTH, BACKGROUND);
-    backgroundTexture.loadFromImage(image);
-    renderTexture.create(backgroundTexture.getSize().x, backgroundTexture.getSize().y);
-    renderTexture.draw(sf::Sprite(backgroundTexture));
     setTexture(&renderTexture.getTexture());
 }
 

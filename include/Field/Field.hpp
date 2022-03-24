@@ -11,7 +11,7 @@
 
 class Field{
 public:
-    FieldCoord basePosition;
+    FieldCoord basePosition = NONE_FIELD_CELL;
     Road road;
     PathSearchField pathSearchField;
 

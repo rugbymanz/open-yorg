@@ -2,7 +2,8 @@
 
 void GameElements::tick(){
     field.tick();
-    // enemies.tick()
+    enemies.update();
+    enemies.draw();
     // resourceBalls.tick();
     // bullets.tick()
 }

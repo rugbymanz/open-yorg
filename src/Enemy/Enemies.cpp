@@ -9,10 +9,12 @@ Enemy *Enemies::append(Enemy *enemy) {
     return enemy;
 }
 
-void Enemies::tick(){
-    // foreach i in creatures
-    //     if(i.erased){
-    //         erase(i)
-    //     }
-    //     i.tick()
+void Enemies::update() {
+    for (auto &el : enemies) 
+        el->update();
+}
+
+void Enemies::draw() {
+    for (auto &el : enemies)
+        el->draw();
 }

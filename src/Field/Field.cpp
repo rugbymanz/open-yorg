@@ -8,10 +8,10 @@ Field::Field() : pathSearchField{*this} {
 
     field.resize(FIELD_LENGTH);
 
-    for(auto row = field.begin(); row < field.end(); row++){
-        row->resize(FIELD_WIDTH);
-        for(auto col = row->begin(); col < row->end(); col++){
-            *col = new EmptyFieldCell({ int(row - field.begin()), int(col - row->begin()) });
+    for(auto col = field.begin(); col < field.end(); col++){
+        col->resize(FIELD_WIDTH);
+        for(auto row = col->begin(); row < col->end(); row++){
+            *row = new EmptyFieldCell({ int(col - field.begin()), int(row - col->begin()) });
             // cellType = rand();
             // if(cellType != FieldCellType::none)
             //     placeNew(FieldCell(row, column), toResource(cellType))

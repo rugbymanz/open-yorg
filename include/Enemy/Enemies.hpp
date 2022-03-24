@@ -2,7 +2,7 @@
 
 #include <forward_list>
 
-#include "Enemy/Enemy.hpp"
+class Enemy;
 
 class Enemies{
 public:
@@ -10,5 +10,10 @@ public:
 
     Enemies();
     Enemy *append(Enemy *enemy);
-    void tick();
+
+private:
+    void update();
+    void draw();
+
+    friend class GameElements;
 };
