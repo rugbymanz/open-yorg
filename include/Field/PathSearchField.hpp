@@ -10,11 +10,6 @@ class Field;
 
 class PathSearchField{
 public:
-    enum class Walkability{
-        walkable,
-        unwalkable
-    };
-
     PathSearchField(Field &field);
     std::pair<lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path *, lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int> > *> generatePath(const FieldCoord &source);
     FieldCoord getCoord(lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path::RevArcIt revArcIt);
@@ -24,4 +19,7 @@ private:
     lemon::ListGraph graphField;
     lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     Field &field;
+    
+    void update();
+    friend class Field;
 };

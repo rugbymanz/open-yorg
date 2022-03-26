@@ -23,4 +23,5 @@ void CanDamage::shootAim(){
 
 bool CanDamage::isTimeToShoot(){
     // return Clock::seconds(fireRate) < clock
+    return true;
 }

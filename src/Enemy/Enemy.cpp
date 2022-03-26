@@ -26,6 +26,11 @@ Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) 
     }
 }
 
+Enemy::~Enemy() {
+    delete path;
+    delete dijkstra;
+}
+
 void Enemy::drawPathCoords() {
 
 }

@@ -8,7 +8,7 @@
 
 class FieldCell: public sf::RectangleShape, public Graphical{
 public:
-    bool isEmpty = false;
+    bool isEmpty = true;
 
     FieldCell(const FieldCoord &fieldCoord);
     void setCoord(const FieldCoord &fieldCoord);

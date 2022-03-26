@@ -14,6 +14,7 @@ class PathSearchField;
 class Enemy: public CanMove, public CanHaveHp, public CanDamage, public sf::CircleShape, public Graphical {
 public:
     Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField);
+    virtual ~Enemy();
     void attack();
 
 protected:
