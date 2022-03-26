@@ -1,9 +1,13 @@
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
+#include <lemon/list_graph.h>
+#include <lemon/dijkstra.h>
+#include <lemon/adaptors.h>
 
 using FieldCoord = sf::Vector2i;
 using Azimuth = double;
+using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<lemon::ListGraph>, lemon::ListGraph::ArcMap<int> >;
 
 #define NONE -1
 #define NONE_FIELD_CELL FieldCoord(-1, -1) 

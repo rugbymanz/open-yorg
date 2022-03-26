@@ -1,7 +1,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "Enemy/Enemy.hpp"
-#include "Field/PathSearchField.hpp"
 #include "Algorithms.hpp"
 #include <Game.hpp>
 
@@ -20,7 +19,7 @@ Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) 
     renderTexture.draw(text);
 
     std::cout << "printing path" << std::endl;
-    for (lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path::RevArcIt it(*path); it != lemon::INVALID; ++it) {
+    for (dijkstra_t::Path::RevArcIt it(*path); it != lemon::INVALID; ++it) {
         FieldCoord fieldCoord = pathSearchField.getCoord(it);
         std::cout << fieldCoord.x << ' ' << fieldCoord.y << std::endl;
     }

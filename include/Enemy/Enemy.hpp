@@ -19,8 +19,8 @@ public:
 
 protected:
     //basic initialization
-    lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path *path = nullptr;
-    lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int> > *dijkstra = nullptr;
+    dijkstra_t::Path *path = nullptr;
+    dijkstra_t *dijkstra = nullptr;
     //[]()->lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path {
     //    lemon::ListGraph g;
     //    lemon::ListGraph::ArcMap<int> lengthMap(g);
