@@ -24,6 +24,7 @@ Field::Field() : pathSearchField{*this} {
 
 void Field::tick(){
     update();
+    pathSearchField.update();
     draw();
 }
 

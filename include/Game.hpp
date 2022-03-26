@@ -10,9 +10,9 @@
 
 class Game{
 public:
+    GameElements gameElements;
     Input input;
     static sf::RenderWindow *window;
-    GameElements gameElements;
     Interface interface;
     Clock clock;
 

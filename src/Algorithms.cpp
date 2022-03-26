@@ -14,7 +14,7 @@ double Algorithms::calculateAzimuth(const FieldCoord &from, const FieldCoord &to
 }
 
 double Algorithms::calculateDistance(const FieldCoord &from, const FieldCoord &to){
-    
+    return -1;
 }
 
 FieldCoord Algorithms::mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoord){

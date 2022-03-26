@@ -2,7 +2,6 @@
 #include "Game.hpp"
 
 EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoord}{
-    isEmpty = true;
 }
 
 #include <SFML/Graphics/Image.hpp>
