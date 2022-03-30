@@ -13,7 +13,6 @@ class PathSearchField{
 public:
     PathSearchField(Field &field);
     std::vector<FieldCoord> generatePath(const FieldCoord &source);
-    FieldCoord getCoord(dijkstra_t::Path::RevArcIt revArcIt);
 
 private:
     Field &field;
@@ -24,5 +23,6 @@ private:
     lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     
     void update();
+    FieldCoord getCoord(dijkstra_t::Path::RevArcIt revArcIt);
     friend class Field;
 };
