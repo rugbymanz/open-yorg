@@ -19,7 +19,7 @@ private:
     Field &field;
     lemon::ListGraph graphField;
     lemon::ListGraph::NodeMap<bool> nodeFilter{ graphField, true };
-    std::vector< std::vector<int> > nodeField;
+    std::vector< std::vector<lemon::ListGraph::NodeIt> > nodeField;
     lemon::FilterNodes<lemon::ListGraph> subGraphField{ graphField, nodeFilter };
     lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     
