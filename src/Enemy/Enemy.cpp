@@ -6,9 +6,7 @@
 
 Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) : pathSearchField{ pathSearchField } {
     currentPosition = Algorithms::mapFieldCoordToVector2f(spawnPosition);
-    auto pair = pathSearchField.generatePath(spawnPosition);
-    path = pair.first;
-    dijkstra = pair.second;
+    path = pathSearchField.generatePath(spawnPosition);
     setPosition(spawnPosition.x * CELL_LENGTH, spawnPosition.y * CELL_WIDTH);
     setRadius(CELL_LENGTH / 2);
     setOutlineColor(UNSELECTED);
@@ -19,15 +17,12 @@ Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) 
     renderTexture.draw(text);
 
     std::cout << "printing path" << std::endl;
-    for (dijkstra_t::Path::RevArcIt it(*path); it != lemon::INVALID; ++it) {
-        FieldCoord fieldCoord = pathSearchField.getCoord(it);
-        std::cout << fieldCoord.x << ' ' << fieldCoord.y << std::endl;
+    for (auto &el : path) {
+        std::cout << el.x << ' ' << el.y << std::endl;
     }
 }
 
 Enemy::~Enemy() {
-    delete path;
-    delete dijkstra;
 }
 
 void Enemy::drawPathCoords() {

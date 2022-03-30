@@ -12,16 +12,16 @@ class Field;
 class PathSearchField{
 public:
     PathSearchField(Field &field);
-    std::pair<dijkstra_t::Path*, dijkstra_t*> generatePath(const FieldCoord &source);
+    std::vector<FieldCoord> generatePath(const FieldCoord &source);
     FieldCoord getCoord(dijkstra_t::Path::RevArcIt revArcIt);
 
 private:
-    std::vector< std::vector<lemon::ListGraph::NodeIt> > nodeField;
-    lemon::ListGraph graphField; 
-    lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     Field &field;
-    lemon::ListGraph::NodeMap<bool> nodeFilter;
-    lemon::FilterNodes<lemon::ListGraph> subGraphField;
+    lemon::ListGraph graphField;
+    lemon::ListGraph::NodeMap<bool> nodeFilter{ graphField, true };
+    std::vector< std::vector<int> > nodeField;
+    lemon::FilterNodes<lemon::ListGraph> subGraphField{ graphField, nodeFilter };
+    lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     
     void update();
     friend class Field;

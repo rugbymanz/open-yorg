@@ -4,7 +4,7 @@
 #include "Algorithms.hpp"
 #include "Field/Field.hpp"
 
-PathSearchField::PathSearchField(Field &field) : field{ field }, nodeFilter{ graphField, true }, subGraphField{ graphField, nodeFilter } {
+PathSearchField::PathSearchField(Field &field) : field{ field } {
     nodeField.resize(FIELD_LENGTH);
     for (int col = 0; col < FIELD_LENGTH; col++) {
         nodeField[col].resize(FIELD_WIDTH);
@@ -13,53 +13,51 @@ PathSearchField::PathSearchField(Field &field) : field{ field }, nodeFilter{ gra
     }
     {
         int i = 0;
+        std::cout << "printing fieldCoord" << std::endl;
         for (lemon::ListGraph::NodeIt it(graphField); it != lemon::INVALID; ++it, i++) {
             FieldCoord fieldCoord = Algorithms::mapFlatIndexToFieldCoord(i);
-            nodeField[fieldCoord.x][fieldCoord.y] = it;
+            nodeField[fieldCoord.x][fieldCoord.y] = graphField.id(it);
         }
     }
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
-            nodeFilter[nodeField[col][row]] = true;
+            nodeFilter[graphField.nodeFromId(nodeField[col][row])] = true;
     for (int col = 0; col < FIELD_LENGTH - 1; col++) {
         for (int row = 0; row < FIELD_WIDTH - 1; row++) {
-            graphField.addEdge(nodeField[col][row + 1], nodeField[col][row]);
-            graphField.addEdge(nodeField[col + 1][row], nodeField[col][row]);
+            graphField.addEdge(graphField.nodeFromId(nodeField[col][row + 1]), graphField.nodeFromId(nodeField[col][row]));
+            graphField.addEdge(graphField.nodeFromId(nodeField[col + 1][row]), graphField.nodeFromId(nodeField[col][row]));
         }
     }
 
     for (int col = 1; col < CELL_LENGTH; col++)
-        graphField.addEdge(nodeField[col - 1][CELL_WIDTH - 1], nodeField[col][CELL_WIDTH - 1]);
+        graphField.addEdge(graphField.nodeFromId(nodeField[col - 1][CELL_WIDTH - 1]), graphField.nodeFromId(nodeField[col][CELL_WIDTH - 1]));
 
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
-            coordMap[nodeField[col][row] ] = { col, row };
+            coordMap[graphField.nodeFromId(nodeField[col][row])] = { col, row };
 }
 
-std::pair<dijkstra_t::Path*, dijkstra_t*> PathSearchField::generatePath(const FieldCoord &source_){
+std::vector<FieldCoord> PathSearchField::generatePath(const FieldCoord &source_){
     if (source_ == NONE_FIELD_CELL) {
-        lemon::ListGraph graphField;
-        lemon::ListGraph::NodeMap<bool> nodeFilter(graphField, true);
-        lemon::FilterNodes<lemon::ListGraph> subGraphField{ graphField, nodeFilter };
-        lemon::ListGraph::ArcMap<int> lengthMap(graphField);
-        dijkstra_t d(subGraphField, lengthMap);
-        d.init();
-        d.start();
-        lemon::ListGraph::NodeIt it(graphField);
-        return std::make_pair(new dijkstra_t::Path(d.path(it)), &d);
+        return std::vector<FieldCoord>();
     }
-    lemon::ListGraph::NodeIt source(nodeField[source_.x][source_.y]);
+    lemon::ListGraph::Node source(graphField.nodeFromId(nodeField[source_.x][source_.y]));
     FieldCoord basePosition = field.basePosition;
-    lemon::ListGraph::NodeIt destination(nodeField[basePosition.x][basePosition.y]);
+    lemon::ListGraph::Node destination(graphField.nodeFromId(nodeField[basePosition.x][basePosition.y]));
 
-    lemon::ListGraph::ArcMap<int> lengthMap(graphField);
+    lemon::FilterNodes<lemon::ListGraph>::ArcMap<int> lengthMap(subGraphField);
     for (lemon::ListGraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
         lengthMap[it] = 1;
-    lemon::ListGraph::NodeMap<int> distMap(graphField);
-    dijkstra_t *dijkstra = new dijkstra_t(subGraphField, lengthMap);
-    dijkstra->run(source, destination);
+    dijkstra_t dijkstra{ subGraphField, lengthMap };
+    dijkstra.run(source, destination);
 
-    dijkstra_t::Path *path = new dijkstra_t::Path(dijkstra->path(destination) );
+    dijkstra_t::Path path{ dijkstra.path(destination) };
+    std::vector<FieldCoord> fieldCoordPath;
+    path.length();
+    //fieldCoordPath.reserve(path.length());
+    for (dijkstra_t::Path::RevArcIt it(path); it != lemon::INVALID; ++it) {
+        fieldCoordPath.push_back(getCoord(it));
+    }
 //#ifdef _DEBUG
 //    std::cout << std::endl << "dijkstra" << std::endl;
 //    for (lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path::RevArcIt it(path); it != lemon::INVALID; ++it) {
@@ -67,7 +65,7 @@ std::pair<dijkstra_t::Path*, dijkstra_t*> PathSearchField::generatePath(const Fi
 //        std::cout << fieldCoord.x << ' ' << fieldCoord.y << std::endl;
 //    }
 //#endif
-    return std::make_pair(path, dijkstra);
+    return std::move(fieldCoordPath);
 }
 
 FieldCoord PathSearchField::getCoord(dijkstra_t::Path::RevArcIt revArcIt) {
@@ -77,8 +75,8 @@ FieldCoord PathSearchField::getCoord(dijkstra_t::Path::RevArcIt revArcIt) {
 void PathSearchField::update() {
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
-            if (!field.get({ col, row }).isEmpty)
-                nodeFilter[nodeField[col][row]] = false;
+            if (FieldCell &fieldCell = field.get({ col, row }); !fieldCell.isEmpty && fieldCell.getCoord() != field.basePosition)
+                nodeFilter[graphField.nodeFromId(nodeField[col][row])] = false;
             else
-                nodeFilter[nodeField[col][row]] = true;
+                nodeFilter[graphField.nodeFromId(nodeField[col][row])] = true;
 }

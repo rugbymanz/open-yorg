@@ -32,10 +32,10 @@ sf::Vector2f Algorithms::mapFieldCoordToVector2f(const FieldCoord &fieldCoord) {
 }
 
 int Algorithms::mapFieldCoordToFlatIndex(const FieldCoord &fieldCoord) {
-    return fieldCoord.y * fieldCoord.x + fieldCoord.y;
+    return fieldCoord.x + fieldCoord.y * FIELD_LENGTH;
 }
 
 FieldCoord Algorithms::mapFlatIndexToFieldCoord(const int index) {
-    return FieldCoord(index / CELL_LENGTH, index % CELL_WIDTH);
+    return FieldCoord(index % FIELD_LENGTH, index / FIELD_LENGTH);
 }
 // Resource Algorithms::enumToClass(const Resource::Types type);

@@ -19,8 +19,7 @@ public:
 
 protected:
     //basic initialization
-    dijkstra_t::Path *path = nullptr;
-    dijkstra_t *dijkstra = nullptr;
+    std::vector<FieldCoord> path;
     //[]()->lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path {
     //    lemon::ListGraph g;
     //    lemon::ListGraph::ArcMap<int> lengthMap(g);
