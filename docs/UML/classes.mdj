@@ -2005,13 +2005,30 @@
 											"height": 13,
 											"text": "-PathSearchField &pathSearchField",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF/3ICw4uCIpoI=",
+											"_parent": {
+												"$ref": "AAAAAAF+RDEvuytc1N8="
+											},
+											"model": {
+												"$ref": "AAAAAAF/3ICwxuCF5Qk="
+											},
+											"font": "Arial;13;0",
+											"left": 2261,
+											"top": 1254,
+											"width": 461.373046875,
+											"height": 13,
+											"text": "#int pathPosIndex",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2256,
 									"top": 1217,
 									"width": 471.373046875,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2034,7 +2051,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1262,
+											"top": 1277,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+draw()",
@@ -2051,7 +2068,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1277,
+											"top": 1292,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+update()",
@@ -2068,7 +2085,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1292,
+											"top": 1307,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+attack()",
@@ -2103,7 +2120,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1307,
+											"top": 1322,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField)",
@@ -2172,18 +2189,36 @@
 											"model": {
 												"$ref": "AAAAAAF/u/Ys/4NIQqg="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1322,
+											"top": 1337,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+void drawPathCoords()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF/3IEaL+Vx62Y=",
+											"_parent": {
+												"$ref": "AAAAAAF+RDEvuytd2G0="
+											},
+											"model": {
+												"$ref": "AAAAAAF/3IEaEuVugq0="
+											},
+											"font": "Arial;13;0",
+											"left": 2261,
+											"top": 1337,
+											"width": 461.373046875,
+											"height": 13,
+											"text": "-void move_()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2256,
-									"top": 1257,
+									"top": 1272,
 									"width": 471.373046875,
 									"height": 83
 								},
@@ -19915,7 +19950,8 @@
 								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
 							},
 							"name": "vector of FieldCoord path",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -19936,6 +19972,15 @@
 							"name": "PathSearchField &pathSearchField",
 							"visibility": "private",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF/3ICwxuCF5Qk=",
+							"_parent": {
+								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
+							},
+							"name": "int pathPosIndex",
+							"visibility": "protected"
 						}
 					],
 					"operations": [
@@ -20030,6 +20075,15 @@
 								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
 							},
 							"name": "void drawPathCoords"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF/3IEaEuVugq0=",
+							"_parent": {
+								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
+							},
+							"name": "void move_",
+							"visibility": "private"
 						}
 					]
 				},
@@ -24028,7 +24082,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF+k6bhCa8BNb4="
 							},
-							"name": "NodeMap of bool nodeFilter"
+							"name": "NodeMap of bool nodeFilter",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -24036,7 +24091,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF+k6bhCa8BNb4="
 							},
-							"name": "FilterNodes of ListGraph subGraphField"
+							"name": "FilterNodes of ListGraph subGraphField",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -24044,7 +24100,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF+k6bhCa8BNb4="
 							},
-							"name": "NodeMap of FieldCoord coordMap"
+							"name": "NodeMap of FieldCoord coordMap",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -24062,7 +24119,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF/sr17LvRDntc="
 									},
-									"name": "const FieldCoord &source"
+									"name": "const FieldCoord &source",
+									"type": ""
 								}
 							]
 						},
@@ -24100,7 +24158,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF/u/gsJoegbBo="
 									},
-									"name": "RevArcIt revArcIt"
+									"name": "RevArcIt revArcIt",
+									"type": ""
 								}
 							]
 						}
