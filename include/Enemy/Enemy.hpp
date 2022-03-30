@@ -19,10 +19,11 @@ public:
 
 protected:
     std::vector<FieldCoord> path;
+    int pathPosIndex = NONE;
 private:
     PathSearchField &pathSearchField;
-
-    void drawPathCoords();
+    
+    void move_();
     void draw() override;
     void update();
 

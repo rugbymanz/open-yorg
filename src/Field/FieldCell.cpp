@@ -1,5 +1,7 @@
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "Field/FieldCell.hpp"
-#include "SFML/Graphics/Sprite.hpp"
+#include "Algorithms.hpp"
 
 FieldCell::FieldCell(const FieldCoord &fieldCoord){
     setCoord(fieldCoord);
@@ -11,7 +13,7 @@ FieldCell::FieldCell(const FieldCoord &fieldCoord){
 }
 
 void FieldCell::setCoord(const FieldCoord &fieldCoord){
-    setPosition(fieldCoord.x * CELL_LENGTH, fieldCoord.y * CELL_WIDTH);
+    setPosition(Algorithms::mapFieldCoordToVector2f(fieldCoord));
     coord = fieldCoord;
 }
 

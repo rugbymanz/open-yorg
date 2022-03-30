@@ -9,5 +9,4 @@ public:
 protected:
     double speed = NONE;
     Azimuth movementAzimuth = NONE;
-    sf::Vector2f currentPosition{ NONE_VECTOR2F };
 };
