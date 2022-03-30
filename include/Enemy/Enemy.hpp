@@ -18,17 +18,7 @@ public:
     void attack();
 
 protected:
-    //basic initialization
     std::vector<FieldCoord> path;
-    //[]()->lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>>::Path {
-    //    lemon::ListGraph g;
-    //    lemon::ListGraph::ArcMap<int> lengthMap(g);
-    //    lemon::Dijkstra<lemon::ListGraph, lemon::ListGraph::ArcMap<int>> d(g, lengthMap);
-    //    d.init();
-    //    d.start();
-    //    lemon::ListGraph::NodeIt it(g);
-    //    return d.path(it);
-    //}();
 private:
     PathSearchField &pathSearchField;
 

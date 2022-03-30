@@ -13,7 +13,6 @@ PathSearchField::PathSearchField(Field &field) : field{ field } {
     }
     {
         int i = 0;
-        std::cout << "printing fieldCoord" << std::endl;
         for (lemon::ListGraph::NodeIt it(graphField); it != lemon::INVALID; ++it, i++) {
             FieldCoord fieldCoord = Algorithms::mapFlatIndexToFieldCoord(i);
             nodeField[fieldCoord.x][fieldCoord.y] = it;
@@ -64,7 +63,7 @@ std::vector<FieldCoord> PathSearchField::generatePath(const FieldCoord &source_)
 //        std::cout << fieldCoord.x << ' ' << fieldCoord.y << std::endl;
 //    }
 //#endif
-    return std::move(fieldCoordPath);
+    return fieldCoordPath;
 }
 
 FieldCoord PathSearchField::getCoord(dijkstra_t::Path::RevArcIt revArcIt) {
