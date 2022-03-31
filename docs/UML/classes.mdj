@@ -1963,6 +1963,7 @@
 											"model": {
 												"$ref": "AAAAAAF/srv5W/H6XiY="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 2261,
 											"top": 1224,
@@ -2000,7 +2001,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1239,
+											"top": 1224,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "-PathSearchField &pathSearchField",
@@ -2015,12 +2016,30 @@
 											"model": {
 												"$ref": "AAAAAAF/3ICwxuCF5Qk="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1254,
+											"top": 1239,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "#int pathPosIndex",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF/34Rlg5OaEX4=",
+											"_parent": {
+												"$ref": "AAAAAAF+RDEvuytc1N8="
+											},
+											"model": {
+												"$ref": "AAAAAAF/34RlaZOX9gA="
+											},
+											"font": "Arial;13;0",
+											"left": 2261,
+											"top": 1239,
+											"width": 461.373046875,
+											"height": 13,
+											"text": "#FieldCoord nextMoveFieldCoord",
 											"horizontalAlignment": 0
 										}
 									],
@@ -2028,7 +2047,7 @@
 									"left": 2256,
 									"top": 1217,
 									"width": 471.373046875,
-									"height": 55
+									"height": 40
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2051,7 +2070,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1277,
+											"top": 1262,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+draw()",
@@ -2068,7 +2087,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1292,
+											"top": 1277,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+update()",
@@ -2085,7 +2104,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1307,
+											"top": 1292,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+attack()",
@@ -2120,7 +2139,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1322,
+											"top": 1307,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "+Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField)",
@@ -2209,7 +2228,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2261,
-											"top": 1337,
+											"top": 1322,
 											"width": 461.373046875,
 											"height": 13,
 											"text": "-void move_()",
@@ -2218,7 +2237,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 2256,
-									"top": 1272,
+									"top": 1257,
 									"width": 471.373046875,
 									"height": 83
 								},
@@ -14712,7 +14731,7 @@
 											"top": 1399,
 											"width": 396.34765625,
 											"height": 13,
-											"text": "+vector of FieldCoord generatePath(const FieldCoord &source)",
+											"text": "+FieldCoord generatePath(const FieldCoord &source)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -19980,6 +19999,16 @@
 								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
 							},
 							"name": "int pathPosIndex",
+							"visibility": "protected",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF/34RlaZOX9gA=",
+							"_parent": {
+								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
+							},
+							"name": "FieldCoord nextMoveFieldCoord",
 							"visibility": "protected"
 						}
 					],
@@ -24111,7 +24140,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF+k6bhCa8BNb4="
 							},
-							"name": "vector of FieldCoord generatePath",
+							"name": "FieldCoord generatePath",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -24119,8 +24148,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF/sr17LvRDntc="
 									},
-									"name": "const FieldCoord &source",
-									"type": ""
+									"name": "const FieldCoord &source"
 								}
 							]
 						},
