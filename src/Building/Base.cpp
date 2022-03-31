@@ -17,6 +17,6 @@ Base::Base(Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
 }
 
 void Base::draw(){
-    FieldCell::draw();
+    Building::draw();
     Game::window->draw(*this);
 }
