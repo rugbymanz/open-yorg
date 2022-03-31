@@ -6,7 +6,7 @@
 
 Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField) : pathSearchField{ pathSearchField } {
     path = pathSearchField.generatePath(spawnPosition);
-    speed = 0.05 * CELL_LENGTH;
+    speed = 0.01 * CELL_LENGTH;
     //skip self
     pathPosIndex = path.size() - 2;
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
@@ -33,10 +33,14 @@ void Enemy::draw(){
 }
 
 void Enemy::move_() {
+    sf::Vector2f pos = Algorithms::mapFieldCoordToVector2f(path[pathPosIndex]);
     sf::Vector2f step = Algorithms::mapFieldCoordToVector2f(path[pathPosIndex]) - getPosition();
-    if (abs(step.x) < speed && abs(step.y) < speed)
-        if(pathPosIndex > 0)
-            pathPosIndex--;
+    if (abs(step.x) < speed && abs(step.y) < speed){
+        sf::Vector2f v = getPosition();
+        FieldCoord fieldCoord = Algorithms::mapVector2fToFieldCoord(getPosition());
+        path = pathSearchField.generatePath(fieldCoord);
+        pathPosIndex = path.size() - 2;
+    }
     step = { static_cast<float>( (step.x>0?1:-1) * speed), static_cast<float>((step.y > 0 ? 1 : -1) * speed) };
     move(step);
 }
