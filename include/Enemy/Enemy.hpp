@@ -18,8 +18,7 @@ public:
     void attack();
 
 protected:
-    std::vector<FieldCoord> path;
-    int pathPosIndex = NONE;
+    FieldCoord nextMoveFieldCoord;
 private:
     PathSearchField &pathSearchField;
     

@@ -12,7 +12,7 @@ class Field;
 class PathSearchField{
 public:
     PathSearchField(Field &field);
-    std::vector<FieldCoord> generatePath(const FieldCoord &source);
+    FieldCoord generatePath(const FieldCoord &source);
 
 private:
     Field &field;
