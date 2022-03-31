@@ -50,7 +50,8 @@ void Input::build(const sf::Keyboard::Key &key){
     const FieldCoord &position = interface.selectedCell;
 
     if (!isValidBuildingPosition(position)){
-        assert(0 && "Invalid building postion");
+        std::cout << "Invalid building postion" << std::endl;
+        return;
     }
     if (interface.selectedCell != NONE_FIELD_CELL)
         switch (key) {
