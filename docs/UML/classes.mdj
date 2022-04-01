@@ -1403,7 +1403,7 @@
 											"font": "Arial;13;1",
 											"left": 53,
 											"top": 3711,
-											"width": 167,
+											"width": 285.76513671875,
 											"height": 13,
 											"text": "Mine"
 										},
@@ -1438,7 +1438,7 @@
 									"font": "Arial;13;0",
 									"left": 48,
 									"top": 3704,
-									"width": 177,
+									"width": 295.76513671875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF+Q6KqyKa6WqU="
@@ -1465,7 +1465,7 @@
 									"font": "Arial;13;0",
 									"left": 48,
 									"top": 3729,
-									"width": 177,
+									"width": 295.76513671875,
 									"height": 10
 								},
 								{
@@ -1490,17 +1490,34 @@
 											"font": "Arial;13;0",
 											"left": 53,
 											"top": 3744,
-											"width": 167,
+											"width": 285.76513671875,
 											"height": 13,
 											"text": "+draw()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF/5ZhCuMvepPg=",
+											"_parent": {
+												"$ref": "AAAAAAF+Q6Kqyaa/Vqc="
+											},
+											"model": {
+												"$ref": "AAAAAAF/5ZhCoMvb4Ps="
+											},
+											"font": "Arial;13;0",
+											"left": 53,
+											"top": 3759,
+											"width": 285.76513671875,
+											"height": 13,
+											"text": "+Mine(Field &field, const FieldCoord &fieldCoord)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 48,
 									"top": 3739,
-									"width": 177,
-									"height": 23
+									"width": 295.76513671875,
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1539,7 +1556,7 @@
 							"containerChangeable": true,
 							"left": 48,
 							"top": 3704,
-							"width": 177,
+							"width": 295.76513671875,
 							"height": 368,
 							"nameCompartment": {
 								"$ref": "AAAAAAF+Q6KqyKa5PmU="
@@ -1672,8 +1689,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 373,
-									"top": 3175,
+									"left": 402,
+									"top": 3176,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1693,8 +1710,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 359,
-									"top": 3170,
+									"left": 388,
+									"top": 3171,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1714,8 +1731,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 402,
-									"top": 3186,
+									"left": 431,
+									"top": 3185,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1733,7 +1750,7 @@
 								"$ref": "AAAAAAF+Q6KqyKa4cao="
 							},
 							"lineStyle": 1,
-							"points": "202:3703;574:2672",
+							"points": "253:3703;581:2672",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF+Q6MhGKgl/iI="
@@ -11026,7 +11043,7 @@
 											"top": 98,
 											"width": 238,
 											"height": 13,
-											"text": "+Vector2f aim",
+											"text": "+FieldCoord aim",
 											"horizontalAlignment": 0
 										}
 									],
@@ -20009,7 +20026,8 @@
 								"$ref": "AAAAAAF+Q51Q7n6Eqsg="
 							},
 							"name": "FieldCoord nextMoveFieldCoord",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -20179,6 +20197,34 @@
 								"$ref": "AAAAAAF+Q6KqyKa2MIs="
 							},
 							"name": "draw"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF/5ZhCoMvb4Ps=",
+							"_parent": {
+								"$ref": "AAAAAAF+Q6KqyKa2MIs="
+							},
+							"name": "Mine",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF/5ZhY+czSF38=",
+									"_parent": {
+										"$ref": "AAAAAAF/5ZhCoMvb4Ps="
+									},
+									"name": "Field &field",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF/5ZhY+czT6Rk=",
+									"_parent": {
+										"$ref": "AAAAAAF/5ZhCoMvb4Ps="
+									},
+									"name": "const FieldCoord &fieldCoord",
+									"type": ""
+								}
+							]
 						}
 					]
 				},
@@ -23614,8 +23660,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF+eGZKkFIY3+o="
 							},
-							"name": "Vector2f aim",
-							"type": ""
+							"name": "FieldCoord aim"
 						}
 					],
 					"operations": [
@@ -24148,7 +24193,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF/sr17LvRDntc="
 									},
-									"name": "const FieldCoord &source"
+									"name": "const FieldCoord &source",
+									"type": ""
 								}
 							]
 						},
