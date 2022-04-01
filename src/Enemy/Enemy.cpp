@@ -23,13 +23,20 @@ Enemy::~Enemy() {
 
 void Enemy::draw(){
     Graphical::draw();
+    renderTexture.display();
     Game::window->draw(*this);
 }
 
 void Enemy::move_() {
     sf::Vector2f step = Algorithms::mapFieldCoordToVector2f(nextMoveFieldCoord) - getPosition();
-    if (abs(step.x) < speed && abs(step.y) < speed)
-        nextMoveFieldCoord = pathSearchField.generatePath(Algorithms::mapVector2fToFieldCoord(getPosition()));
+    if (abs(step.x) < speed && abs(step.y) < speed) {
+        FieldCoord selfCoord = Algorithms::mapVector2fToFieldCoord(getPosition());
+        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
+        if (nextMoveFieldCoord == selfCoord) {
+            aim = { 0, 0 };
+            shootAim();
+        }
+    }
     step = { static_cast<float>( (step.x>0?1:-1) * speed), static_cast<float>((step.y > 0 ? 1 : -1) * speed) };
     move(step);
 }

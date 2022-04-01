@@ -11,7 +11,7 @@ public:
     double fireRate = NONE;
     sf::Clock clock;
     double damage = NONE;
-    sf::Vector2f aim = NONE_VECTOR2F;
+    FieldCoord aim = NONE_FIELD_CELL;
 
     virtual void update();
     virtual void findAim();

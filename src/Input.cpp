@@ -10,6 +10,7 @@
 #include "Building/Base.hpp"
 #include "Resource/Crystal.hpp"
 #include "Enemy/CasualEnemy.hpp"
+#include "Building/Mine.hpp"
 
 Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies) : interface {interface}, 
                                                                                                        pathSearchField {pathSearchField},
@@ -64,6 +65,8 @@ void Input::build(const sf::Keyboard::Key &key){
         case sf::Keyboard::E:
             new CasualEnemy{ interface.selectedCell, enemies, pathSearchField };
             break;
+        case sf::Keyboard::M:
+            field.set(new Mine{ field, interface.selectedCell });
         }
 }
 
@@ -87,6 +90,7 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
     //fall-through
     case sf::Keyboard::Key::C:
     case sf::Keyboard::Key::E:
+    case sf::Keyboard::Key::M:
         build(key.code);
         break;
     default:

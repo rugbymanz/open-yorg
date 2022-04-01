@@ -18,5 +18,6 @@ Base::Base(Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
 
 void Base::draw(){
     Building::draw();
+    renderTexture.display();
     Game::window->draw(*this);
 }
