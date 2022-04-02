@@ -1,5 +1,3 @@
-#include <SFML/Graphics/Sprite.hpp>
-
 #include "Field/FieldCell.hpp"
 #include "Algorithms.hpp"
 

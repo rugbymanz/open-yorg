@@ -1,5 +1,4 @@
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/Color.hpp>
 
 #include "Game.hpp"

@@ -3,6 +3,7 @@
 #include "Field/PathSearchField.hpp"
 #include "Algorithms.hpp"
 #include "Field/Field.hpp"
+#include "Field/FieldCell.hpp"
 
 PathSearchField::PathSearchField(Field &field) : field{ field } {
     nodeField.resize(FIELD_LENGTH);

@@ -6,5 +6,5 @@ class Enemies;
 
 class CasualEnemy: public Enemy{
 public:
-	CasualEnemy(const FieldCoord &spawnPosition, Enemies &enemies, PathSearchField &pathSearchField);
+	CasualEnemy(const FieldCoord &spawnPosition, Enemies &enemies, PathSearchField &pathSearchField, Bullets &bullets);
 };

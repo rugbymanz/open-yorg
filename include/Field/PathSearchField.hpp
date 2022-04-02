@@ -2,7 +2,6 @@
 
 #include <lemon/dijkstra.h>
 #include <lemon/list_graph.h>
-#include <lemon/grid_graph.h>
 #include <lemon/adaptors.h>
 
 #include "ValuesAndTypes.hpp"
@@ -13,6 +12,7 @@ class PathSearchField{
 public:
     PathSearchField(Field &field);
     FieldCoord generatePath(const FieldCoord &source);
+    void update();
 
 private:
     Field &field;
@@ -22,7 +22,5 @@ private:
     lemon::FilterNodes<lemon::ListGraph> subGraphField{ graphField, nodeFilter };
     lemon::ListGraph::NodeMap<FieldCoord> coordMap{ graphField };
     
-    void update();
     FieldCoord getCoord(dijkstra_t::Path::RevArcIt revArcIt);
-    friend class Field;
 };

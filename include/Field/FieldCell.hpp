@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/Texture.hpp>
 
 #include "ValuesAndTypes.hpp"
 #include "Graphical.hpp"

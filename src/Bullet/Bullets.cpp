@@ -1,14 +1,12 @@
 #include "Bullet/Bullets.hpp"
+#include "Bullet/Bullet.hpp"
 
-void Bullets::append(const Bullet &bullet){
+void Bullets::append(Bullet *bullet){
     bullets.push_front(bullet);
 }
 
 void Bullets::tick(){
-    // foreach i in ammunitions{
-    //     if(i.erased){
-    //         erase(i)
-    //     }
-    //     i.tick()
-    // }
+    for (auto *el : bullets) {
+        el->update();
+    }
 }

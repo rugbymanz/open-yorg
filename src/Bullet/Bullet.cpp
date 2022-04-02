@@ -1,4 +1,5 @@
 #include "Bullet/Bullet.hpp"
+#include "Algorithms.hpp"
 
 // Bullet::Bullet(aim, damage): aim{aim}, damage{damage}{
 //     Game::gameElements.ammunitions.add(*this)
@@ -25,10 +26,13 @@
 //     erased = true;
 // }
 
-Bullet::Bullet(const Bullet &bullet) {
+Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim) : CanDamage{ aim } {
+    setMovementAzimuth(spawnPosition, Algorithms::mapFieldCoordToVector2fCentered(aim) );
 }
 
 void Bullet::draw(){
     
 }
 
+void Bullet::update() {
+}

@@ -120,6 +120,12 @@
     <ClInclude Include="include\ValuesAndTypes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Bullet\EnemyBullet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Can\CanShoot.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Building\Base.cpp">
@@ -222,6 +228,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Graphical.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Can\CanShoot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bullet\EnemyBullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

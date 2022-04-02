@@ -1,13 +1,13 @@
 #pragma once
 
 #include <vector>
-#include <functional>
 
 #include "ValuesAndTypes.hpp"
 #include "Road.hpp"
 #include "PathSearchField.hpp"
 #include "ValuesAndTypes.hpp"
-#include "FieldCell.hpp"
+
+class FieldCell;
 
 class Field{
 public:

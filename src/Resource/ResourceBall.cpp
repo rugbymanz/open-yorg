@@ -1,9 +1,7 @@
 #include "Resource/ResourceBall.hpp"
-#include "Building/Building.hpp"
-#include "Building/Mine.hpp"
-#include "Game.hpp"
+#include "Resource/ResourceBalls.hpp"
 #include "Algorithms.hpp"
-#include "Building/Base.hpp"
+#include "Field/Road.hpp"
 
 ResourceBall::ResourceBall(Road &road, const FieldCoord &source) : road{road}, source { source }, destination{ source }, destinationNode{ source }{
     // if(const FieldCell &fieldCell = Game::gameElements.field.get(source); fieldCell.type == FieldCell::Types::buidling)

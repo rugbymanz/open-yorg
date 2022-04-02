@@ -1,5 +1,5 @@
 #include "Enemy/Enemies.hpp"
-#include "Enemy/CasualEnemy.hpp"
+#include "Enemy/Enemy.hpp"
 
 Enemies::Enemies() {
 }

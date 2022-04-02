@@ -2,13 +2,13 @@
 
 #include <forward_list>
 
-#include "Bullet.hpp"
+class Bullet;
 
 class Bullets{
 public:
     void tick();
-    void append(const Bullet &bullet);
+    void append(Bullet *bullet);
 
 private:
-    std::forward_list<Bullet> bullets;
+    std::forward_list<Bullet*> bullets;
 };

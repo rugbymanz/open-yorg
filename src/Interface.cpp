@@ -1,6 +1,7 @@
 #include "Interface.hpp"
-#include "Game.hpp"
+#include "Field/Field.hpp"
 #include "ValuesAndTypes.hpp"
+#include "Field/FieldCell.hpp"
 
 Interface::Interface(Field &field) : field{ field } {}
 

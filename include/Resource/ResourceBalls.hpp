@@ -2,7 +2,8 @@
 
 #include <vector>
 
-#include "ResourceBall.hpp"
+class ResourceBall;
+class FieldCell;
 
 class ResourceBalls{
 public:
@@ -10,7 +11,7 @@ public:
     void append(const size_t amount, const ResourceBall &resourceBall);
     
 private:
-    std::vector<ResourceBall> resourceBalls;
+    std::vector<ResourceBall*> resourceBalls;
 
     void update();
     bool isResourceNearby(const FieldCell &fieldCell);

@@ -4,7 +4,6 @@
 
 #include "Can/CanMove.hpp"
 #include "Graphical.hpp"
-#include "Resource/Resource.hpp"
 
 class ResourceBalls;
 class Road;

@@ -5,7 +5,6 @@
 #include "Input.hpp"
 #include "GameElements.hpp"
 #include "Interface.hpp"
-#include "ValuesAndTypes.hpp"
 #include "Clock.hpp"
 
 class Game{
