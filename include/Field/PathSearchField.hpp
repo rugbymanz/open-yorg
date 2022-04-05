@@ -7,11 +7,12 @@
 #include "ValuesAndTypes.hpp"
 
 class Field;
+class FieldCell;
 
 class PathSearchField{
 public:
     PathSearchField(Field &field);
-    FieldCoord generatePath(const FieldCoord &source);
+    std::pair<FieldCoord, FieldCell*> generatePath(const FieldCoord &source);
     void update();
 
 private:

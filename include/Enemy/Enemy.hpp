@@ -26,6 +26,7 @@ protected:
 private:
     PathSearchField &pathSearchField;
     Bullets &bullets;
+    bool attacking = false;
     
     void move_();
     void shootAim()override;

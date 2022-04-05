@@ -18,8 +18,8 @@ sf::Vector2f Algorithms::calculateDistanceVector(const sf::Vector2f &from, const
 }
 
 FieldCoord Algorithms::mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoord){
-    int x = round(floatFieldCoord.x / CELL_LENGTH);
-    int y = round(floatFieldCoord.y / CELL_WIDTH);
+    int x = floatFieldCoord.x / CELL_LENGTH;
+    int y = floatFieldCoord.y / CELL_WIDTH;
 
     return FieldCoord(x, y);
 }

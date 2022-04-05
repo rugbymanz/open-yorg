@@ -6,7 +6,6 @@
 #include "Game.hpp"
 
 Base::Base(Field &field, const FieldCoord &fieldCoord): Building{fieldCoord}{
-    isEmpty = false;
     text.setString("B");
     renderTexture.draw(text);
     if(field.basePosition != NONE_FIELD_CELL){

@@ -37,9 +37,9 @@ PathSearchField::PathSearchField(Field &field) : field{ field } {
             coordMap[nodeField[col][row]] = { col, row };
 }
 
-FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
+std::pair<FieldCoord, FieldCell*> PathSearchField::generatePath(const FieldCoord &source_){
     if (source_ == NONE_FIELD_CELL) {
-        return NONE_FIELD_CELL;
+        return { NONE_FIELD_CELL, nullptr};
     }
     lemon::ListGraph::Node source(nodeField[source_.x][source_.y]);
     FieldCoord basePosition = field.basePosition;
@@ -58,7 +58,8 @@ FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
         dijkstra_t::Path::RevArcIt it(path);
 
         for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
-        return getCoord(it);
+        FieldCoord fieldCoord = getCoord(it);
+        return { fieldCoord, &field.get(fieldCoord) };
     }
 }
 
@@ -69,7 +70,7 @@ FieldCoord PathSearchField::getCoord(dijkstra_t::Path::RevArcIt revArcIt) {
 void PathSearchField::update() {
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
-            if (FieldCell &fieldCell = field.get({ col, row }); !fieldCell.isEmpty && fieldCell.getCoord() != field.basePosition)
+            if (FieldCell &fieldCell = field.get({ col, row }); !fieldCell.isEmpty && !fieldCell.isDestructable)
                 nodeFilter[nodeField[col][row]] = false;
             else
                 nodeFilter[nodeField[col][row]] = true;
