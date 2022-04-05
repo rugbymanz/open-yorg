@@ -40,8 +40,10 @@ void Enemy::move_() {
                 shootAim();
         }
     }
-    step = getMovementVector();
-    move(step);
+    else {
+        step = getMovementVector();
+        move(step);
+    }
 }
 
 void Enemy::update(){
