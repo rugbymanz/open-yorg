@@ -24,3 +24,7 @@ void FieldCell::draw(){
     // image.create(Settings::Field::cellLength, Settings::Field::cellWidth, Color::White);
     // text.loadFromImage(image);
 }
+
+sf::Vector2f FieldCell::getCenter(){
+    return getPosition() + sf::Vector2f{ getSize().x / 2, getSize().y / 2 };
+}

@@ -14,4 +14,9 @@ public:
     // void erase();
     void draw() override;
     void update()override;
+
+    bool deleted = false;
+protected:
+    sf::Vector2f getCenter() override;
+    void move_();
 };

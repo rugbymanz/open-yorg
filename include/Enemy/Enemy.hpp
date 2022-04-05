@@ -22,6 +22,7 @@ public:
 
 protected:
     FieldCoord nextMoveFieldCoord;
+    sf::Vector2f getCenter() override;
 private:
     PathSearchField &pathSearchField;
     Bullets &bullets;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <forward_list>
+#include <list>
 
 class Bullet;
 
@@ -10,5 +10,5 @@ public:
     void append(Bullet *bullet);
 
 private:
-    std::forward_list<Bullet*> bullets;
+    std::list<Bullet*> bullets;
 };

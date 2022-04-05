@@ -29,21 +29,25 @@ void Enemy::draw(){
 }
 
 void Enemy::move_() {
-    sf::Vector2f step = Algorithms::calculateDistanceVector(getPosition(), Algorithms::mapFieldCoordToVector2f(nextMoveFieldCoord) );
-    if (abs(step.x) < speed && abs(step.y) < speed) {
-        FieldCoord selfCoord = Algorithms::mapVector2fToFieldCoord(getPosition());
-        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
-        setMovementAzimuth(getPosition(), Algorithms::mapFieldCoordToVector2f(nextMoveFieldCoord));
-        if (nextMoveFieldCoord == selfCoord) {
-            aim = { 0, 0 };
-            if(isTimeToShoot())
-                shootAim();
-        }
-    }
-    else {
-        step = getMovementVector();
-        move(step);
-    }
+    //sf::Vector2f distance = Algorithms::calculateDistanceVector(getPosition(), Algorithms::mapFieldCoordToVector2f(nextMoveFieldCoord) );
+    //if (abs(distance.x) < speed && abs(distance.y) < speed) {
+    //    FieldCoord selfCoord = Algorithms::mapVector2fToFieldCoord(getPosition());
+    //    nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
+    //    setMovementAzimuth(getPosition(), Algorithms::mapFieldCoordToVector2f(nextMoveFieldCoord));
+    //    if (nextMoveFieldCoord == selfCoord) {
+    //        aim = { 0, 0 };
+    //        if(isTimeToShoot())
+    //            shootAim();
+    //    }
+    //}
+    //else {
+    //    sf::Vector2f step = getMovementVector();
+    //    move(step);
+    //}
+
+    aim = { 0, 0 };
+    if (isTimeToShoot())
+        shootAim();
 }
 
 void Enemy::update(){
@@ -54,5 +58,9 @@ void Enemy::update(){
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ Algorithms::mapFieldCoordToVector2fCentered(Algorithms::mapVector2fToFieldCoord(getPosition()) ), aim });
+    bullets.append(new EnemyBullet{ getCenter(), aim });
+}
+
+sf::Vector2f Enemy::getCenter(){
+    return getPosition() + sf::Vector2f{getRadius(), getRadius()};
 }

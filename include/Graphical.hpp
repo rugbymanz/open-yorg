@@ -8,7 +8,7 @@ class Graphical{
 public:
     Graphical();
 
-    sf::Vector2f getCenter();
+    virtual sf::Vector2f getCenter() = 0;
     virtual void draw();
     virtual ~Graphical(){};
 
