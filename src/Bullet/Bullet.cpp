@@ -1,3 +1,5 @@
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "Bullet/Bullet.hpp"
 #include "Algorithms.hpp"
 #include "Game.hpp"
@@ -36,6 +38,10 @@ Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim) : CanDamage{ aim } {
     setTexture(&renderTexture.getTexture());
 
     renderTexture.draw(text);
+    sf::Image image;
+    image.create(CELL_LENGTH, CELL_WIDTH, sf::Color::Red);
+    backgroundTexture.loadFromImage(image);
+    renderTexture.draw(sf::Sprite(backgroundTexture));
 }
 
 void Bullet::draw(){
