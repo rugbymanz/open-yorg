@@ -37,9 +37,9 @@ PathSearchField::PathSearchField(Field &field) : field{ field } {
             coordMap[nodeField[col][row]] = { col, row };
 }
 
-std::pair<FieldCoord, FieldCell*> PathSearchField::generatePath(const FieldCoord &source_){
+FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
     if (source_ == NONE_FIELD_CELL) {
-        return { NONE_FIELD_CELL, nullptr};
+        return NONE_FIELD_CELL;
     }
     lemon::ListGraph::Node source(nodeField[source_.x][source_.y]);
     FieldCoord basePosition = field.basePosition;
@@ -55,14 +55,14 @@ std::pair<FieldCoord, FieldCell*> PathSearchField::generatePath(const FieldCoord
     {
         int pathLength = path.length();
         if (pathLength == 1) {
-            return { basePosition, &field.get(basePosition) };
+            return basePosition;
         }
         int pathLengthIndex = pathLength - 1;
         dijkstra_t::Path::RevArcIt it(path);
 
         for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
         FieldCoord fieldCoord = getCoord(it);
-        return { fieldCoord, &field.get(fieldCoord) };
+        return fieldCoord;
     }
 }
 

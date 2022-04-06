@@ -3,8 +3,9 @@
 #include "Enemy/Enemy.hpp"
 
 class Enemies;
+class Field;
 
 class CasualEnemy: public Enemy{
 public:
-	CasualEnemy(const FieldCoord &spawnPosition, Enemies &enemies, PathSearchField &pathSearchField, Bullets &bullets);
+	CasualEnemy(const FieldCoord &spawnPosition, Enemies &enemies, PathSearchField &pathSearchField, Bullets &bullets, Field &field);
 };

@@ -4,7 +4,7 @@
 
 class CanDamage{
 public:
-    CanDamage(FieldCoord aim, double damage);
+    CanDamage(FieldCoord aim, double damage, double damageRadius);
 
     double damageRadius = NONE;
     double damage = NONE;

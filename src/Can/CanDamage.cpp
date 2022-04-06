@@ -1,6 +1,6 @@
 #include "Can/CanDamage.hpp"
 
-CanDamage::CanDamage(FieldCoord aim, double damage) : aim{ aim }, damage{ damage } {}
+CanDamage::CanDamage(FieldCoord aim, double damage, double damageRadius) : aim{ aim }, damage{ damage }, damageRadius{damageRadius} {}
 
 void CanDamage::update(){
 }

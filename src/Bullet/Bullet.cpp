@@ -29,7 +29,7 @@
 //     erased = true;
 // }
 
-Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage) : CanDamage{ aim, damage } {
+Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
     setRadius(CELL_LENGTH / 4.);
     setPosition(spawnPosition - sf::Vector2f{getRadius(), getRadius()});
     setMovementAzimuth(this->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(aim) );

@@ -126,6 +126,9 @@
     <ClInclude Include="include\Can\CanShoot.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Bullet\DamageCircle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Building\Base.cpp">
@@ -234,6 +237,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Bullet\EnemyBullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bullet\DamageCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

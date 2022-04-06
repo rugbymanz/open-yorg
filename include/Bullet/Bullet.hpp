@@ -8,7 +8,7 @@
 
 class Bullet: public sf::CircleShape, public Graphical, public CanMove, public CanDamage{
 public:
-    Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage);
+    Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, double damageRadius);
     // void update();
     // void damage();
     // void erase();

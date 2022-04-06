@@ -7,7 +7,7 @@
 #include "Field/FieldCell.hpp"
 #include "Building/Building.hpp"
 
-Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage) : bullets{ bullets }, pathSearchField { pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage } {
+Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius) : bullets{ bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{field} {
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
     setRadius(CELL_LENGTH / 2);
     setOutlineColor(UNSELECTED);
@@ -29,13 +29,11 @@ void Enemy::move_() {
     sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord) );
     if (abs(distance.x) < speed && abs(distance.y) < speed) {
         FieldCoord selfCoord = Algorithms::mapVector2fToFieldCoord(getCenter());
-        FieldCell *fieldCell = nullptr;
-        std::tie(nextMoveFieldCoord, fieldCell) = pathSearchField.generatePath(selfCoord);
+        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
         setMovementAzimuth(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord));
-        if (fieldCell->isDestructable) {
+        if (field.get(nextMoveFieldCoord).isDestructable) {
             attacking = true;
             aim = nextMoveFieldCoord;
-            aimBuilding = static_cast<Building*>(fieldCell);
         }
     }
     else {
@@ -54,7 +52,7 @@ void Enemy::update(){
     if (!attacking)
         move_();
     else {
-        if (aimBuilding->getHp() > 0)
+        if (static_cast<Building&>(field.get(aim)).getHp() > 0)
             attack();
         else
             attacking = false;
@@ -64,7 +62,7 @@ void Enemy::update(){
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ getCenter(), aim, aimBuilding, damage });
+    bullets.append(new EnemyBullet{ getCenter(), aim, damage, field, damageRadius });
 }
 
 sf::Vector2f Enemy::getCenter(){

@@ -62,7 +62,7 @@ void Input::build(const sf::Keyboard::Key &key){
             field.set(new Crystal{ interface.selectedCell });
             break;
         case sf::Keyboard::E:
-            new CasualEnemy{ interface.selectedCell, enemies, pathSearchField, bullets};
+            new CasualEnemy{ interface.selectedCell, enemies, pathSearchField, bullets, field};
             break;
         case sf::Keyboard::M:
             field.set(new Mine{ field, interface.selectedCell });

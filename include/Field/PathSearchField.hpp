@@ -12,7 +12,7 @@ class FieldCell;
 class PathSearchField{
 public:
     PathSearchField(Field &field);
-    std::pair<FieldCoord, FieldCell*> generatePath(const FieldCoord &source);
+    FieldCoord generatePath(const FieldCoord &source);
     void update();
 
 private:
