@@ -6,6 +6,7 @@ class CanMove{
 private:
     Azimuth movementAzimuth = NONE;
 protected:
+    virtual void move_() = 0;
     sf::Vector2f getMovementVector();
 
     void setMovementAzimuth(const FieldCoord spawnPosition, const FieldCoord aim);

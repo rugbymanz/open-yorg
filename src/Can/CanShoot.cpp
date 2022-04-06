@@ -2,7 +2,7 @@
 
 #include "Can/CanShoot.hpp"
 
-CanShoot::CanShoot(FieldCoord aim) : CanDamage{ aim } {};
+CanShoot::CanShoot(FieldCoord aim, double damage) : CanDamage{ aim, damage } {};
 
 void CanShoot::shootAim() {
 	clock.restart();

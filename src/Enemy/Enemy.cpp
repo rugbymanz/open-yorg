@@ -5,8 +5,9 @@
 #include "Game.hpp"
 #include "Bullet/EnemyBullet.hpp"
 #include "Field/FieldCell.hpp"
+#include "Building/Building.hpp"
 
-Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets) : bullets{ bullets }, pathSearchField { pathSearchField }, CanShoot{ NONE_FIELD_CELL } {
+Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage) : bullets{ bullets }, pathSearchField { pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage } {
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
     setRadius(CELL_LENGTH / 2);
     setOutlineColor(UNSELECTED);
@@ -16,9 +17,6 @@ Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, 
 
     text.setString("E");
     renderTexture.draw(text);
-}
-
-Enemy::~Enemy() {
 }
 
 void Enemy::draw(){
@@ -37,6 +35,7 @@ void Enemy::move_() {
         if (fieldCell->isDestructable) {
             attacking = true;
             aim = nextMoveFieldCoord;
+            aimBuilding = static_cast<Building*>(fieldCell);
         }
     }
     else {
@@ -54,15 +53,18 @@ void Enemy::attack() {
 void Enemy::update(){
     if (!attacking)
         move_();
-    else
-        attack();
-
+    else {
+        if (aimBuilding->getHp() > 0)
+            attack();
+        else
+            attacking = false;
+    }
     // moveSprite
 }
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ getCenter(), aim });
+    bullets.append(new EnemyBullet{ getCenter(), aim, aimBuilding, damage });
 }
 
 sf::Vector2f Enemy::getCenter(){

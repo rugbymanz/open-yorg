@@ -14,6 +14,7 @@ public:
     void setCoord(const FieldCoord &fieldCoord);
     FieldCoord getCoord();
     void draw()override;
+    virtual void update() = 0;
 
 protected:
     FieldCoord coord = NONE_FIELD_CELL;

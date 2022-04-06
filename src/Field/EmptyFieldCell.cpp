@@ -11,3 +11,5 @@ void EmptyFieldCell::draw(){
     renderTexture.display();
     Game::window->draw(*this);
 }
+
+void EmptyFieldCell::update(){}

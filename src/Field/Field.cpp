@@ -29,6 +29,15 @@ void Field::tick(){
 }
 
 void Field::update(){
+    for (auto &row : field)
+        for (auto &col : row) {
+            if (col->deleted) {
+                FieldCoord fieldCoord = col->getCoord();
+                set(new EmptyFieldCell{ fieldCoord });
+            }
+            else
+                col->update();
+        }
 }
 
 void Field::draw(){

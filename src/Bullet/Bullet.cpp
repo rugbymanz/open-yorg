@@ -29,7 +29,7 @@
 //     erased = true;
 // }
 
-Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim) : CanDamage{ aim } {
+Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage) : CanDamage{ aim, damage } {
     setRadius(CELL_LENGTH / 4.);
     setPosition(spawnPosition - sf::Vector2f{getRadius(), getRadius()});
     setMovementAzimuth(this->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(aim) );
@@ -51,10 +51,6 @@ void Bullet::draw(){
 }
 
 void Bullet::move_() {
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(aim));
-    if (abs(distance.x) < speed && abs(distance.y) < speed) {
-        deleted = true;
-    }
     sf::Vector2f step = getMovementVector();
     move(step);
 }

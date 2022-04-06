@@ -6,7 +6,7 @@
 
 class CanShoot : public CanDamage {
 public:
-	CanShoot(FieldCoord aim);
+	CanShoot(FieldCoord aim, double damage);
 protected:
 	virtual void shootAim();
 	bool isTimeToShoot();

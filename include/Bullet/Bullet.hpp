@@ -8,15 +8,13 @@
 
 class Bullet: public sf::CircleShape, public Graphical, public CanMove, public CanDamage{
 public:
-    Bullet(sf::Vector2f spawnPosition, FieldCoord aim);
+    Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage);
     // void update();
     // void damage();
     // void erase();
     void draw() override;
     void update()override;
-
-    bool deleted = false;
 protected:
     sf::Vector2f getCenter() override;
-    void move_();
+    void move_() override;
 };

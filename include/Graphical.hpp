@@ -6,11 +6,12 @@
 
 class Graphical{
 public:
-    Graphical();
+    bool deleted = false;
 
+    Graphical();
     virtual sf::Vector2f getCenter() = 0;
     virtual void draw();
-    virtual ~Graphical(){};
+    virtual ~Graphical() = default;
 
 protected:
     sf::Texture backgroundTexture;
