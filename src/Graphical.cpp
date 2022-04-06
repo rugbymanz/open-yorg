@@ -4,7 +4,7 @@
 #include "ValuesAndTypes.hpp"
 
 Graphical::Graphical() {
-	font.loadFromFile("resources/CascadiaCode.ttf");
+    font.loadFromFile("resources/CascadiaCode.ttf");
 	text.setFont(font);
 	text.setCharacterSize(CELL_WIDTH);
 

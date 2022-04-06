@@ -7,11 +7,14 @@ void Bullets::append(Bullet *bullet){
 
 void Bullets::tick(){
     for (auto &el : bullets) {
+        if (el->deleted) {
+            delete el;
+            el = nullptr;
+            continue;
+        }
         el->update();
         el->draw();
     }
 
-    bullets.remove_if([](const Bullet *bullet) {
-        return bullet->deleted;
-        });
+    bullets.remove(nullptr);
 }

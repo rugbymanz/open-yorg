@@ -54,6 +54,9 @@ std::pair<FieldCoord, FieldCell*> PathSearchField::generatePath(const FieldCoord
     dijkstra_t::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
+        if (pathLength == 1) {
+            return { basePosition, &field.get(basePosition) };
+        }
         int pathLengthIndex = pathLength - 1;
         dijkstra_t::Path::RevArcIt it(path);
 
