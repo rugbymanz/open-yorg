@@ -13,7 +13,7 @@ public:
     // void damage();
     // void erase();
     void draw() override;
-    void update()override;
+    void update();
 protected:
     sf::Vector2f getCenter() override;
     void move_() override;

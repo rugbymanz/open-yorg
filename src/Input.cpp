@@ -10,11 +10,12 @@
 #include "Enemy/CasualEnemy.hpp"
 #include "Building/Mine.hpp"
 
-Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets) : interface {interface}, 
-                                                                                                                         pathSearchField {pathSearchField},
-                                                                                                                         field{field},
-                                                                                                                         enemies{ enemies },
-                                                                                                                         bullets{bullets}{}
+Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_) : interface {interface}, 
+                                                                                                                                                        pathSearchField {pathSearchField},
+                                                                                                                                                        field{field},
+                                                                                                                                                        enemies{ enemies },
+                                                                                                                                                        bullets{bullets},
+                                                                                                                                                        damageCircles{damageCircles_} {}
 
 void Input::process(const sf::Event &event){
     if (event.type == sf::Event::Closed)
@@ -62,7 +63,7 @@ void Input::build(const sf::Keyboard::Key &key){
             field.set(new Crystal{ interface.selectedCell });
             break;
         case sf::Keyboard::E:
-            new CasualEnemy{ interface.selectedCell, enemies, pathSearchField, bullets, field};
+            new CasualEnemy{ interface.selectedCell, enemies, pathSearchField, bullets, field, damageCircles};
             break;
         case sf::Keyboard::M:
             field.set(new Mine{ field, interface.selectedCell });

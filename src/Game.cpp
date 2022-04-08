@@ -12,7 +12,8 @@ Game::Game(sf::RenderWindow *const window) : input{ gameElements.field,
                                                     interface, 
                                                     gameElements.field.pathSearchField, 
                                                     gameElements.enemies,
-                                                    gameElements.bullets
+                                                    gameElements.bullets,
+                                                    gameElements.damageCircles
                                                   },
                                              interface { gameElements.field } {
     this->window = window;

@@ -163,8 +163,10 @@
     <ClInclude Include="include\Bullet\Bullets.hpp" />
     <ClInclude Include="include\Bullet\CannonBall.hpp" />
     <ClInclude Include="include\Bullet\CannonBalls.hpp" />
+    <ClInclude Include="include\Bullet\DamageCircles.hpp" />
     <ClInclude Include="include\Bullet\EnemyBullet.hpp" />
-    <ClInclude Include="include\Bullet\DamageCircle.h" />
+    <ClInclude Include="include\Bullet\DamageCircle.hpp" />
+    <ClInclude Include="include\Bullet\EnemyDamageCircle.hpp" />
     <ClInclude Include="include\Can\CanDamage.hpp" />
     <ClInclude Include="include\Can\CanHaveHp.hpp" />
     <ClInclude Include="include\Can\CanMove.hpp" />
@@ -203,7 +205,9 @@
     <ClCompile Include="src\Bullet\CannonBall.cpp" />
     <ClCompile Include="src\Bullet\CannonBalls.cpp" />
     <ClCompile Include="src\Bullet\DamageCircle.cpp" />
+    <ClCompile Include="src\Bullet\DamageCircles.cpp" />
     <ClCompile Include="src\Bullet\EnemyBullet.cpp" />
+    <ClCompile Include="src\Bullet\EnemyDamageCircle.cpp" />
     <ClCompile Include="src\Can\CanDamage.cpp" />
     <ClCompile Include="src\Can\CanHaveHp.cpp" />
     <ClCompile Include="src\Can\CanMove.cpp" />

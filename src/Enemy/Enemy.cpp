@@ -7,7 +7,7 @@
 #include "Field/FieldCell.hpp"
 #include "Building/Building.hpp"
 
-Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius) : bullets{ bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{field} {
+Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius, DamageCircles &damageCircles_) : damageCircles{ damageCircles_ }, bullets { bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{ field } {
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
     setRadius(CELL_LENGTH / 2);
     setOutlineColor(UNSELECTED);
@@ -62,7 +62,7 @@ void Enemy::update(){
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ getCenter(), aim, damage, field, damageRadius });
+    bullets.append(new EnemyBullet{ getCenter(), aim, damage, field, damageRadius, damageCircles });
 }
 
 sf::Vector2f Enemy::getCenter(){

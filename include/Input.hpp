@@ -9,10 +9,11 @@ class Interface;
 class Enemies;
 class PathSearchField;
 class Bullets;
+class DamageCircles;
 
 class Input{
 public:
-    Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets);
+    Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles);
     void process(const sf::Event &event);
 
 private:
@@ -21,6 +22,7 @@ private:
     Enemies &enemies;
     PathSearchField &pathSearchField;
     Bullets &bullets;
+    DamageCircles &damageCircles;
 
     bool isValidBuildingPosition(const FieldCoord &position);
     void processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll);

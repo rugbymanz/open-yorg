@@ -4,6 +4,7 @@
 #include "Enemy/Enemies.hpp"
 #include "Resource/ResourceBalls.hpp"
 #include "Bullet/Bullets.hpp"
+#include "Bullet/DamageCircles.hpp"
 
 class GameElements{
 public:
@@ -11,6 +12,7 @@ public:
     Enemies enemies;
     ResourceBalls resourceBalls;
     Bullets bullets;
+    DamageCircles damageCircles;
 
     void tick();
 };

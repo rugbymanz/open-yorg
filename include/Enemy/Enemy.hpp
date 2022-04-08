@@ -13,10 +13,11 @@ class PathSearchField;
 class Bullets;
 class Building;
 class Field;
+class DamageCircles;
 
 class Enemy: public CanMove, public CanHaveHp, public CanShoot, public sf::CircleShape, public Graphical {
 public:
-    Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius);
+    Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius, DamageCircles &damageCircles);
     virtual ~Enemy() = default;
     void attack();
     void draw() override;
@@ -30,6 +31,7 @@ private:
     PathSearchField &pathSearchField;
     Bullets &bullets;
     bool attacking = false;
+    DamageCircles &damageCircles;
     
     void move_();
     void shootAim()override;

@@ -4,31 +4,6 @@
 #include "Algorithms.hpp"
 #include "Game.hpp"
 
-// Bullet::Bullet(aim, damage): aim{aim}, damage{damage}{
-//     Game::gameElements.ammunitions.add(*this)
-//     movementAzimuth = Algorithms::calculateAzimuth(getCenter(), aim)
-// }
-
-// update(){
-//     if(!aim.contains(getCenter())
-//         move(movementAzimuth * speed, movementAzimuth * speed
-//     else{
-//         damage()
-//         erase()
-//     }
-// }
-
-// damage(){
-//     foreach i in creatures
-//         if(distance(i.getCenter(), getCenter()) < radius){
-//             i.hp -= damage;
-//         }
-// }
-
-// erase(){
-//     erased = true;
-// }
-
 Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
     setRadius(CELL_LENGTH / 4.);
     setPosition(spawnPosition - sf::Vector2f{getRadius(), getRadius()});
