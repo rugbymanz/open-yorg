@@ -1,7 +1,5 @@
 #include "Bullet/EnemyBullet.hpp"
 #include "Algorithms.hpp"
-#include "Building/Building.hpp"
-#include "Field/Field.hpp"
 #include "DamageCircle/EnemyDamageCircle.hpp"
 #include "DamageCircle/DamageCircles.hpp"
 
