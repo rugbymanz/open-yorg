@@ -4,7 +4,7 @@
 #include "Enemy/Enemies.hpp"
 #include "Resource/ResourceBalls.hpp"
 #include "Bullet/Bullets.hpp"
-#include "Bullet/DamageCircles.hpp"
+#include "DamageCircle/DamageCircles.hpp"
 
 class GameElements{
 public:

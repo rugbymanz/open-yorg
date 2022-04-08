@@ -126,13 +126,13 @@
     <ClInclude Include="include\Can\CanShoot.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Bullet\DamageCircle.hpp">
+    <ClInclude Include="include\DamageCircle\DamageCircle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Bullet\EnemyDamageCircle.hpp">
+    <ClInclude Include="include\DamageCircle\EnemyDamageCircle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Bullet\DamageCircles.hpp">
+    <ClInclude Include="include\DamageCircle\DamageCircles.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -245,13 +245,13 @@
     <ClCompile Include="src\Bullet\EnemyBullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bullet\DamageCircle.cpp">
+    <ClCompile Include="src\DamageCircle\DamageCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bullet\EnemyDamageCircle.cpp">
+    <ClCompile Include="src\DamageCircle\EnemyDamageCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bullet\DamageCircles.cpp">
+    <ClCompile Include="src\DamageCircle\DamageCircles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

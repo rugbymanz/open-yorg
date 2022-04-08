@@ -5,14 +5,14 @@
 CanShoot::CanShoot(FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {};
 
 void CanShoot::shootAim() {
-	clock.restart();
+	fireRateClock.restart();
 }
 
 void CanShoot::findAim() {
 
 }
 bool CanShoot::isTimeToShoot() {
-	if (fireRate < clock.getElapsedTime().asSeconds()) 
+	if (fireRate < fireRateClock.getElapsedTime().asSeconds()) 
 		return true;
 	else
 		return false;

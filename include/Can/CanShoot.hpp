@@ -12,7 +12,7 @@ protected:
 	bool isTimeToShoot();
 	double fireRate = NONE;
 private:
-	sf::Clock clock;
+	sf::Clock fireRateClock;
 
 	void findAim();
 };

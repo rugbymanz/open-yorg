@@ -1,13 +1,14 @@
-#include "Bullet/DamageCircle.hpp"
+#include "DamageCircle/DamageCircle.hpp"
 #include "Algorithms.hpp"
 #include "Game.hpp"
+#include "ValuesAndTypes.hpp"
 
 DamageCircle::DamageCircle(FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
     setRadius(damageRadius);
     setPosition(Algorithms::mapFieldCoordToVector2fCentered(aim) - sf::Vector2f{ getRadius(), getRadius() });
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
-    setFillColor(sf::Color::Red);
+    setFillColor(sf::Color{ 255, 0, 0, 125 });
 };
 
 void DamageCircle::draw() {
@@ -17,7 +18,8 @@ void DamageCircle::draw() {
 }
 
 void DamageCircle::update() {
-
+    if (DAMAGE_CIRCLE_LIFE_TIME < lifeTimeClock.getElapsedTime().asSeconds())
+        deleted = true;
 }
 
 sf::Vector2f DamageCircle::getCenter() {

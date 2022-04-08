@@ -30,3 +30,5 @@ using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<lemon::ListGraph>, lemon::
 
 #define DAY_DURATION NONE
 #define NIGHT_DURATION NONE
+
+#define DAMAGE_CIRCLE_LIFE_TIME 0.3

@@ -2,8 +2,8 @@
 #include "Algorithms.hpp"
 #include "Building/Building.hpp"
 #include "Field/Field.hpp"
-#include "Bullet/EnemyDamageCircle.hpp"
-#include "Bullet/DamageCircles.hpp"
+#include "DamageCircle/EnemyDamageCircle.hpp"
+#include "DamageCircle/DamageCircles.hpp"
 
 EnemyBullet::EnemyBullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, Field &field, double damageRadius, DamageCircles &damgeCircles_) : damageCircles{ damgeCircles_ }, Bullet { spawnPosition, aim, damage, damageRadius }, field{ field } {
 	speed = 0.01 * CELL_LENGTH;

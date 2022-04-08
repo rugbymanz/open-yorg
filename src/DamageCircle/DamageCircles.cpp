@@ -1,5 +1,5 @@
-#include "Bullet/DamageCircles.hpp"
-#include "Bullet/DamageCircle.hpp"
+#include "DamageCircle/DamageCircles.hpp"
+#include "DamageCircle/DamageCircle.hpp"
 
 void DamageCircles::append(DamageCircle *damageCircle) {
     damageCircles.push_front(damageCircle);
