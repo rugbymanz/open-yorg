@@ -2,7 +2,8 @@
 
 #include "Can/CanShoot.hpp"
 
-CanShoot::CanShoot(FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {};
+CanShoot::CanShoot(FieldCoord aim, double damage, int damageRadius) : CanDamage{ aim, damage, damageRadius } {};
+CanShoot::CanShoot(sf::Vector2f aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {};
 
 void CanShoot::shootAim() {
 	fireRateClock.restart();

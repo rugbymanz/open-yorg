@@ -6,7 +6,7 @@ class DamageCircles;
 
 class EnemyBullet : public Bullet {
 public:
-	EnemyBullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, Field &field, double damageRadius, DamageCircles &damgeCircles);
+	EnemyBullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, Field &field, int damageRadius, DamageCircles &damgeCircles);
 protected:
 	void move_()override;
 private:

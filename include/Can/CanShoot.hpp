@@ -6,7 +6,8 @@
 
 class CanShoot : public CanDamage {
 public:
-	CanShoot(FieldCoord aim, double damage, double damageRadius);
+	CanShoot(sf::Vector2f aim, double damage, double damageRadius);
+	CanShoot(FieldCoord aim, double damage, int damageRadius);
 protected:
 	virtual void shootAim();
 	bool isTimeToShoot();

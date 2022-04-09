@@ -3,13 +3,21 @@
 #include "Game.hpp"
 #include "ValuesAndTypes.hpp"
 
-DamageCircle::DamageCircle(FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
-    setRadius(damageRadius);
-    setPosition(Algorithms::mapFieldCoordToVector2fCentered(aim) - sf::Vector2f{ getRadius(), getRadius() });
+DamageCircle::DamageCircle(sf::Vector2f aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
+    init();
+}
+
+DamageCircle::DamageCircle(FieldCoord aim, double damage, int damageRadius) : CanDamage{ aim, damage, damageRadius } {
+    init();
+}
+
+void DamageCircle::init() {
+    setRadius(getDamageRadiusd());
+    setPosition(getAimVector2f() - sf::Vector2f{ getRadius(), getRadius() });
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setFillColor(sf::Color{ 255, 0, 0, 125 });
-};
+}
 
 void DamageCircle::draw() {
     Graphical::draw();

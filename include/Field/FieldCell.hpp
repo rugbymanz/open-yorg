@@ -15,10 +15,10 @@ public:
     FieldCoord getCoord();
     void draw()override;
     virtual void update() = 0;
+    sf::Vector2f getCenter()override;
 
 protected:
     FieldCoord coord = NONE_FIELD_CELL;
-    sf::Vector2f getCenter()override;
 
 private:
 };

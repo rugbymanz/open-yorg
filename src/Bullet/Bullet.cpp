@@ -4,10 +4,18 @@
 #include "Algorithms.hpp"
 #include "Game.hpp"
 
-Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
+Bullet::Bullet(sf::Vector2f spawnPosition, FieldCoord aim, double damage, int damageRadius) : CanDamage{ aim, damage, damageRadius } {
+    init(spawnPosition);
+}
+
+Bullet::Bullet(sf::Vector2f spawnPosition, sf::Vector2f aim, double damage, double damageRadius) : CanDamage{ aim, damage, damageRadius } {
+    init(spawnPosition);
+}
+
+void Bullet::init(sf::Vector2f spawnPosition) {
     setRadius(CELL_LENGTH / 4.);
-    setPosition(spawnPosition - sf::Vector2f{getRadius(), getRadius()});
-    setMovementAzimuth(this->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(aim) );
+    setPosition(spawnPosition - sf::Vector2f{ getRadius(), getRadius() });
+    setMovementAzimuth(this->getCenter(), getAimVector2f());
     setOutlineColor(sf::Color::Black);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setTexture(&renderTexture.getTexture());

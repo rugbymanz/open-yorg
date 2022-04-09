@@ -17,7 +17,7 @@ class DamageCircles;
 
 class Enemy: public CanMove, public CanHaveHp, public CanShoot, public sf::CircleShape, public Graphical {
 public:
-    Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius, DamageCircles &damageCircles);
+    Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, int damageRadius, DamageCircles &damageCircles);
     virtual ~Enemy() = default;
     void attack();
     void draw() override;

@@ -8,7 +8,8 @@
 
 class DamageCircle : public CanDamage, public sf::CircleShape, public Graphical {
 public:
-	DamageCircle(FieldCoord aim, double damage, double damageRadius);
+	DamageCircle(sf::Vector2f aim, double damage, double damageRadius);
+	DamageCircle(FieldCoord aim, double damage, int damageRadius);
 
 	void draw()override;
 	virtual void update();
@@ -16,4 +17,6 @@ public:
 
 private:
 	sf::Clock lifeTimeClock;
+
+	void init();
 };

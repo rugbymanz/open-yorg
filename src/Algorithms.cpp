@@ -45,3 +45,11 @@ FieldCoord Algorithms::mapFlatIndexToFieldCoord(const int index) {
     return FieldCoord(index % FIELD_LENGTH, index / FIELD_LENGTH);
 }
 // Resource Algorithms::enumToClass(const Resource::Types type);
+
+int Algorithms::doubleDamageRadiusToInt(double damageRadius) {
+    return 1 + (damageRadius - (CELL_LENGTH / 2) ) / CELL_LENGTH;
+}
+
+double Algorithms::intDamageRadiusToDouble(int damageRadius) {
+    return (damageRadius - 1) * CELL_LENGTH + CELL_LENGTH / 2;
+}

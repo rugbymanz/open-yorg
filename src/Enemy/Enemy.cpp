@@ -7,7 +7,7 @@
 #include "Field/FieldCell.hpp"
 #include "Building/Building.hpp"
 
-Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, double damageRadius, DamageCircles &damageCircles_) : damageCircles{ damageCircles_ }, bullets { bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{ field } {
+Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, int damageRadius, DamageCircles &damageCircles_) : damageCircles{ damageCircles_ }, bullets { bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{ field } {
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
     setRadius(CELL_LENGTH / 2);
     setOutlineColor(UNSELECTED);
@@ -33,7 +33,7 @@ void Enemy::move_() {
         setMovementAzimuth(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord));
         if (field.get(nextMoveFieldCoord).isDestructable) {
             attacking = true;
-            aim = nextMoveFieldCoord;
+            setAimFieldCoord(nextMoveFieldCoord);
         }
     }
     else {
@@ -52,7 +52,7 @@ void Enemy::update(){
     if (!attacking)
         move_();
     else {
-        if (static_cast<Building&>(field.get(aim)).getHp() > 0)
+        if (static_cast<Building&>(field.get(getAimFieldCoord())).getHp() > 0)
             attack();
         else
             attacking = false;
@@ -62,7 +62,7 @@ void Enemy::update(){
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ getCenter(), aim, damage, field, damageRadius, damageCircles });
+    bullets.append(new EnemyBullet{ getCenter(), getAimFieldCoord(), damage, field, getDamageRadiusi(), damageCircles });
 }
 
 sf::Vector2f Enemy::getCenter(){
