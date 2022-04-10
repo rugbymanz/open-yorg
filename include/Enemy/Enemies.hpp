@@ -2,6 +2,8 @@
 
 #include <forward_list>
 
+#include "ValuesAndTypes.hpp"
+
 class Enemy;
 
 class Enemies{
@@ -10,6 +12,8 @@ public:
 
     Enemies();
     Enemy *append(Enemy *enemy);
+    Enemy &findNearest(FieldCoord fieldCoord, double searchRadius);
+    std::vector<Enemy*> findAllInCircle(FieldCoord fieldCoord, double searchRadius);
 
 private:
     void update();

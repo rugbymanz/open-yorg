@@ -42,12 +42,6 @@ void Enemy::move_() {
     }
 }
 
-void Enemy::attack() {
-    if (isTimeToShoot()) {
-        shootAim();
-    }
-}
-
 void Enemy::update(){
     if (!attacking)
         move_();

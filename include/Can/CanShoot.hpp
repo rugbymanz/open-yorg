@@ -12,6 +12,8 @@ protected:
 	virtual void shootAim();
 	bool isTimeToShoot();
 	double fireRate = NONE;
+	bool attacking = false;
+	void attack();
 private:
 	sf::Clock fireRateClock;
 

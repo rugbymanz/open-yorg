@@ -9,7 +9,7 @@ public:
     bool deleted = false;
 
     Graphical();
-    virtual sf::Vector2f getCenter() = 0;
+    virtual sf::Vector2f getCenter() const = 0;
     virtual void draw();
     virtual ~Graphical() = default;
 

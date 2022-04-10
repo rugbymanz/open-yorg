@@ -18,3 +18,9 @@ bool CanShoot::isTimeToShoot() {
 	else
 		return false;
 }
+
+void CanShoot::attack() {
+	if (isTimeToShoot()) {
+		shootAim();
+	}
+}

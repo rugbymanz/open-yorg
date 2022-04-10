@@ -2,7 +2,7 @@
 #include "Game.hpp"
 
 Crystal::Crystal(const FieldCoord &fieldCoord): Resource{fieldCoord}{
-    text.setString("C");
+    text.setString("R");
     renderTexture.draw(text);
 }
 

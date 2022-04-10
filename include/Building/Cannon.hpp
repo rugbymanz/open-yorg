@@ -1,12 +1,22 @@
 #pragma once
 
+#include <SFML/Graphics/CircleShape.hpp>
+
 #include "Building.hpp"
-#include "Can/CanDamage.hpp"
+#include "Can/CanShoot.hpp"
 #include "Can/CanStore.hpp"
 
-class Cannon: public Building, public CanDamage, public CanStore{
+class Enemies;
+class Enemy;
+
+class Cannon: public Building, public CanShoot, public CanStore{
 public:
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-    void shootAim();
-    void tick();
+    Cannon(FieldCoord &fieldCoord, Enemies &enemies);
+    void draw() override;
+    void shootAim()override;
+    void update()override;
+
+private:
+    Enemies &enemies;
+    Enemy *aim = nullptr;
 };

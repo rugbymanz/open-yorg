@@ -135,6 +135,9 @@
     <ClInclude Include="include\DamageCircle\DamageCircles.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\DamageCircle\BuildingDamageCircle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Building\Base.cpp">
@@ -252,6 +255,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\DamageCircle\DamageCircles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DamageCircle\BuildingDamageCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

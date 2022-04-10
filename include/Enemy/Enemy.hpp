@@ -19,18 +19,16 @@ class Enemy: public CanMove, public CanHaveHp, public CanShoot, public sf::Circl
 public:
     Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, int damageRadius, DamageCircles &damageCircles);
     virtual ~Enemy() = default;
-    void attack();
     void draw() override;
     virtual void update();
+    sf::Vector2f getCenter() const override;
 
 protected:
     FieldCoord nextMoveFieldCoord;
-    sf::Vector2f getCenter() override;
 private:
     Field &field;
     PathSearchField &pathSearchField;
     Bullets &bullets;
-    bool attacking = false;
     DamageCircles &damageCircles;
     
     void move_();

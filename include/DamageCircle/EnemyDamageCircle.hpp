@@ -10,6 +10,6 @@ public:
 private:
 	Field &field;
 
-    void damageNearCells();
-	bool belongsToCircle(sf::Vector2f point);
+    void damageNear();
+	bool belongsToCircle(sf::Vector2f point)override;
 };
