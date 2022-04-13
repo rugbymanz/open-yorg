@@ -59,6 +59,6 @@ void Enemy::shootAim() {
     bullets.append(new EnemyBullet{ getCenter(), getAimFieldCoord(), damage, field, getDamageRadiusi(), damageCircles });
 }
 
-sf::Vector2f Enemy::getCenter(){
+sf::Vector2f Enemy::getCenter()const{
     return getPosition() + sf::Vector2f{getRadius(), getRadius()};
 }

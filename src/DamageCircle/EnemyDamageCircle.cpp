@@ -10,13 +10,8 @@ EnemyDamageCircle::EnemyDamageCircle(FieldCoord aim, double damage, int damageRa
 
 void EnemyDamageCircle::damageNear() {
     for (int col = 0; col < FIELD_LENGTH; col++)
-        for (int row = 0; row < FIELD_WIDTH; row++) 
-            if (FieldCell &fieldCell = field.get({ col, row }); belongsToCircle(field.get({ col, row }).getCenter()))
+        for (int row = 0; row < FIELD_WIDTH; row++)
+            if (FieldCell &fieldCell = field.get({ col, row }); Algorithms::belongsToCircle(fieldCell.getCenter(), getCenter(), getRadius()))
                 if (fieldCell.isDestructable)
                     static_cast<Building &>(fieldCell).decreaseHp(damage);
-}
-
-bool EnemyDamageCircle::belongsToCircle(sf::Vector2f point) {
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(point, getCenter());
-    return ( (abs(distance.x) < getRadius() ) && ( abs(distance.y) < getRadius() ) );
 }

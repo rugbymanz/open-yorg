@@ -53,3 +53,8 @@ int Algorithms::doubleDamageRadiusToInt(double damageRadius) {
 double Algorithms::intDamageRadiusToDouble(int damageRadius) {
     return (damageRadius - 1) * CELL_LENGTH + CELL_LENGTH / 2;
 }
+
+bool Algorithms::belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius) {
+    sf::Vector2f distance = Algorithms::calculateDistanceVector(point, center);
+    return ((abs(distance.x) < radius) && (abs(distance.y) < radius));
+}

@@ -22,10 +22,10 @@ void Enemies::draw() {
 
 Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
 
-    std::min_element(enemies.begin(), enemies.end(), [fieldCoord](const Enemy &lhs, const Enemy &rhs) {
-        sf::Vector2f distanceLhs = Algorithms::calculateDistanceVector(lhs.getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
+    return **std::min_element(enemies.begin(), enemies.end(), [fieldCoord](const Enemy *lhs, const Enemy *rhs) {
+        sf::Vector2f distanceLhs = Algorithms::calculateDistanceVector(lhs->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
         distanceLhs = { abs(distanceLhs.x), abs(distanceLhs.y) };
-        sf::Vector2f distanceRhs = Algorithms::calculateDistanceVector(rhs.getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
+        sf::Vector2f distanceRhs = Algorithms::calculateDistanceVector(rhs->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
         distanceRhs = { abs(distanceRhs.x), abs(distanceRhs.y) };
         return (distanceLhs.x < distanceRhs.x) && (distanceLhs.y < distanceRhs.y);
         });
@@ -46,9 +46,13 @@ Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
     //return *min_enemy;
 }
 
-std::vector<Enemy *> Enemies::findAllInCircle(FieldCoord fieldCoord, double searchRadius) {
+std::vector<Enemy *> Enemies::findAllInCircle(sf::Vector2f circleCenter, double searchRadius) {
     std::vector<Enemy *> enemiesInCircle;
-    std::copy_if(enemies.begin(), enemies.end(), enemiesInCircle.begin(), enemiesInCircle.end(), ()[fieldCoord, searchRadius] {
+    std::copy_if(enemies.begin(), enemies.end(), enemiesInCircle.begin(), [circleCenter, searchRadius](const Enemy *enemy) {
+        sf::Vector2f distance = Algorithms::calculateDistanceVector(enemy->getCenter(), circleCenter);
+        distance = { abs(distance.x), abs(distance.y) };
+        return (distance.x < searchRadius) && (distance.y < searchRadius);
+        });
 
-        })
+    return enemiesInCircle;
 }

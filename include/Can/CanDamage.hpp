@@ -10,7 +10,7 @@ public:
     CanDamage(FieldCoord aim, double damage, int damageRadius);
 
     int getDamageRadiusi();
-    int getDamageRadiusd();
+    double getDamageRadiusd();
     FieldCoord getAimFieldCoord();
     sf::Vector2f getAimVector2f();
 

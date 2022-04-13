@@ -11,5 +11,4 @@ private:
 	Enemies &enemies;
 
 	void damageNear()override;
-	bool belongsToCircle(sf::Vector2f point)override;
 };

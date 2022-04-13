@@ -12,10 +12,6 @@ DamageCircle::DamageCircle(FieldCoord aim, double damage, int damageRadius) : Ca
 }
 
 void DamageCircle::init() {
-    left = getPosition().x;
-    top = getPosition().y;
-    width = get
-
     setRadius(getDamageRadiusd());
     setPosition(getAimVector2f() - sf::Vector2f{ getRadius(), getRadius() });
     setOutlineColor(UNSELECTED);
@@ -34,6 +30,6 @@ void DamageCircle::update() {
         deleted = true;
 }
 
-sf::Vector2f DamageCircle::getCenter() {
+sf::Vector2f DamageCircle::getCenter() const {
     return { getPosition().x + getRadius(), getPosition().y + getRadius() };
 }

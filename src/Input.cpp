@@ -70,7 +70,7 @@ void Input::build(const sf::Keyboard::Key &key){
             field.set(new Mine{ field, interface.selectedCell });
             break;
         case sf::Keyboard::C:
-            field.set(new Cannon{ interface.selectedCell, enemies });
+            field.set(new Cannon{ interface.selectedCell, enemies, bullets, damageCircles });
             break;
         }
 }

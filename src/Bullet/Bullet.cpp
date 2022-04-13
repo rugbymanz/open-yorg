@@ -42,6 +42,6 @@ void Bullet::update() {
     move_();
 }
 
-sf::Vector2f Bullet::getCenter() {
+sf::Vector2f Bullet::getCenter() const {
     return getPosition() + sf::Vector2f{getRadius(), getRadius()};
 }

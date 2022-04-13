@@ -13,7 +13,7 @@ public:
     Enemies();
     Enemy *append(Enemy *enemy);
     Enemy &findNearest(FieldCoord fieldCoord, double searchRadius);
-    std::vector<Enemy*> findAllInCircle(FieldCoord fieldCoord, double searchRadius);
+    std::vector<Enemy*> findAllInCircle(sf::Vector2f circleCenter, double searchRadius);
 
 private:
     void update();

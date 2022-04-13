@@ -25,6 +25,6 @@ void FieldCell::draw(){
     // text.loadFromImage(image);
 }
 
-sf::Vector2f FieldCell::getCenter(){
+sf::Vector2f FieldCell::getCenter()const{
     return getPosition() + sf::Vector2f{ getSize().x / 2, getSize().y / 2 };
 }

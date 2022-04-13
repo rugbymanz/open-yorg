@@ -16,7 +16,7 @@ public:
     void draw() override;
     void update();
 protected:
-    sf::Vector2f getCenter() override;
+    sf::Vector2f getCenter() const override;
     void move_() override;
 
 private:

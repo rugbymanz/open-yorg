@@ -13,7 +13,7 @@ CanDamage::CanDamage(FieldCoord aim_, double damage, int damageRadius_) : damage
 int CanDamage::getDamageRadiusi() {
 	return Algorithms::doubleDamageRadiusToInt(damageRadius);
 }
-int CanDamage::getDamageRadiusd() {
+double CanDamage::getDamageRadiusd() {
 	return damageRadius;
 }
 FieldCoord CanDamage::getAimFieldCoord() {

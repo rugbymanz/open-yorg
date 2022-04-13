@@ -18,4 +18,6 @@ namespace Algorithms {
 
     int doubleDamageRadiusToInt(double damageRadius);
     double intDamageRadiusToDouble(int damageRadius);
+
+    bool belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius);
 }
