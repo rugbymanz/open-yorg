@@ -2,3 +2,7 @@ x64/
 .vs/
 ms_tests/
 Debug/
+.sconsign.dblite
+compile_commands.json
+build/
+.cache/
