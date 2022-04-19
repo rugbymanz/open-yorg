@@ -1,7 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics/CircleShape.hpp>
-
 #include "Building.hpp"
 #include "Can/CanShoot.hpp"
 #include "Can/CanStore.hpp"
