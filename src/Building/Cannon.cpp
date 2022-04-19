@@ -4,7 +4,7 @@
 #include "Enemy/Enemy.hpp"
 
 Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, DamageCircles &damageCircles) : enemies{ enemies_ }, Building{ fieldCoord_ }, CanShoot{ NONE_VECTOR2F, NONE, NONE }, bullets{ bullets }, damageCircles{damageCircles} {
-    setDamageRadiusi(3);
+    setDamageRadius(3);
     text.setString("C");
     renderTexture.draw(text);
 
@@ -28,7 +28,7 @@ void Cannon::draw() {
 
 void Cannon::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new CannonBall{ getCenter(), getAimVector2f(), damage, getDamageRadiusd(), damageCircles, enemies });
+    bullets.append(new CannonBall{ getCenter(), enemies.findNearest(getCoord(), getDamageRadius<double>()).getCenter(), damage, getDamageRadius<double>(), damageCircles, enemies });
 }
 
 sf::Vector2f Cannon::getCenter() const {

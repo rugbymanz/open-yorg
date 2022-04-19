@@ -15,7 +15,7 @@ Bullet::Bullet(sf::Vector2f spawnPosition, sf::Vector2f aim, double damage, doub
 void Bullet::init(sf::Vector2f spawnPosition) {
     setRadius(CELL_LENGTH / 4.);
     setPosition(spawnPosition - sf::Vector2f{ getRadius(), getRadius() });
-    setMovementAzimuth(this->getCenter(), getAimVector2f());
+    setMovementAzimuth(this->getCenter(), getAimCoord<sf::Vector2f>());
     setOutlineColor(sf::Color::Black);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setTexture(&renderTexture.getTexture());

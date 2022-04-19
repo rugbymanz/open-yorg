@@ -33,7 +33,7 @@ void Enemy::move_() {
         setMovementAzimuth(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord));
         if (field.get(nextMoveFieldCoord).isDestructable) {
             attacking = true;
-            setAimFieldCoord(nextMoveFieldCoord);
+            setAimCoord(nextMoveFieldCoord);
         }
     }
     else {
@@ -46,7 +46,7 @@ void Enemy::update(){
     if (!attacking)
         move_();
     else {
-        if (static_cast<Building&>(field.get(getAimFieldCoord())).getHp() > 0)
+        if (static_cast<Building&>(field.get(getAimCoord<FieldCoord>())).getHp() > 0)
             attack();
         else
             attacking = false;
@@ -56,7 +56,7 @@ void Enemy::update(){
 
 void Enemy::shootAim() {
     CanShoot::shootAim();
-    bullets.append(new EnemyBullet{ getCenter(), getAimFieldCoord(), damage, field, getDamageRadiusi(), damageCircles });
+    bullets.append(new EnemyBullet{ getCenter(), getAimCoord<FieldCoord>(), damage, field, getDamageRadius<int>(), damageCircles });
 }
 
 sf::Vector2f Enemy::getCenter()const{

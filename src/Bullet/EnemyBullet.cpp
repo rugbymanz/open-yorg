@@ -9,9 +9,9 @@ EnemyBullet::EnemyBullet(sf::Vector2f spawnPosition, FieldCoord aim, double dama
 
 void EnemyBullet::move_(){
     Bullet::move_();
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), getAimVector2f());
+    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), getAimCoord<sf::Vector2f>());
     if (abs(distance.x) < speed && abs(distance.y) < speed) {
-        damageCircles.append(new EnemyDamageCircle(getAimFieldCoord(), damage, getDamageRadiusi(), field));
+        damageCircles.append(new EnemyDamageCircle(getAimCoord<FieldCoord>(), damage, getDamageRadius<int>(), field));
         deleted = true;
     }
 }

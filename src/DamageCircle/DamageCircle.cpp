@@ -12,8 +12,8 @@ DamageCircle::DamageCircle(FieldCoord aim, double damage, int damageRadius) : Ca
 }
 
 void DamageCircle::init() {
-    setRadius(getDamageRadiusd());
-    setPosition(getAimVector2f() - sf::Vector2f{ getRadius(), getRadius() });
+    setRadius(getDamageRadius<double>());
+    setPosition(getAimCoord<sf::Vector2f>() - sf::Vector2f{ getRadius(), getRadius() });
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setFillColor(sf::Color{ 255, 0, 0, 125 });

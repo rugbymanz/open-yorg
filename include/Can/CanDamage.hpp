@@ -9,15 +9,17 @@ public:
     CanDamage(sf::Vector2f aim, double damage, double damageRadius);
     CanDamage(FieldCoord aim, double damage, int damageRadius);
 
-    int getDamageRadiusi();
-    double getDamageRadiusd();
-    FieldCoord getAimFieldCoord();
-    sf::Vector2f getAimVector2f();
+    template<class T>
+    T getDamageRadius();
 
-    void setDamageRadiusi(int damageRadius);
-    void setDamageRadiusd(double damageRadius);
-    void setAimFieldCoord(FieldCoord aim);
-    void setAimVector2f(sf::Vector2f aim);
+    template<class T>
+    T getAimCoord(); 
+
+	template<class T>
+    void setDamageRadius(T damageRadius);
+
+    template<class T>
+    void setAimCoord(T aim);
 
 private:
     double damageRadius = NONE;

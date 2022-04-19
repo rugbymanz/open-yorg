@@ -9,9 +9,9 @@ CannonBall::CannonBall(sf::Vector2f spawnPosition, sf::Vector2f aim_, double dam
 
 void CannonBall::move_() {
     Bullet::move_();
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), getAimVector2f());
+    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), getAimCoord<sf::Vector2f>());
     if (abs(distance.x) < speed && abs(distance.y) < speed) {
-        damageCircles.append(new BuildingDamageCircle(getAimVector2f(), damage, getDamageRadiusd(), enemies));
+        damageCircles.append(new BuildingDamageCircle(getAimCoord<sf::Vector2f>(), damage, getDamageRadius<double>(), enemies));
         deleted = true;
     }
 }
