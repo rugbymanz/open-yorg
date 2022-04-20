@@ -31,6 +31,6 @@ private:
     Bullets &bullets;
     DamageCircles &damageCircles;
     
-    void move_();
+    void move_() override;
     void shootAim()override;
 };

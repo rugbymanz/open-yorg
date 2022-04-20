@@ -11,9 +11,9 @@
             "program": "${workspaceFolder}/build/open-yorg.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/build",
             "environment": [],
-            "console": "externalTerminal"
+            "console": "integratedTerminal"
         },
         {
             "type": "lldb",

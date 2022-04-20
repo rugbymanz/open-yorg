@@ -9,7 +9,7 @@
 
 Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, int damageRadius, DamageCircles &damageCircles_) : damageCircles{ damageCircles_ }, bullets { bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{ field } {
     setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
-    setRadius(CELL_LENGTH / 2);
+    setRadius(CELL_LENGTH / static_cast<double>(2));
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setTexture(&renderTexture.getTexture());
@@ -43,15 +43,20 @@ void Enemy::move_() {
 }
 
 void Enemy::update(){
+	if (getHp() <= 0){
+		deleted = true;
+        return;
+    }
     if (!attacking)
         move_();
     else {
-        if (static_cast<Building&>(field.get(getAimCoord<FieldCoord>())).getHp() > 0)
-            attack();
+        if (static_cast<Building&>(field.get(getAimCoord<FieldCoord>())).getHp() > 0){
+            if(isTimeToAttack())
+                attack();
+        }
         else
             attacking = false;
     }
-    // moveSprite
 }
 
 void Enemy::shootAim() {

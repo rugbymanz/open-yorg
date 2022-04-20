@@ -7,17 +7,19 @@ Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, Dam
     setDamageRadius(3);
     text.setString("C");
     renderTexture.draw(text);
-
-    
+	fireRate = 2;
+    damage = 4;
 }
 
 void Cannon::update() {
-    if (attacking) {
-        if (aim->getHp() > 0)
-            attack();
-        else
-            attacking = false;
+	if (getHp() <= 0){
+		deleted = true;
+        return;
     }
+    std::vector<Enemy*> enemiesInDamageCircle = enemies.findAllInCircle(getCenter(), getDamageRadius<double>());
+    if(enemiesInDamageCircle.size())
+        if( isTimeToAttack() )
+            attack();
 }
 
 void Cannon::draw() {

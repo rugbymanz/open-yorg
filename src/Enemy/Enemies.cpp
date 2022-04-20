@@ -11,8 +11,15 @@ Enemy *Enemies::append(Enemy *enemy) {
 }
 
 void Enemies::update() {
-    for (auto &el : enemies) 
-        el->update();
+    for (auto &enemy : enemies) {
+        if(enemy->deleted){
+            delete enemy;
+            enemy = nullptr;
+            continue;
+        }
+        enemy->update();
+    }
+    enemies.remove(nullptr);
 }
 
 void Enemies::draw() {
@@ -48,11 +55,12 @@ Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
 
 std::vector<Enemy *> Enemies::findAllInCircle(sf::Vector2f circleCenter, double searchRadius) {
     std::vector<Enemy *> enemiesInCircle;
-    std::copy_if(enemies.begin(), enemies.end(), enemiesInCircle.begin(), [circleCenter, searchRadius](const Enemy *enemy) {
+    for(auto &enemy: enemies){
         sf::Vector2f distance = Algorithms::calculateDistanceVector(enemy->getCenter(), circleCenter);
         distance = { abs(distance.x), abs(distance.y) };
-        return (distance.x < searchRadius) && (distance.y < searchRadius);
-        });
+        if((distance.x < searchRadius) && (distance.y < searchRadius))
+            enemiesInCircle.push_back(enemy);
+    }
 
     return enemiesInCircle;
 }

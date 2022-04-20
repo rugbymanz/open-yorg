@@ -12,7 +12,7 @@ void CanShoot::shootAim() {
 void CanShoot::findAim() {
 
 }
-bool CanShoot::isTimeToShoot() {
+bool CanShoot::isTimeToAttack() {
 	if (fireRate < fireRateClock.getElapsedTime().asSeconds()) 
 		return true;
 	else
@@ -20,7 +20,5 @@ bool CanShoot::isTimeToShoot() {
 }
 
 void CanShoot::attack() {
-	if (isTimeToShoot()) {
-		shootAim();
-	}
+	shootAim();
 }

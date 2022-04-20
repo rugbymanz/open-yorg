@@ -10,7 +10,7 @@ public:
 	CanShoot(FieldCoord aim, double damage, int damageRadius);
 protected:
 	virtual void shootAim();
-	bool isTimeToShoot();
+	bool isTimeToAttack();
 	double fireRate = NONE;
 	bool attacking = false;
 	void attack();

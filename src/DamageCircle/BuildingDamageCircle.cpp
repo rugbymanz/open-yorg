@@ -10,7 +10,6 @@ BuildingDamageCircle::BuildingDamageCircle(sf::Vector2f aim, double damage, doub
 
 void BuildingDamageCircle::damageNear() {
     std::vector<Enemy*> enemiesInCircle = enemies.findAllInCircle(getCenter(), getRadius());
-    for (auto &el : enemiesInCircle) {
-        el->decreaseHp(damage);
-    }
+    for (auto &enemy : enemiesInCircle) 
+        enemy->decreaseHp(damage);
 }

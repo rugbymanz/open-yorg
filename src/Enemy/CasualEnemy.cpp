@@ -5,4 +5,5 @@ CasualEnemy::CasualEnemy(const FieldCoord &spawnPosition, Enemies &enemies, Path
 	enemies.append(this);
 	fireRate = 1;
 	speed = 0.01 * CELL_LENGTH;
+	setHp(12);
 }
