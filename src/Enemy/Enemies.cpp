@@ -30,9 +30,9 @@ void Enemies::draw() {
 Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
 
     return **std::min_element(enemies.begin(), enemies.end(), [fieldCoord](const Enemy *lhs, const Enemy *rhs) {
-        sf::Vector2f distanceLhs = Algorithms::calculateDistanceVector(lhs->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
+        sf::Vector2f distanceLhs = Algorithms::calculateDistanceVector(lhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
         distanceLhs = { abs(distanceLhs.x), abs(distanceLhs.y) };
-        sf::Vector2f distanceRhs = Algorithms::calculateDistanceVector(rhs->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
+        sf::Vector2f distanceRhs = Algorithms::calculateDistanceVector(rhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
         distanceRhs = { abs(distanceRhs.x), abs(distanceRhs.y) };
         return (distanceLhs.x < distanceRhs.x) && (distanceLhs.y < distanceRhs.y);
         });

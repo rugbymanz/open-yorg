@@ -8,12 +8,12 @@
 #include "Building/Building.hpp"
 
 Enemy::Enemy(const FieldCoord &spawnPosition, PathSearchField &pathSearchField, Bullets &bullets, double damage, Field &field, int damageRadius, DamageCircles &damageCircles_) : damageCircles{ damageCircles_ }, bullets { bullets }, pathSearchField{ pathSearchField }, CanShoot{ NONE_FIELD_CELL, damage, damageRadius }, field{ field } {
-    setPosition(Algorithms::mapFieldCoordToVector2f(spawnPosition));
+    setPosition(Algorithms::fieldCoordToVector2f(spawnPosition));
     setRadius(CELL_LENGTH / static_cast<double>(2));
     setOutlineColor(UNSELECTED);
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setTexture(&renderTexture.getTexture());
-    nextMoveFieldCoord = Algorithms::mapVector2fToFieldCoord(getCenter());
+    nextMoveFieldCoord = Algorithms::vector2fToFieldCoord(getCenter());
 
     text.setString("E");
     renderTexture.draw(text);
@@ -26,11 +26,11 @@ void Enemy::draw(){
 }
 
 void Enemy::move_() {
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord) );
+    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
     if (abs(distance.x) < speed && abs(distance.y) < speed) {
-        FieldCoord selfCoord = Algorithms::mapVector2fToFieldCoord(getCenter());
+        FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
         nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
-        setMovementAzimuth(getCenter(), Algorithms::mapFieldCoordToVector2fCentered(nextMoveFieldCoord));
+        setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
         if (field.get(nextMoveFieldCoord).isDestructable) {
             attacking = true;
             setAimCoord(nextMoveFieldCoord);

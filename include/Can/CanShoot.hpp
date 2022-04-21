@@ -3,6 +3,8 @@
 #include <SFML/System/Clock.hpp>
 
 #include "Can/CanDamage.hpp"
+#include "SFML/System/Vector2.hpp"
+#include "ValuesAndTypes.hpp"
 
 class CanShoot : public CanDamage {
 public:
@@ -14,8 +16,13 @@ protected:
 	double fireRate = NONE;
 	bool attacking = false;
 	void attack();
+	template<class T>
+	void setAttackRadius(T attackRadius);
+	template<class T>
+	T getAttackRadius();
 private:
 	sf::Clock fireRateClock;
+	double attackRadius = NONE;
 
 	void findAim();
 };

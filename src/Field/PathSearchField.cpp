@@ -15,7 +15,7 @@ PathSearchField::PathSearchField(Field &field) : field{ field } {
     {
         int i = 0;
         for (lemon::ListGraph::NodeIt it(graphField); it != lemon::INVALID; ++it, i++) {
-            FieldCoord fieldCoord = Algorithms::mapFlatIndexToFieldCoord(i);
+            FieldCoord fieldCoord = Algorithms::flatIndexToFieldCoord(i);
             nodeField[fieldCoord.x][fieldCoord.y] = it;
         }
     }

@@ -9,15 +9,15 @@ namespace Algorithms {
     sf::Vector2f calculateDistanceVector(const FieldCoord &from, const FieldCoord &to);
     sf::Vector2f calculateDistanceVector(const sf::Vector2f &from, const sf::Vector2f &to);
 
-    int mapFieldCoordToFlatIndex(const FieldCoord &fieldCoord);
-    FieldCoord mapFlatIndexToFieldCoord(const int index);
+    int fieldCoordToFlatIndex(const FieldCoord &fieldCoord);
+    FieldCoord flatIndexToFieldCoord(const int index);
 
-    FieldCoord mapVector2fToFieldCoord(const sf::Vector2f &floatFieldCoord);
-    sf::Vector2f mapFieldCoordToVector2f(const FieldCoord &fieldCoord);
-    sf::Vector2f mapFieldCoordToVector2fCentered(const FieldCoord &fieldCoord);
+    FieldCoord vector2fToFieldCoord(const sf::Vector2f &floatFieldCoord);
+    sf::Vector2f fieldCoordToVector2f(const FieldCoord &fieldCoord);
+    sf::Vector2f fieldCoordToVector2fCentered(const FieldCoord &fieldCoord);
 
-    int doubleDamageRadiusToInt(double damageRadius);
-    double intDamageRadiusToDouble(int damageRadius);
+    int doubleRadiusToInt(double damageRadius);
+    double intRadiusToDouble(int damageRadius);
 
     bool belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius);
 }

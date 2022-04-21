@@ -108,7 +108,7 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
 
 void Input::processMouseLeftClick(const sf::Vector2i &clickPosition){
     sf::Vector2f floatCoord = Game::window->mapPixelToCoords(clickPosition);
-    FieldCoord fieldCell = Algorithms::mapVector2fToFieldCoord(floatCoord);
+    FieldCoord fieldCell = Algorithms::vector2fToFieldCoord(floatCoord);
     std::cerr << std::endl << fieldCell.x << ' ' << fieldCell.y << ' ';
 
     if( (fieldCell.x < FIELD_LENGTH && floatCoord.x >= 0) && (fieldCell.y < FIELD_WIDTH && floatCoord.y >= 0) )

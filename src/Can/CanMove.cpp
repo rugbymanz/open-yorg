@@ -6,7 +6,7 @@ void CanMove::setMovementAzimuth(const sf::Vector2f spawnPosition, const sf::Vec
 }
 
 void CanMove::setMovementAzimuth(const FieldCoord spawnPosition, const FieldCoord aim) {
-	setMovementAzimuth(Algorithms::mapFieldCoordToVector2fCentered(spawnPosition), Algorithms::mapFieldCoordToVector2fCentered(aim));
+	setMovementAzimuth(Algorithms::fieldCoordToVector2fCentered(spawnPosition), Algorithms::fieldCoordToVector2fCentered(aim));
 }
 
 sf::Vector2f CanMove::getMovementVector() {

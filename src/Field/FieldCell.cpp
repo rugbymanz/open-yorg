@@ -11,7 +11,7 @@ FieldCell::FieldCell(const FieldCoord &fieldCoord){
 }
 
 void FieldCell::setCoord(const FieldCoord &fieldCoord){
-    setPosition(Algorithms::mapFieldCoordToVector2f(fieldCoord));
+    setPosition(Algorithms::fieldCoordToVector2f(fieldCoord));
     coord = fieldCoord;
 }
 

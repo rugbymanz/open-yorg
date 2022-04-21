@@ -9,6 +9,7 @@ Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, Dam
     renderTexture.draw(text);
 	fireRate = 2;
     damage = 4;
+    setAttackRadius(10);
 }
 
 void Cannon::update() {
@@ -16,7 +17,7 @@ void Cannon::update() {
 		deleted = true;
         return;
     }
-    std::vector<Enemy*> enemiesInDamageCircle = enemies.findAllInCircle(getCenter(), getDamageRadius<double>());
+    std::vector<Enemy*> enemiesInDamageCircle = enemies.findAllInCircle(getCenter(), getAttackRadius<double>());
     if(enemiesInDamageCircle.size())
         if( isTimeToAttack() )
             attack();
