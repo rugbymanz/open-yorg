@@ -10,6 +10,5 @@ if ret != 0:
 if not os.path.exists(os.path.abspath('./build/sfml-graphics-d-2.dll')):
     for file in libs: shutil.copy(file, './build/')
 if not os.path.exists(os.path.abspath('./build/resources')):
-    print(2)
     shutil.copytree('./resources/', './build/resources/')
 os.system('build\open-yorg.exe')

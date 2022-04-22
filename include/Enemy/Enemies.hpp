@@ -1,6 +1,6 @@
 #pragma once
 
-#include <forward_list>
+#include <list>
 
 #include "ValuesAndTypes.hpp"
 
@@ -14,7 +14,7 @@ public:
     std::vector<Enemy *> findAllInCircle(sf::Vector2f circleCenter, double searchRadius);
 
 private:
-    std::forward_list<Enemy*> enemies;
+    std::list<Enemy*> enemies;
 
     void update();
     void draw();

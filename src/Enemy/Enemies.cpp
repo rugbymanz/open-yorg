@@ -35,30 +35,20 @@ Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
         double distanceRhs = Algorithms::calculateEuclideanDistance(rhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
         return distanceLhs < distanceRhs;
         });
-
-    //Enemy *min_enemy = (*enemies.begin());
-    //sf::Vector2f min = (*enemies.begin())->getCenter();
-    //min = { abs(min.x), abs(min.y) };
-    //for (auto &enemy : enemies) {
-    //    sf::Vector2f distance = Algorithms::calculateDistanceVector(enemy->getCenter(), Algorithms::mapFieldCoordToVector2fCentered(fieldCoord));
-    //    distance = { abs(distance.x), abs(distance.y) };
-    //    if(distance.x < searchRadius && distance.x < searchRadius)
-    //        if (distance.x < min.x && distance.y < min.y) {
-    //            min = distance;
-    //            min_enemy = enemy;
-    //        }
-    //}
-
-    //return *min_enemy;
 }
 
 std::vector<Enemy *> Enemies::findAllInCircle(sf::Vector2f circleCenter, double searchRadius) {
     std::vector<Enemy *> enemiesInCircle;
-    for(auto &enemy: enemies){
+    std::copy_if(enemies.begin(), enemies.end(), std::inserter(enemiesInCircle, enemiesInCircle.begin()), [searchRadius, circleCenter](const Enemy *enemy){
         double distance = Algorithms::calculateEuclideanDistance(enemy->getCenter(), circleCenter);
-        if(distance < searchRadius)
-            enemiesInCircle.push_back(enemy);
-    }
-
+        return distance < searchRadius? true: false;
+    });
     return enemiesInCircle;
+    // for(auto &enemy: enemies){
+    //     double distance = Algorithms::calculateEuclideanDistance(enemy->getCenter(), circleCenter);
+    //     if(distance < searchRadius)
+    //         enemiesInCircle.push_back(enemy);
+    // }
+
+    // return enemiesInCircle;
 }
