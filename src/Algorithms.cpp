@@ -2,6 +2,7 @@
 #include <math.h>
 
 #include "Algorithms.hpp"
+#include "ValuesAndTypes.hpp"
 
 double Algorithms::calculateAzimuth(const sf::Vector2f &from, const sf::Vector2f &to) {
     return atan2(to.y - from.y, to.x - from.x);
@@ -55,6 +56,17 @@ double Algorithms::intRadiusToDouble(int damageRadius) {
 }
 
 bool Algorithms::belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius) {
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(point, center);
-    return ((abs(distance.x) < radius) && (abs(distance.y) < radius));
+    return calculateEuclideanDistance(point, center) < radius;
+}
+
+bool Algorithms::belongsToCircle(FieldCoord point, FieldCoord center, int radius) {
+    return belongsToCircle(fieldCoordToVector2fCentered(point), fieldCoordToVector2fCentered(center), intRadiusToDouble(radius));
+}
+
+double Algorithms::calculateManhattanDistance( const sf::Vector2f &from, const sf::Vector2f &to){
+    return abs(to.x - from.x);
+}
+
+double Algorithms::calculateEuclideanDistance( const sf::Vector2f &from, const sf::Vector2f &to){
+    return sqrt((to.x - from.x) * (to.x - from.x) + (to.y - from.y) * (to.y - from.y));
 }

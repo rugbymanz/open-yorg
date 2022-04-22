@@ -2,6 +2,7 @@
 #include "Algorithms.hpp"
 #include "DamageCircle/BuildingDamageCircle.hpp"
 #include "DamageCircle/DamageCircles.hpp"
+#include "SFML/System/Vector2.hpp"
 
 CannonBall::CannonBall(sf::Vector2f spawnPosition, sf::Vector2f aim_, double damage, double damageRadius, DamageCircles &damgeCircles_, Enemies &enemies) : damageCircles{ damgeCircles_ }, Bullet{ spawnPosition, aim_, damage, damageRadius }, enemies{ enemies } {
     speed = 0.01 * CELL_LENGTH;
@@ -9,8 +10,7 @@ CannonBall::CannonBall(sf::Vector2f spawnPosition, sf::Vector2f aim_, double dam
 
 void CannonBall::move_() {
     Bullet::move_();
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), getAimCoord<sf::Vector2f>());
-    if (abs(distance.x) < speed && abs(distance.y) < speed) {
+    if (Algorithms::calculateEuclideanDistance(getCenter(), getAimCoord<sf::Vector2f>()) < speed) {
         damageCircles.append(new BuildingDamageCircle(getAimCoord<sf::Vector2f>(), damage, getDamageRadius<double>(), enemies));
         deleted = true;
     }

@@ -3,7 +3,7 @@
 #include "Field/Field.hpp"
 #include "Field/EmptyFieldCell.hpp"
 
-Field::Field() : pathSearchField{*this} {
+Field::Field() : pathSearchField{*this}, road(*this) {
     srand(time(0));
 
     field.resize(FIELD_LENGTH);
@@ -25,6 +25,7 @@ Field::Field() : pathSearchField{*this} {
 void Field::tick(){
     update();
     pathSearchField.update();
+    road.update();
     draw();
 }
 

@@ -35,8 +35,8 @@ void ResourceBall::update(){
 }
 
 void ResourceBall::findDestinationNode(){
-    destinationNode = road.findPath(currentNode, destination);
-    movementAzimuth = Algorithms::calculateAzimuth(currentNode, destinationNode);
+    // destinationNode = road.findPath(currentNode, destination);
+    // movementAzimuth = Algorithms::calculateAzimuth(currentNode, destinationNode);
 }
 
 void ResourceBall::findDestination(){

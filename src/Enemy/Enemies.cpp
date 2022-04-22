@@ -1,6 +1,7 @@
 #include "Enemy/Enemies.hpp"
 #include "Enemy/Enemy.hpp"
 #include "Algorithms.hpp"
+#include "SFML/System/Vector2.hpp"
 
 Enemies::Enemies() {
 }
@@ -30,11 +31,9 @@ void Enemies::draw() {
 Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
 
     return **std::min_element(enemies.begin(), enemies.end(), [fieldCoord](const Enemy *lhs, const Enemy *rhs) {
-        sf::Vector2f distanceLhs = Algorithms::calculateDistanceVector(lhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
-        distanceLhs = { abs(distanceLhs.x), abs(distanceLhs.y) };
-        sf::Vector2f distanceRhs = Algorithms::calculateDistanceVector(rhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
-        distanceRhs = { abs(distanceRhs.x), abs(distanceRhs.y) };
-        return (distanceLhs.x < distanceRhs.x) && (distanceLhs.y < distanceRhs.y);
+        double distanceLhs = Algorithms::calculateEuclideanDistance(lhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
+        double distanceRhs = Algorithms::calculateEuclideanDistance(rhs->getCenter(), Algorithms::fieldCoordToVector2fCentered(fieldCoord));
+        return distanceLhs < distanceRhs;
         });
 
     //Enemy *min_enemy = (*enemies.begin());
@@ -56,9 +55,8 @@ Enemy &Enemies::findNearest(FieldCoord fieldCoord, double searchRadius) {
 std::vector<Enemy *> Enemies::findAllInCircle(sf::Vector2f circleCenter, double searchRadius) {
     std::vector<Enemy *> enemiesInCircle;
     for(auto &enemy: enemies){
-        sf::Vector2f distance = Algorithms::calculateDistanceVector(enemy->getCenter(), circleCenter);
-        distance = { abs(distance.x), abs(distance.y) };
-        if((distance.x < searchRadius) && (distance.y < searchRadius))
+        double distance = Algorithms::calculateEuclideanDistance(enemy->getCenter(), circleCenter);
+        if(distance < searchRadius)
             enemiesInCircle.push_back(enemy);
     }
 

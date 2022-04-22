@@ -8,6 +8,8 @@ namespace Algorithms {
 
     sf::Vector2f calculateDistanceVector(const FieldCoord &from, const FieldCoord &to);
     sf::Vector2f calculateDistanceVector(const sf::Vector2f &from, const sf::Vector2f &to);
+    double calculateManhattanDistance( const sf::Vector2f &from, const sf::Vector2f &to);
+    double calculateEuclideanDistance( const sf::Vector2f &from, const sf::Vector2f &to);
 
     int fieldCoordToFlatIndex(const FieldCoord &fieldCoord);
     FieldCoord flatIndexToFieldCoord(const int index);
@@ -20,4 +22,5 @@ namespace Algorithms {
     double intRadiusToDouble(int damageRadius);
 
     bool belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius);
+    bool belongsToCircle(FieldCoord point, FieldCoord center, int radius);
 }

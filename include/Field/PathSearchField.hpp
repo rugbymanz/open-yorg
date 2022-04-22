@@ -7,7 +7,6 @@
 #include "ValuesAndTypes.hpp"
 
 class Field;
-class FieldCell;
 
 class PathSearchField{
 public:
