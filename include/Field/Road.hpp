@@ -11,6 +11,7 @@ class Road{
 public:
     Road(Field &field);
     void update();
+    void draw();
 
 private:
     Field &field;
@@ -21,4 +22,5 @@ private:
     lemon::ListDigraph::NodeMap<FieldCoord> coordMap{ graphField };
 
     void connect(lemon::ListDigraph::NodeIt node);
+    void drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt);
 };

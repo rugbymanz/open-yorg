@@ -1,4 +1,7 @@
 #include "Field/Road.hpp"
+#include "SFML/Graphics/PrimitiveType.hpp"
+#include "SFML/Graphics/Vertex.hpp"
+#include "SFML/System/Vector2.hpp"
 #include "ValuesAndTypes.hpp"
 #include "Field/Field.hpp"
 #include "Field/FieldCell.hpp"
@@ -7,6 +10,7 @@
 #include "lemon/core.h"
 #include "lemon/list_graph.h"
 #include <algorithm>
+#include "Game.hpp"
 
 Road::Road(Field &field): field{field}{
     nodeField.resize(FIELD_LENGTH);
@@ -42,7 +46,19 @@ void Road::update(){
                 nodeFilter[node] = true;
                 connect(node);
             }
-    std::cout << lemon::countArcs(subGraphField) << std::endl;
+}
+
+void Road::draw(){
+    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(subGraphField); it != lemon::INVALID; ++it)
+        drawArc(it);
+}
+
+void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt)
+{
+    lemon::ListDigraph::Node sourceNode = subGraphField.source(arcIt);
+    lemon::ListDigraph::Node targetNode = subGraphField.target(arcIt);
+    sf::Vertex line[] = { sf::Vertex{Algorithms::fieldCoordToVector2fCentered(coordMap[sourceNode])}, sf::Vertex{ Algorithms::fieldCoordToVector2fCentered(coordMap[targetNode])}};
+    Game::window->draw(line, 2, sf::Lines);
 }
 
 void Road::connect(lemon::ListDigraph::NodeIt node){

@@ -27,6 +27,7 @@ void Field::tick(){
     pathSearchField.update();
     road.update();
     draw();
+    road.draw();
 }
 
 void Field::update(){
