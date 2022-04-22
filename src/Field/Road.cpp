@@ -1,5 +1,7 @@
 #include "Field/Road.hpp"
+#include "SFML/Graphics/Color.hpp"
 #include "SFML/Graphics/PrimitiveType.hpp"
+#include "SFML/Graphics/RectangleShape.hpp"
 #include "SFML/Graphics/Vertex.hpp"
 #include "SFML/System/Vector2.hpp"
 #include "ValuesAndTypes.hpp"
@@ -53,12 +55,19 @@ void Road::draw(){
         drawArc(it);
 }
 
-void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt)
-{
+void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt) {
     lemon::ListDigraph::Node sourceNode = subGraphField.source(arcIt);
     lemon::ListDigraph::Node targetNode = subGraphField.target(arcIt);
-    sf::Vertex line[] = { sf::Vertex{Algorithms::fieldCoordToVector2fCentered(coordMap[sourceNode])}, sf::Vertex{ Algorithms::fieldCoordToVector2fCentered(coordMap[targetNode])}};
-    Game::window->draw(line, 2, sf::Lines);
+    sf::Vector2f source = Algorithms::fieldCoordToVector2fCentered(coordMap[sourceNode]);
+    sf::Vector2f target = Algorithms::fieldCoordToVector2fCentered(coordMap[targetNode]);
+    float length = Algorithms::calculateEuclideanDistance(source, target);
+    float thickness = 1;
+    sf::RectangleShape line;
+    line.setSize({length, thickness});
+    line.setPosition(source);
+    line.setFillColor(sf::Color::Green);
+    line.setRotation(Algorithms::radiansToDegrees( Algorithms::calculateAzimuth(source, target) ));
+    Game::window->draw(line);
 }
 
 void Road::connect(lemon::ListDigraph::NodeIt node){

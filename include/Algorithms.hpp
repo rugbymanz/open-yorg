@@ -23,4 +23,6 @@ namespace Algorithms {
 
     bool belongsToCircle(sf::Vector2f point, sf::Vector2f center, double radius);
     bool belongsToCircle(FieldCoord point, FieldCoord center, int radius);
+
+    double radiansToDegrees( double radians);
 }

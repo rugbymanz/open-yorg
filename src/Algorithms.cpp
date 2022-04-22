@@ -1,4 +1,5 @@
 #include <SFML/System/Vector2.hpp>
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 #include "Algorithms.hpp"
@@ -69,4 +70,8 @@ double Algorithms::calculateManhattanDistance( const sf::Vector2f &from, const s
 
 double Algorithms::calculateEuclideanDistance( const sf::Vector2f &from, const sf::Vector2f &to){
     return sqrt((to.x - from.x) * (to.x - from.x) + (to.y - from.y) * (to.y - from.y));
+}
+
+double Algorithms::radiansToDegrees( double radians){
+    return radians * (180.0/M_PI);
 }
