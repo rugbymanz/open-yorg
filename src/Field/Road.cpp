@@ -14,7 +14,7 @@
 #include <algorithm>
 #include "Game.hpp"
 
-Road::Road(Field &field): field{field}{
+Road::Road(Field &field): Graph{field}{
     nodeField.resize(FIELD_LENGTH);
     for (int col = 0; col < FIELD_LENGTH; col++) {
         nodeField[col].resize(FIELD_WIDTH);

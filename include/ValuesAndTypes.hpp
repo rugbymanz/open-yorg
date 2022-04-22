@@ -7,7 +7,9 @@
 
 using FieldCoord = sf::Vector2i;
 using Azimuth = double;
-using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<lemon::ListGraph>, lemon::ListGraph::ArcMap<int> >;
+
+template<class GR>
+using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<GR>, typename GR::template ArcMap<int> >;
 
 #define NONE -1
 #define NONE_FIELD_CELL FieldCoord(-1, -1) 

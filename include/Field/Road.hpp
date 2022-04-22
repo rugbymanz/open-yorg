@@ -4,23 +4,15 @@
 #include <lemon/list_graph.h>
 
 #include "ValuesAndTypes.hpp"
+#include "Field/Graph.hpp"
 
-class Field;
-
-class Road{
+class Road: public Graph<lemon::ListDigraph>{
 public:
     Road(Field &field);
-    void update();
+    void update() override;
     void draw();
 
 private:
-    Field &field;
-    lemon::ListDigraph graphField;
-    lemon::ListDigraph::NodeMap<bool> nodeFilter{ graphField, false };
-    std::vector< std::vector<lemon::ListDigraph::NodeIt> > nodeField;
-    lemon::FilterNodes<lemon::ListDigraph> subGraphField{ graphField, nodeFilter };
-    lemon::ListDigraph::NodeMap<FieldCoord> coordMap{ graphField };
-
     void connect(lemon::ListDigraph::NodeIt node);
     void drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt);
 };

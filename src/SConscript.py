@@ -5,6 +5,7 @@ libs = ['sfml-graphics-d', 'sfml-system-d', 'sfml-window-d', 'lemon']
 cppflags = ['/std:c++17', '/MDd', '/EHs', '/Zi', '/Ob0', '/Od']
 linkflags =[  '/DEBUG:FULL']
 env = Environment(CPPPATH=system_include + include, LIBPATH = libpath, LIBS=libs, LINK = 'lld-link', CXX = 'clang-cl' )
+# env = Environment(CPPPATH=system_include + include, LIBPATH = libpath, LIBS=libs)
 env.Decider('MD5-timestamp')
 env.Tool('compilation_db')
 env.CompilationDatabase()
