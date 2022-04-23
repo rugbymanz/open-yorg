@@ -10,10 +10,16 @@ class Road;
 
 class ResourceBall: public CanMove, public Graphical, public sf::CircleShape{
 public:
-    bool isSupposedToBeDeleted = false;
+    bool deleted = false;
 
     ResourceBall(Road &road, const FieldCoord &source);
-    void create(ResourceBalls &resourceBalls, const size_t amount);
+protected:
+    virtual void findDestinationNode();
+    virtual void findDestination();
+    void increaseResource();
+    void erase();
+    void update();
+    void updatePosition();
 
 private:
     Road &road;
@@ -24,11 +30,4 @@ private:
     FieldCoord destinationNode = NONE_FIELD_CELL;
     FieldCoord currentNode = NONE_FIELD_CELL;
     Azimuth movementAzimuth = NONE;
-
-    void findDestinationNode();
-    void findDestination();
-    void increaseResource();
-    void erase();
-    void update();
-    void updatePosition();
 };
