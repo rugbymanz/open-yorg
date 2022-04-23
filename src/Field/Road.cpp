@@ -85,3 +85,32 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
         }
     }
 }
+
+FieldCoord Road::generatePath(const FieldCoord &source_){
+    if (source_ == NONE_FIELD_CELL) {
+        return NONE_FIELD_CELL;
+    }
+    lemon::ListDigraph::Node source(nodeField[source_.x][source_.y]);
+    FieldCoord basePosition = field.basePosition;
+    lemon::ListDigraph::Node destination(nodeField[basePosition.x][basePosition.y]);
+
+    lemon::FilterNodes<lemon::ListDigraph>::ArcMap<int> lengthMap(subGraphField);
+    for (lemon::ListDigraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
+        lengthMap[it] = 1;
+    dijkstra_t<lemon::ListDigraph> dijkstra{ subGraphField, lengthMap };
+    dijkstra.run(source, destination);
+
+    dijkstra_t<lemon::ListDigraph>::Path path{ dijkstra.path(destination) };
+    {
+        int pathLength = path.length();
+        if (pathLength == 1) {
+            return basePosition;
+        }
+        int pathLengthIndex = pathLength - 1;
+        dijkstra_t<lemon::ListDigraph>::Path::RevArcIt it(path);
+
+        for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
+        FieldCoord fieldCoord = getCoord(it);
+        return fieldCoord;
+    }
+}

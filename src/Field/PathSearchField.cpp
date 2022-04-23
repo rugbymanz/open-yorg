@@ -4,6 +4,7 @@
 #include "Algorithms.hpp"
 #include "Field/Field.hpp"
 #include "Field/FieldCell.hpp"
+#include "lemon/list_graph.h"
 
 PathSearchField::PathSearchField(Field &field) : Graph{ field } {
     nodeField.resize(FIELD_LENGTH);
@@ -44,4 +45,33 @@ void PathSearchField::update() {
                 nodeFilter[nodeField[col][row]] = false;
             else
                 nodeFilter[nodeField[col][row]] = true;
+}
+
+FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
+    if (source_ == NONE_FIELD_CELL) {
+        return NONE_FIELD_CELL;
+    }
+    lemon::ListGraph::Node source(nodeField[source_.x][source_.y]);
+    FieldCoord basePosition = field.basePosition;
+    lemon::ListGraph::Node destination(nodeField[basePosition.x][basePosition.y]);
+
+    lemon::FilterNodes<lemon::ListGraph>::ArcMap<int> lengthMap(subGraphField);
+    for (lemon::ListGraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
+        lengthMap[it] = 1;
+    dijkstra_t<lemon::ListGraph> dijkstra{ subGraphField, lengthMap };
+    dijkstra.run(source, destination);
+
+    dijkstra_t<lemon::ListGraph>::Path path{ dijkstra.path(destination) };
+    {
+        int pathLength = path.length();
+        if (pathLength == 1) {
+            return basePosition;
+        }
+        int pathLengthIndex = pathLength - 1;
+        dijkstra_t<lemon::ListGraph>::Path::RevArcIt it(path);
+
+        for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
+        FieldCoord fieldCoord = getCoord(it);
+        return fieldCoord;
+    }
 }

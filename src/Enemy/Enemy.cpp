@@ -29,7 +29,7 @@ void Enemy::move_() {
     sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
     if (abs(distance.x) < speed && abs(distance.y) < speed) {
         FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
-        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord, field.basePosition);
+        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
         setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
         if (field.get(nextMoveFieldCoord).isDestructable) {
             attacking = true;

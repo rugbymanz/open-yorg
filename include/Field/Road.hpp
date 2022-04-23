@@ -11,6 +11,7 @@ public:
     Road(Field &field);
     void update() override;
     void draw();
+    FieldCoord generatePath(const FieldCoord &source) override;
 
 private:
     void connect(lemon::ListDigraph::NodeIt node);

@@ -1,20 +1,12 @@
 #pragma once
 
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <vector>
 
 #include "ValuesAndTypes.hpp"
 #include "Graphical.hpp"
 
 class FieldCell: public sf::RectangleShape, public Graphical{
 public:
-    enum Compatibilities{
-        enemy,
-        wood,
-
-        n
-    };
-    std::vector<bool> isCompatibleWith = std::vector<bool>(Compatibilities::n, false);
     bool isEmpty = true;
     bool isDestructable = false;
     int connectionRadius = NONE;
