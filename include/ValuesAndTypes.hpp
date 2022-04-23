@@ -10,6 +10,12 @@ using Azimuth = double;
 
 template<class GR>
 using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<GR>, typename GR::template ArcMap<int> >;
+enum class ResourceType{
+	wood,
+	crystal,
+
+	none
+};
 
 #define NONE -1
 #define NONE_FIELD_CELL FieldCoord(-1, -1) 

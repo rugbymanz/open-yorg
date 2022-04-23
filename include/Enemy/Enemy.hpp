@@ -23,8 +23,6 @@ public:
     virtual void update();
     sf::Vector2f getCenter() const override;
 
-protected:
-    FieldCoord nextMoveFieldCoord;
 private:
     Field &field;
     PathSearchField &pathSearchField;

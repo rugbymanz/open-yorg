@@ -1,4 +1,5 @@
 #include "Resource/ResourceBalls.hpp"
+#include "Resource/ResourceBall.hpp"
 
 // void ResourceBalls::tick(){
 //     update();
@@ -6,11 +7,17 @@
 // }
 
 void ResourceBalls::update(){
-    // ResourceBall resourceBall;
-    // foreach field check buildingType
-    //     if(isResourceNearby())
-    //     resourceBall = ResourceBall(fieldCell);
-    //     resourceBall.create(number);
+    for (auto &el : resourceBalls) {
+        // if (el->deleted) {
+        //     delete el;
+        //     el = nullptr;
+        //     continue;
+        // }
+        el->update();
+        el->draw();
+    }
+
+    // bullets.remove(nullptr);
 }
 
 bool ResourceBalls::isResourceNearby(const FieldCell &fieldCell){
@@ -20,8 +27,6 @@ bool ResourceBalls::isResourceNearby(const FieldCell &fieldCell){
     return true;
 }
 
-void ResourceBalls::append(const size_t amount, const ResourceBall &resourceBall){
-    // for(int i = 0; i < amount; i++){
-    //     resourceBalls.push_back(ResourceBall)
-    // }
+void ResourceBalls::append(ResourceBall *resourceBall){
+    resourceBalls.push_front(resourceBall);
 }

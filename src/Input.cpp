@@ -2,6 +2,7 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include "Building/CrystalMine.hpp"
 #include "Input.hpp"
 #include "Game.hpp"
 #include "Algorithms.hpp"
@@ -11,12 +12,14 @@
 #include "Building/Mine.hpp"
 #include "Building/Cannon.hpp"
 
-Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_) : interface {interface}, 
+Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_, ResourceBalls &resourceBalls_, Road &road_) : interface {interface}, 
                                                                                                                                                         pathSearchField {pathSearchField},
                                                                                                                                                         field{field},
                                                                                                                                                         enemies{ enemies },
                                                                                                                                                         bullets{bullets},
-                                                                                                                                                        damageCircles{damageCircles_} {}
+                                                                                                                                                        damageCircles{damageCircles_},
+            resourceBalls{resourceBalls_},
+            road{road_}{}
 
 void Input::process(const sf::Event &event){
     if (event.type == sf::Event::Closed)
@@ -67,7 +70,7 @@ void Input::build(const sf::Keyboard::Key &key){
             new CasualEnemy{ interface.selectedCell, enemies, pathSearchField, bullets, field, damageCircles};
             break;
         case sf::Keyboard::M:
-            field.set(new Mine{ field, interface.selectedCell });
+            field.set(new CrystalMine{ field, interface.selectedCell, resourceBalls, road });
             break;
         case sf::Keyboard::C:
             field.set(new Cannon{ interface.selectedCell, enemies, bullets, damageCircles });

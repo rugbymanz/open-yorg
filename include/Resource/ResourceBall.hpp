@@ -4,6 +4,8 @@
 
 #include "Can/CanMove.hpp"
 #include "Graphical.hpp"
+#include "SFML/System/Vector2.hpp"
+#include "ValuesAndTypes.hpp"
 
 class ResourceBalls;
 class Road;
@@ -11,14 +13,17 @@ class Road;
 class ResourceBall: public CanMove, public Graphical, public sf::CircleShape{
 public:
     bool deleted = false;
+    ResourceType type = ResourceType::none;
 
-    ResourceBall(Road &road, const FieldCoord &source);
+    ResourceBall(Road &road, const FieldCoord &source, ResourceType type);
+    sf::Vector2f getCenter()const override;
+    void draw()override;
+    void update();
 protected:
     virtual void findDestinationNode();
     virtual void findDestination();
     void increaseResource();
     void erase();
-    void update();
     void updatePosition();
 
 private:
@@ -30,4 +35,6 @@ private:
     FieldCoord destinationNode = NONE_FIELD_CELL;
     FieldCoord currentNode = NONE_FIELD_CELL;
     Azimuth movementAzimuth = NONE;
+
+    void move_()override;
 };

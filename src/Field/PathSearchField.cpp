@@ -64,7 +64,7 @@ FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
     dijkstra_t<lemon::ListGraph>::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
-        if (pathLength == 1) {
+        if (pathLength == 0 || pathLength == 1) {
             return basePosition;
         }
         int pathLengthIndex = pathLength - 1;

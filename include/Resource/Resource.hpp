@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Field/FieldCell.hpp"
+#include "ValuesAndTypes.hpp"
 
 class Resource: public FieldCell{
 public:

@@ -6,6 +6,7 @@
 
 class Building: public FieldCell, public CanHaveHp{
 public:
+	ResourceType compatibleResource = ResourceType::none;
     Building(const FieldCoord &fieldCoord);
 public:
 	void update() override;

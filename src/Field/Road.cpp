@@ -103,7 +103,7 @@ FieldCoord Road::generatePath(const FieldCoord &source_){
     dijkstra_t<lemon::ListDigraph>::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
-        if (pathLength == 1) {
+        if (pathLength == 1 || pathLength == 0) {
             return basePosition;
         }
         int pathLengthIndex = pathLength - 1;

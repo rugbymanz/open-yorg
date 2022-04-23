@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include <list>
 
 class ResourceBall;
 class FieldCell;
@@ -8,11 +8,11 @@ class FieldCell;
 class ResourceBalls{
 public:
     void tick();
-    void append(const size_t amount, const ResourceBall &resourceBall);
+    void append(ResourceBall *resourceBall);
+    void update();
     
 private:
-    std::vector<ResourceBall*> resourceBalls;
+    std::list<ResourceBall*> resourceBalls;
 
-    void update();
     bool isResourceNearby(const FieldCell &fieldCell);
 };
