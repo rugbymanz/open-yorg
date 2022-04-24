@@ -1,4 +1,5 @@
 #include "Field/Road.hpp"
+#include "Building/Building.hpp"
 #include "SFML/Graphics/Color.hpp"
 #include "SFML/Graphics/PrimitiveType.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
@@ -91,20 +92,32 @@ std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, Resour
         return std::make_pair(NONE_FIELD_CELL, false);
     }
     lemon::ListDigraph::Node source(nodeField[source_.x][source_.y]);
-    FieldCoord basePosition = field.basePosition;
-    lemon::ListDigraph::Node destination(nodeField[basePosition.x][basePosition.y]);
 
     lemon::FilterNodes<lemon::ListDigraph>::ArcMap<int> lengthMap(subGraphField);
     for (lemon::ListDigraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
         lengthMap[it] = 1;
     dijkstra_t<lemon::ListDigraph> dijkstra{ subGraphField, lengthMap };
-    dijkstra.run(source, destination);
+    dijkstra.init();
+    dijkstra.addSource(source);
+    bool reachedDestination = false;
+    while(!reachedDestination){
+        lemon::ListDigraph::Node nextNode = dijkstra.nextNode();
+        if(nextNode == lemon::INVALID)
+            return std::make_pair(NONE_FIELD_CELL, false);
+        if(static_cast<Building&>(field.get(coordMap[nextNode])).compatibleResource == type)
+            reachedDestination = true;
+        else
+            dijkstra.processNextNode();
+    }
+
+    lemon::ListDigraph::Node destination = dijkstra.nextNode();
+    FieldCoord destinationCoord = field.get(coordMap[destination]).getCoord();
 
     dijkstra_t<lemon::ListDigraph>::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
 		if(pathLength <= 1){
-            return std::make_pair(basePosition, dijkstra.reached(destination));
+            return std::make_pair(destinationCoord, dijkstra.reached(destination));
         }
         int pathLengthIndex = pathLength - 1;
         dijkstra_t<lemon::ListDigraph>::Path::RevArcIt it(path);
