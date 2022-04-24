@@ -8,5 +8,5 @@ CrystalMine::CrystalMine(Field &field, const FieldCoord &fieldCoord, ResourceBal
 
 void CrystalMine::mine(){
 	Mine::mine();
-	resourceBalls.append(new ResourceBall{road, getCoord(), ResourceType::crystal});
+	resourceBalls.append(new ResourceBall{field, road, getCoord(), ResourceType::crystal});
 }

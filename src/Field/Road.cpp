@@ -86,9 +86,9 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
     }
 }
 
-FieldCoord Road::generatePath(const FieldCoord &source_){
+std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, ResourceType type){
     if (source_ == NONE_FIELD_CELL) {
-        return NONE_FIELD_CELL;
+        return std::make_pair(NONE_FIELD_CELL, false);
     }
     lemon::ListDigraph::Node source(nodeField[source_.x][source_.y]);
     FieldCoord basePosition = field.basePosition;
@@ -103,14 +103,14 @@ FieldCoord Road::generatePath(const FieldCoord &source_){
     dijkstra_t<lemon::ListDigraph>::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
-        if (pathLength == 1 || pathLength == 0) {
-            return basePosition;
+		if(pathLength <= 1){
+            return std::make_pair(basePosition, dijkstra.reached(destination));
         }
         int pathLengthIndex = pathLength - 1;
         dijkstra_t<lemon::ListDigraph>::Path::RevArcIt it(path);
 
         for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
         FieldCoord fieldCoord = getCoord(it);
-        return fieldCoord;
+        return std::make_pair(fieldCoord, true);
     }
 }

@@ -12,7 +12,6 @@ class Graph{
 public:
     Graph(Field &field);
     virtual void update() = 0;
-    virtual FieldCoord generatePath(const FieldCoord &source) = 0;
 
 protected:
     Field &field;

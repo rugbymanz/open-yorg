@@ -9,13 +9,14 @@
 
 class ResourceBalls;
 class Road;
+class Field;
 
 class ResourceBall: public CanMove, public Graphical, public sf::CircleShape{
 public:
     bool deleted = false;
     ResourceType type = ResourceType::none;
 
-    ResourceBall(Road &road, const FieldCoord &source, ResourceType type);
+    ResourceBall(Field &field, Road &road, const FieldCoord &source, ResourceType type);
     sf::Vector2f getCenter()const override;
     void draw()override;
     void update();
@@ -35,6 +36,11 @@ private:
     FieldCoord destinationNode = NONE_FIELD_CELL;
     FieldCoord currentNode = NONE_FIELD_CELL;
     Azimuth movementAzimuth = NONE;
+    bool fading = false;
+    Field &field;
 
     void move_()override;
+    void moveToNextNode();
+    void fade();
+    bool reachedDestination(FieldCoord &fieldCoord);
 };

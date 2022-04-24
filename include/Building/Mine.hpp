@@ -22,6 +22,7 @@ protected:
     double miningRate = NONE;
     ResourceBalls &resourceBalls;
     Road &road;
+    Field &field;
 
     virtual void mine();
 };

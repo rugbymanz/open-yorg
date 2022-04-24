@@ -2,9 +2,11 @@
 #include "Game.hpp"
 #include "Bullet/CannonBall.hpp"
 #include "Enemy/Enemy.hpp"
+#include "ValuesAndTypes.hpp"
 
 Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, DamageCircles &damageCircles) : enemies{ enemies_ }, Building{ fieldCoord_ }, CanShoot{ NONE_VECTOR2F, NONE, NONE }, bullets{ bullets }, damageCircles{damageCircles} {
     setDamageRadius(3);
+    compatibleResource = ResourceType::crystal;
     text.setString("C");
     renderTexture.draw(text);
 	fireRate = 2;

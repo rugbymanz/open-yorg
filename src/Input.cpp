@@ -3,6 +3,7 @@
 #include <SFML/Window/Event.hpp>
 
 #include "Building/CrystalMine.hpp"
+#include "Building/Transporter.hpp"
 #include "Input.hpp"
 #include "Game.hpp"
 #include "Algorithms.hpp"
@@ -75,6 +76,9 @@ void Input::build(const sf::Keyboard::Key &key){
         case sf::Keyboard::C:
             field.set(new Cannon{ interface.selectedCell, enemies, bullets, damageCircles });
             break;
+        case sf::Keyboard::T:
+            field.set(new Transporter{ interface.selectedCell });
+            break;
         }
 }
 
@@ -100,6 +104,7 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
     case sf::Keyboard::Key::E:
     case sf::Keyboard::Key::M:
     case sf::Keyboard::Key::C:
+    case sf::Keyboard::Key::T:
         build(key.code);
         break;
     default:
