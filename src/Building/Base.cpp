@@ -6,8 +6,7 @@
 #include "Game.hpp"
 #include "ValuesAndTypes.hpp"
 
-Base::Base(Field &field, const FieldCoord &fieldCoord): CanStore{fieldCoord}{
-    connectionRadius = 3;
+Base::Base(Field &field, const FieldCoord &fieldCoord): CanStore{fieldCoord, 3}{
     compatibleResource = ResourceType::crystal;
     text.setString("B");
     renderTexture.draw(text);

@@ -1,7 +1,7 @@
 #include "Field/FieldCell.hpp"
 #include "Algorithms.hpp"
 
-FieldCell::FieldCell(const FieldCoord &fieldCoord){
+FieldCell::FieldCell(const FieldCoord &fieldCoord, int connectionRadius_): connectionRadius{connectionRadius_}{
     setCoord(fieldCoord);
     setSize({CELL_LENGTH, CELL_WIDTH});
     setOutlineColor(UNSELECTED);

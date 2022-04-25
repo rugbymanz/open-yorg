@@ -5,6 +5,6 @@
 
 class CanStore: public Building{
 public:
-    CanStore(const FieldCoord &fieldCoord);
+    CanStore(const FieldCoord &fieldCoord, int connectionRadius);
     double storage = 0;
 };

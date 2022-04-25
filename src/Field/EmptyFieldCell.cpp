@@ -1,7 +1,8 @@
 #include "Field/EmptyFieldCell.hpp"
 #include "Game.hpp"
+#include "ValuesAndTypes.hpp"
 
-EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoord}{
+EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoord, NONE}{
 }
 
 #include <SFML/Graphics/Image.hpp>

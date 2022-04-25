@@ -11,7 +11,7 @@ public:
     bool isDestructable = false;
     int connectionRadius = NONE;
 
-    FieldCell(const FieldCoord &fieldCoord);
+    FieldCell(const FieldCoord &fieldCoord, int connectionRadius_);
     void setCoord(const FieldCoord &fieldCoord);
     FieldCoord getCoord();
     void draw()override;

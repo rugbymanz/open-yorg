@@ -7,7 +7,7 @@
 class Building: public FieldCell, public CanHaveHp{
 public:
 	ResourceType compatibleResource = ResourceType::none;
-    Building(const FieldCoord &fieldCoord);
+    Building(const FieldCoord &fieldCoord, int connectionRadius);
 public:
 	void update() override;
 

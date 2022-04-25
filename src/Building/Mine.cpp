@@ -2,7 +2,7 @@
 #include "Game.hpp"
 #include "Resource/ResourceBalls.hpp"
 
-Mine::Mine(Field &field, const FieldCoord &fieldCoord, double miningRate_, ResourceBalls &resourceBalls_, Road& road_) : resourceBalls{ resourceBalls_ },Building{ fieldCoord }, field{field}, miningRate{ miningRate_ }, road{ road_ } {
+Mine::Mine(Field &field, const FieldCoord &fieldCoord, double miningRate_, ResourceBalls &resourceBalls_, Road& road_) : resourceBalls{ resourceBalls_ },Building{ fieldCoord, 2 }, field{field}, miningRate{ miningRate_ }, road{ road_ } {
     text.setString("M");
     renderTexture.draw(text);
 }
