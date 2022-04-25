@@ -4,6 +4,7 @@
 #include "Algorithms.hpp"
 #include "Field/Road.hpp"
 #include "SFML/Graphics/Sprite.hpp"
+#include "SFML/System/Clock.hpp"
 #include "ValuesAndTypes.hpp"
 #include "Game.hpp"
 #include "Field/FieldCell.hpp"
@@ -25,14 +26,22 @@ ResourceBall::ResourceBall(Field &field_, Road &road, const FieldCoord &source, 
     renderTexture.draw(sf::Sprite(backgroundTexture));
 }
 
+ResourceBall::~ResourceBall(){
+    delete fadingClock;
+}
+
 void ResourceBall::fade(){
     setRandomMovementAzimuth();
+    fadingClock = new sf::Clock;
 }
 
 void ResourceBall::update(){
     double distance = Algorithms::calculateEuclideanDistance(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
     if (distance < speed && !fading) 
         findNextNode();
+    double fadingTime = 1.5;
+    if(fading && fadingTime < fadingClock->getElapsedTime().asSeconds())
+        deleted = true;
 	else
         move_();
 }

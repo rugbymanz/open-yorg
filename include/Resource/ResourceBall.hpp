@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/System/Clock.hpp>
 
 #include "Can/CanMove.hpp"
 #include "Graphical.hpp"
@@ -17,6 +18,7 @@ public:
     ResourceType type = ResourceType::none;
 
     ResourceBall(Field &field, Road &road, const FieldCoord &source, ResourceType type);
+    virtual ~ResourceBall();
     sf::Vector2f getCenter()const override;
     void draw()override;
     void update();
@@ -38,6 +40,7 @@ private:
     Azimuth movementAzimuth = NONE;
     Field &field;
     bool fading = false;
+    sf::Clock *fadingClock = nullptr;
 
     void move_()override;
     void fade();

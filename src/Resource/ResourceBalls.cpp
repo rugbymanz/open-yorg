@@ -8,16 +8,16 @@
 
 void ResourceBalls::update(){
     for (auto &el : resourceBalls) {
-        // if (el->deleted) {
-        //     delete el;
-        //     el = nullptr;
-        //     continue;
-        // }
+        if (el->deleted) {
+            delete el;
+            el = nullptr;
+            continue;
+        }
         el->update();
         el->draw();
     }
 
-    // bullets.remove(nullptr);
+    resourceBalls.remove(nullptr);
 }
 
 bool ResourceBalls::isResourceNearby(const FieldCell &fieldCell){
