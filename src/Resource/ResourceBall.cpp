@@ -18,7 +18,6 @@ ResourceBall::ResourceBall(Field &field_, Road &road, const FieldCoord &source, 
     setOutlineThickness(CELL_OUTLINE_THICKNESS);
     setTexture(&renderTexture.getTexture());
     nextMoveFieldCoord = Algorithms::vector2fToFieldCoord(getCenter());
-
     renderTexture.draw(text);
     sf::Image image;
     image.create(CELL_LENGTH, CELL_WIDTH, sf::Color::Magenta);
@@ -27,11 +26,15 @@ ResourceBall::ResourceBall(Field &field_, Road &road, const FieldCoord &source, 
 }
 
 void ResourceBall::fade(){
-    std::cout << "fading" << std::endl;
+    setRandomMovementAzimuth();
 }
 
 void ResourceBall::update(){
-    move_();
+    double distance = Algorithms::calculateEuclideanDistance(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
+    if (distance < speed && !fading) 
+        findNextNode();
+	else
+        move_();
 }
 
 void ResourceBall::draw(){
@@ -56,10 +59,8 @@ void ResourceBall::updatePosition(){
 }
 
 void ResourceBall::move_(){
-    if(fading)
-		fade();
-	else
-        moveToNextNode();
+    sf::Vector2f step = getMovementVector();
+    move(step);
 }
 
 bool ResourceBall::reachedDestination(FieldCoord &fieldCoord){
@@ -70,24 +71,19 @@ sf::Vector2f ResourceBall::getCenter()const{
     return getPosition() + sf::Vector2f{getRadius(), getRadius()};
 }
 
-void ResourceBall::moveToNextNode(){
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
-    if (abs(distance.x) < speed && abs(distance.y) < speed) {
-        FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
-        bool reached = false;
-        std::tie(nextMoveFieldCoord, reached) = road.generatePath(selfCoord, type);
-        if(!reached)
-            fading = true;
-		else if(reachedDestination(nextMoveFieldCoord)){
-            std::cout << "destination" << std::endl;
-            
-        }
-        else{
-            setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
-        }
+void ResourceBall::findNextNode(){
+    FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
+    bool reached = false;
+    std::tie(nextMoveFieldCoord, reached) = road.generatePath(selfCoord, type);
+    if(!reached){
+        fading = true;
+        fade();
     }
-    else {
-        sf::Vector2f step = getMovementVector();
-        move(step);
+    else if(reachedDestination(nextMoveFieldCoord)){
+        std::cout << "destination" << std::endl;
+        
+    }
+    else{
+        setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
     }
 }

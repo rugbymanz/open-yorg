@@ -36,11 +36,11 @@ private:
     FieldCoord destinationNode = NONE_FIELD_CELL;
     FieldCoord currentNode = NONE_FIELD_CELL;
     Azimuth movementAzimuth = NONE;
-    bool fading = false;
     Field &field;
+    bool fading = false;
 
     void move_()override;
-    void moveToNextNode();
     void fade();
     bool reachedDestination(FieldCoord &fieldCoord);
+    void findNextNode();
 };
