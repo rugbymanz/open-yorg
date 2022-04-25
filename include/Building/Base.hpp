@@ -5,7 +5,7 @@
 
 class Field;
 
-class Base: public Building, public CanStore{
+class Base: public CanStore{
 public:
     Base(Field &field, const FieldCoord &fieldCoord);
 

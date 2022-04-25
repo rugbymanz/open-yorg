@@ -9,7 +9,7 @@ class Enemy;
 class Bullets;
 class DamageCircles;
 
-class Cannon: public Building, public CanShoot, public CanStore{
+class Cannon: public CanStore, public CanShoot{
 public:
     Cannon(FieldCoord &fieldCoord, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles);
     void draw() override;

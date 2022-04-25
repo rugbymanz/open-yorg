@@ -1,4 +1,5 @@
 #include "Resource/ResourceBall.hpp"
+#include "Can/CanStore.hpp"
 #include "Graphical.hpp"
 #include "Resource/ResourceBalls.hpp"
 #include "Algorithms.hpp"
@@ -59,6 +60,7 @@ void ResourceBall::findDestination(){
 }
 
 void ResourceBall::increaseResource(){
+    static_cast<CanStore&>(field.get(nextMoveFieldCoord)).storage++;
 }
 
 void ResourceBall::erase(){
@@ -89,8 +91,8 @@ void ResourceBall::findNextNode(){
         fade();
     }
     else if(reachedDestination(nextMoveFieldCoord)){
-        std::cout << "destination" << std::endl;
-        
+        increaseResource();
+        deleted = true;
     }
     else{
         setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));

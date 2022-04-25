@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Building/Building.hpp"
 #include "ValuesAndTypes.hpp"
 
-class CanStore{
+class CanStore: public Building{
 public:
-    double storage = NONE;
+    CanStore(const FieldCoord &fieldCoord);
+    double storage = 0;
 };
