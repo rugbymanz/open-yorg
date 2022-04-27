@@ -1,8 +1,7 @@
 #include "Building/Building.hpp"
 
 Building::Building(const FieldCoord &fieldCoord, int connectionRadius): FieldCell{fieldCoord, connectionRadius}{
-	isDestructable = true;
-	isEmpty = false;
+	fieldCellType = FieldCellType::building;
 	setHp(12);
 }
 

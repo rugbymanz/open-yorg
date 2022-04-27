@@ -7,8 +7,13 @@
 
 class FieldCell: public sf::RectangleShape, public Graphical{
 public:
-    bool isEmpty = true;
-    bool isDestructable = false;
+    enum class FieldCellType{
+        empty,
+        building,
+        resource,
+
+        none
+    } fieldCellType = FieldCellType::none;
     int connectionRadius = NONE;
 
     FieldCell(const FieldCoord &fieldCoord, int connectionRadius_);

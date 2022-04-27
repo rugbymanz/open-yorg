@@ -4,6 +4,7 @@
 
 #include "Building/CrystalMine.hpp"
 #include "Building/Transporter.hpp"
+#include "Field/FieldCell.hpp"
 #include "Input.hpp"
 #include "Game.hpp"
 #include "Algorithms.hpp"
@@ -37,7 +38,7 @@ void Input::process(const sf::Event &event){
 }
 
 bool Input::isValidBuildingPosition(const FieldCoord &position){
-    return field.get(position).isEmpty;
+    return field.get(position).fieldCellType == FieldCell::FieldCellType::empty;
 }
 
 void Input::processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton){

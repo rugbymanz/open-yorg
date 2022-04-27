@@ -3,6 +3,7 @@
 #include "ValuesAndTypes.hpp"
 
 EmptyFieldCell::EmptyFieldCell(const FieldCoord &fieldCoord): FieldCell{fieldCoord, NONE}{
+    fieldCellType = FieldCellType::empty;
 }
 
 #include <SFML/Graphics/Image.hpp>

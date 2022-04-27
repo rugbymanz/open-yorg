@@ -45,7 +45,7 @@ void Road::update(){
         subGraphField.erase(arc);
     for(int col = 0; col < FIELD_LENGTH; col++)
         for(int row = 0; row < FIELD_WIDTH; row++)
-			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; !field.get({col, row}).isEmpty){
+			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; field.get({col, row}).fieldCellType != FieldCell::FieldCellType::empty){
                 nodeFilter[node] = true;
                 connect(node);
             }
@@ -53,7 +53,7 @@ void Road::update(){
 
 bool Road::mineHasResource(const FieldCoord &source, ResourceType type){
     for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc){
-		if(FieldCell &fieldCell = field.get(coordMap[subGraphField.source(arc)]); !fieldCell.isEmpty && !fieldCell.isDestructable && static_cast<Resource&>(fieldCell).type == type && Algorithms::belongsToCircle(fieldCell.getCoord(), source, 2))
+		if(FieldCell &fieldCell = field.get(coordMap[subGraphField.source(arc)]); fieldCell.fieldCellType == FieldCell::FieldCellType::resource && static_cast<Resource&>(fieldCell).resourceType == type && Algorithms::belongsToCircle(fieldCell.getCoord(), source, 2))
             return true;
     }
     return false;

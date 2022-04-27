@@ -5,7 +5,7 @@
 
 class Resource: public FieldCell{
 public:
-    ResourceType type{ ResourceType::none };
+    ResourceType resourceType{ ResourceType::none };
 
     Resource(const FieldCoord &fieldCoord);
 

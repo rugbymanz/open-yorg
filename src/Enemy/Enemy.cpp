@@ -31,7 +31,7 @@ void Enemy::move_() {
         FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
         nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
         setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
-        if (field.get(nextMoveFieldCoord).isDestructable) {
+        if (field.get(nextMoveFieldCoord).fieldCellType == FieldCell::FieldCellType::building) {
             attacking = true;
             setAimCoord(nextMoveFieldCoord);
         }

@@ -4,7 +4,7 @@
 Crystal::Crystal(const FieldCoord &fieldCoord): Resource{fieldCoord}{
     text.setString("R");
     renderTexture.draw(text);
-    type = ResourceType::crystal;
+    resourceType = ResourceType::crystal;
 }
 
 void Crystal::draw() {

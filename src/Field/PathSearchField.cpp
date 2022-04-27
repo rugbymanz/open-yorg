@@ -41,7 +41,7 @@ PathSearchField::PathSearchField(Field &field) : Graph{ field } {
 void PathSearchField::update() {
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
-            if (FieldCell &fieldCell = field.get({ col, row }); !fieldCell.isEmpty && !fieldCell.isDestructable)
+            if (FieldCell &fieldCell = field.get({ col, row }); fieldCell.fieldCellType == FieldCell::FieldCellType::resource)
                 nodeFilter[nodeField[col][row]] = false;
             else
                 nodeFilter[nodeField[col][row]] = true;
