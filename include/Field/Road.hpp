@@ -14,6 +14,7 @@ public:
     void update() override;
     void draw();
     std::pair<FieldCoord, bool> generatePath(const FieldCoord &source, ResourceType type);
+    bool mineHasResource(const FieldCoord &source, ResourceType type);
 
 private:
     void connect(lemon::ListDigraph::NodeIt node);

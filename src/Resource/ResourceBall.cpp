@@ -25,6 +25,8 @@ ResourceBall::ResourceBall(Field &field_, Road &road, const FieldCoord &source, 
     image.create(CELL_LENGTH, CELL_WIDTH, sf::Color::Magenta);
     backgroundTexture.loadFromImage(image);
     renderTexture.draw(sf::Sprite(backgroundTexture));
+    if(!road.mineHasResource(source, type))
+        fade();
 }
 
 ResourceBall::~ResourceBall(){
@@ -33,6 +35,7 @@ ResourceBall::~ResourceBall(){
 
 void ResourceBall::fade(){
     setRandomMovementAzimuth();
+    fading = true;
     fadingClock = new sf::Clock;
 }
 
@@ -86,10 +89,8 @@ void ResourceBall::findNextNode(){
     FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
     bool reached = false;
     std::tie(nextMoveFieldCoord, reached) = road.generatePath(selfCoord, type);
-    if(!reached){
-        fading = true;
+    if(!reached)
         fade();
-    }
     else if(reachedDestination(nextMoveFieldCoord)){
         increaseResource();
         deleted = true;

@@ -5,6 +5,8 @@
 
 class Resource: public FieldCell{
 public:
+    ResourceType type{ ResourceType::none };
+
     Resource(const FieldCoord &fieldCoord);
 
     void update()override;

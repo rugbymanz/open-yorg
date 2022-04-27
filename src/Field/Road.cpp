@@ -1,5 +1,6 @@
 #include "Field/Road.hpp"
 #include "Building/Building.hpp"
+#include "Resource/Resource.hpp"
 #include "SFML/Graphics/Color.hpp"
 #include "SFML/Graphics/PrimitiveType.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
@@ -40,15 +41,22 @@ Road::Road(Field &field): Graph{field}{
 
 
 void Road::update(){
-    for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt it(subGraphField); it != lemon::INVALID; ++it)
-        if(!field.get(coordMap[it]).isDestructable)
-            nodeFilter[it] = false;
+    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc)
+        subGraphField.erase(arc);
     for(int col = 0; col < FIELD_LENGTH; col++)
         for(int row = 0; row < FIELD_WIDTH; row++)
-			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; field.get({col, row}).isDestructable && !nodeFilter[node]){
+			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; !field.get({col, row}).isEmpty){
                 nodeFilter[node] = true;
                 connect(node);
             }
+}
+
+bool Road::mineHasResource(const FieldCoord &source, ResourceType type){
+    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc){
+		if(FieldCell &fieldCell = field.get(coordMap[subGraphField.source(arc)]); !fieldCell.isEmpty && !fieldCell.isDestructable && static_cast<Resource&>(fieldCell).type == type && Algorithms::belongsToCircle(fieldCell.getCoord(), source, 2))
+            return true;
+    }
+    return false;
 }
 
 void Road::draw(){
