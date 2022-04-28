@@ -3,6 +3,7 @@
 #include <SFML/Graphics/Text.hpp>
 
 #include "Building/Base.hpp"
+#include "Can/CanStore.hpp"
 #include "Game.hpp"
 #include "ValuesAndTypes.hpp"
 
@@ -18,7 +19,7 @@ Base::Base(Field &field, const FieldCoord &fieldCoord): CanStore{fieldCoord, 3}{
 }
 
 void Base::draw(){
-    Building::draw();
     renderTexture.display();
     Game::window->draw(*this);
+    CanStore::draw();
 }
