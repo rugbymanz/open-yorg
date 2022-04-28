@@ -22,7 +22,12 @@ ResourceBall::ResourceBall(Field &field_, Road &road, const FieldCoord &source, 
     nextMoveFieldCoord = Algorithms::vector2fToFieldCoord(getCenter());
     renderTexture.draw(text);
     sf::Image image;
-    image.create(CELL_LENGTH, CELL_WIDTH, sf::Color::Magenta);
+    sf::Color color;
+    if(type == ResourceType::crystal)
+        color = sf::Color::Magenta;
+    else if(type == ResourceType::iron)
+        color = sf::Color::Yellow;
+    image.create(CELL_LENGTH, CELL_WIDTH, color);
     backgroundTexture.loadFromImage(image);
     renderTexture.draw(sf::Sprite(backgroundTexture));
     if(!road.mineHasResource(source, type))

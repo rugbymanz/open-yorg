@@ -86,6 +86,7 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
         if(node == it)
             continue;
 		FieldCoord itCoord = {coordMap[it].x, coordMap[it].y};
+        // canConnect(itCoord, nodeCoord);
         int itConnectionRadius = field.get({coordMap[it].x, coordMap[it].y}).connectionRadius;
         int connectionRadius = std::max(nodeConnectionRadius, itConnectionRadius);
 		if(Algorithms::belongsToCircle(itCoord, nodeCoord, connectionRadius)){
@@ -94,6 +95,17 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
         }
     }
 }
+
+// bool Road::canConnect(FieldCoord leftCoord, FieldCoord rightCoord){
+//     FieldCell &leftFieldCell = field.get(leftCoord);
+//     FieldCell &rightFieldCell = field.get(rightCoord);
+//     if(leftFieldCell.fieldCellType == FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
+//         return false;
+//     if(leftFieldCell.fieldCellType != FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType != FieldCell::FieldCellType::resource)
+//         return true;
+//     ResourceType leftResourceType = leftFieldCell.fie
+
+
 
 std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, ResourceType type){
     if (source_ == NONE_FIELD_CELL) {

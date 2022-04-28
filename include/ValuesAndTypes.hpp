@@ -13,6 +13,7 @@ using dijkstra_t = lemon::Dijkstra<lemon::FilterNodes<GR>, typename GR::template
 enum class ResourceType{
 	wood,
 	crystal,
+	iron,
 
 	none
 };

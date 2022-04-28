@@ -13,6 +13,9 @@
 #include "Enemy/CasualEnemy.hpp"
 #include "Building/Mine.hpp"
 #include "Building/Cannon.hpp"
+#include "SFML/Window/Keyboard.hpp"
+#include "Resource/Iron.hpp"
+#include "Building/IronMine.hpp"
 
 Input::Input(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_, ResourceBalls &resourceBalls_, Road &road_) : interface {interface}, 
                                                                                                                                                         pathSearchField {pathSearchField},
@@ -80,6 +83,12 @@ void Input::build(const sf::Keyboard::Key &key){
         case sf::Keyboard::T:
             field.set(new Transporter{ interface.selectedCell });
             break;
+        case sf::Keyboard::I:
+            field.set(new Iron{interface.selectedCell});
+            break;
+        case sf::Keyboard::O:
+            field.set(new IronMine{ field, interface.selectedCell, resourceBalls, road });
+            break;
         }
 }
 
@@ -106,6 +115,8 @@ void Input::processKeys(const sf::Event::KeyEvent &key){
     case sf::Keyboard::Key::M:
     case sf::Keyboard::Key::C:
     case sf::Keyboard::Key::T:
+    case sf::Keyboard::I:
+    case sf::Keyboard::O:
         build(key.code);
         break;
     default:

@@ -19,4 +19,5 @@ public:
 private:
     void connect(lemon::ListDigraph::NodeIt node);
     void drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt);
+    // bool canConnect(FieldCoord leftCoord, FieldCoord rightCoord);
 };

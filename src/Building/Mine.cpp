@@ -3,8 +3,6 @@
 #include "Resource/ResourceBalls.hpp"
 
 Mine::Mine(Field &field, const FieldCoord &fieldCoord, double miningRate_, ResourceBalls &resourceBalls_, Road& road_) : resourceBalls{ resourceBalls_ },Building{ fieldCoord, 2 }, field{field}, miningRate{ miningRate_ }, road{ road_ } {
-    text.setString("M");
-    renderTexture.draw(text);
 }
 void Mine::update(){
     if(isTimeToMine())
