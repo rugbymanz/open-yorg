@@ -7,8 +7,3 @@ IronMine::IronMine(Field &field, const FieldCoord &fieldCoord, ResourceBalls &re
     text.setString("IM");
     renderTexture.draw(text);
 }
-
-void IronMine::mine(){
-	Mine::mine();
-	resourceBalls.append(new ResourceBall{field, road, getCoord(), ResourceType::iron});
-}

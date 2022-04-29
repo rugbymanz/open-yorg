@@ -31,4 +31,5 @@ private:
     
     void move_() override;
     void shootAim()override;
+    void findNextNode() override;
 };

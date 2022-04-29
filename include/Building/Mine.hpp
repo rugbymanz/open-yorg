@@ -24,5 +24,5 @@ protected:
     Road &road;
     Field &field;
 
-    virtual void mine();
+    void mine();
 };

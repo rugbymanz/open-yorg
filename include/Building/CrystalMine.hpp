@@ -5,7 +5,4 @@
 class CrystalMine: public Mine{
 public:
 	CrystalMine(Field &field, const FieldCoord &fieldCoord, ResourceBalls &resourceBalls, Road &road);
-
-private:
-	void mine()override;
 };

@@ -47,13 +47,13 @@ void PathSearchField::update() {
                 nodeFilter[nodeField[col][row]] = true;
 }
 
-FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
+std::pair<FieldCoord, bool>  PathSearchField::generatePath(const FieldCoord &source_){
     if (source_ == NONE_FIELD_CELL) {
-        return NONE_FIELD_CELL;
+        return std::make_pair(NONE_FIELD_CELL, false);
     }
     lemon::ListGraph::Node source(nodeField[source_.x][source_.y]);
-    FieldCoord basePosition = field.basePosition;
-    lemon::ListGraph::Node destination(nodeField[basePosition.x][basePosition.y]);
+    FieldCoord destinationCoord = field.basePosition;
+    lemon::ListGraph::Node destination(nodeField[destinationCoord.x][destinationCoord.y]);
 
     lemon::FilterNodes<lemon::ListGraph>::ArcMap<int> lengthMap(subGraphField);
     for (lemon::ListGraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
@@ -64,14 +64,14 @@ FieldCoord PathSearchField::generatePath(const FieldCoord &source_){
     dijkstra_t<lemon::ListGraph>::Path path{ dijkstra.path(destination) };
     {
         int pathLength = path.length();
-        if (pathLength == 0 || pathLength == 1) {
-            return basePosition;
+		if(pathLength <= 1){
+            return std::make_pair(destinationCoord, dijkstra.reached(destination));
         }
         int pathLengthIndex = pathLength - 1;
         dijkstra_t<lemon::ListGraph>::Path::RevArcIt it(path);
 
         for (; pathLengthIndex > 1; ++it, pathLengthIndex--);
         FieldCoord fieldCoord = getCoord(it);
-        return fieldCoord;
+        return std::make_pair(fieldCoord, true);
     }
 }

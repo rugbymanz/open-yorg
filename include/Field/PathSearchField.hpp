@@ -11,6 +11,6 @@ class PathSearchField: public Graph<lemon::ListGraph>{
 public:
     PathSearchField(Field &field);
     void update() override;
-    FieldCoord generatePath(const FieldCoord &source);
+    std::pair<FieldCoord, bool> generatePath(const FieldCoord &source);
 
 };

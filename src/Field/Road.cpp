@@ -15,6 +15,7 @@
 #include "lemon/list_graph.h"
 #include <algorithm>
 #include "Game.hpp"
+#include "Building/Mine.hpp"
 
 Road::Road(Field &field): Graph{field}{
     nodeField.resize(FIELD_LENGTH);
@@ -86,7 +87,8 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
         if(node == it)
             continue;
 		FieldCoord itCoord = {coordMap[it].x, coordMap[it].y};
-        // canConnect(itCoord, nodeCoord);
+        if(!canConnect(itCoord, nodeCoord))
+            return;
         int itConnectionRadius = field.get({coordMap[it].x, coordMap[it].y}).connectionRadius;
         int connectionRadius = std::max(nodeConnectionRadius, itConnectionRadius);
 		if(Algorithms::belongsToCircle(itCoord, nodeCoord, connectionRadius)){
@@ -96,14 +98,30 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
     }
 }
 
-// bool Road::canConnect(FieldCoord leftCoord, FieldCoord rightCoord){
-//     FieldCell &leftFieldCell = field.get(leftCoord);
-//     FieldCell &rightFieldCell = field.get(rightCoord);
-//     if(leftFieldCell.fieldCellType == FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
-//         return false;
-//     if(leftFieldCell.fieldCellType != FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType != FieldCell::FieldCellType::resource)
-//         return true;
-//     ResourceType leftResourceType = leftFieldCell.fie
+bool Road::canConnect(FieldCoord leftCoord, FieldCoord rightCoord){
+    FieldCell &leftFieldCell = field.get(leftCoord);
+    FieldCell &rightFieldCell = field.get(rightCoord);
+    if(leftFieldCell.fieldCellType == FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
+        return false;
+    if(leftFieldCell.fieldCellType != FieldCell::FieldCellType::resource && rightFieldCell.fieldCellType != FieldCell::FieldCellType::resource)
+        return true;
+    if(leftFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
+        if(Building &building = static_cast<Building&>( rightFieldCell ); building.buildingType == Building::BuildingType::mine)
+            if(Mine &mine = static_cast<Mine&>(building); mine.compatibleResource == static_cast<Resource&>(leftFieldCell).resourceType)
+                return true;
+            else
+                return false;
+        else 
+            return false;
+    if(rightFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
+        if(Building &building = static_cast<Building&>( leftFieldCell ); building.buildingType == Building::BuildingType::mine)
+            if(Mine &mine = static_cast<Mine&>(building); mine.compatibleResource == static_cast<Resource&>(leftFieldCell).resourceType)
+                return true;
+            else
+                return false;
+        else 
+            return false;
+}
 
 
 
@@ -124,7 +142,7 @@ std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, Resour
         lemon::ListDigraph::Node nextNode = dijkstra.nextNode();
         if(nextNode == lemon::INVALID)
             return std::make_pair(NONE_FIELD_CELL, false);
-        if(static_cast<Building&>(field.get(coordMap[nextNode])).compatibleResource == type)
+        if(Building &building = static_cast<Building&>(field.get(coordMap[nextNode])); building.compatibleResource == type && building.buildingType != Building::BuildingType::mine)
             reachedDestination = true;
         else
             dijkstra.processNextNode();

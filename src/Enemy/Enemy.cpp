@@ -26,27 +26,32 @@ void Enemy::draw(){
 }
 
 void Enemy::move_() {
-    sf::Vector2f distance = Algorithms::calculateDistanceVector(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
-    if (abs(distance.x) < speed && abs(distance.y) < speed) {
+    sf::Vector2f step = getMovementVector();
+    move(step);
+}
+
+void Enemy::findNextNode(){
         FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
-        nextMoveFieldCoord = pathSearchField.generatePath(selfCoord);
+        bool reached = false;
+        std::tie(nextMoveFieldCoord, reached) = pathSearchField.generatePath(selfCoord);
+        if(!reached)
+            nextMoveFieldCoord = selfCoord;
         setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));
         if (field.get(nextMoveFieldCoord).fieldCellType == FieldCell::FieldCellType::building) {
             attacking = true;
             setAimCoord(nextMoveFieldCoord);
         }
-    }
-    else {
-        sf::Vector2f step = getMovementVector();
-        move(step);
-    }
 }
+    
 
 void Enemy::update(){
 	if (getHp() <= 0){
 		deleted = true;
         return;
     }
+    double distance = Algorithms::calculateEuclideanDistance(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord) );
+    if (distance < speed )
+        findNextNode();
     if (!attacking)
         move_();
     else {
