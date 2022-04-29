@@ -20,6 +20,7 @@ void CanStore::draw(){
 
 
 void CanStore::update(){
+    Building::update();
     storageText.setString(std::to_string(storage));
 }
 
