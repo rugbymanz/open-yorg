@@ -1,4 +1,5 @@
 #include "Building/Cannon.hpp"
+#include "Can/CanStore.hpp"
 #include "Game.hpp"
 #include "Bullet/CannonBall.hpp"
 #include "Enemy/Enemy.hpp"
@@ -15,6 +16,7 @@ Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, Dam
 }
 
 void Cannon::update() {
+    CanStore::update();
 	if (getHp() <= 0){
 		deleted = true;
         return;
@@ -28,9 +30,9 @@ void Cannon::update() {
 }
 
 void Cannon::draw() {
-    Building::draw();
     renderTexture.display();
     Game::window->draw(*this);
+    CanStore::draw();
 }
 
 void Cannon::shootAim() {
