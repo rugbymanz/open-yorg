@@ -11,6 +11,7 @@ Cannon::Cannon(FieldCoord &fieldCoord_, Enemies &enemies_, Bullets &bullets, Dam
 	fireRate = 2;
     damage = 4;
     setAttackRadius(10);
+    compatibleResource = ResourceType::iron;
 }
 
 void Cannon::update() {

@@ -89,11 +89,9 @@ void Road::connect(lemon::ListDigraph::NodeIt node){
         if(node == it)
             continue;
 		FieldCoord itCoord = {coordMap[it].x, coordMap[it].y};
-        if(!canConnect(itCoord, nodeCoord))
-            return;
         int itConnectionRadius = field.get({coordMap[it].x, coordMap[it].y}).connectionRadius;
         int connectionRadius = std::max(nodeConnectionRadius, itConnectionRadius);
-		if(Algorithms::belongsToCircle(itCoord, nodeCoord, connectionRadius)){
+		if(Algorithms::belongsToCircle(itCoord, nodeCoord, connectionRadius) && canConnect(itCoord, nodeCoord)){
             subGraphField.addArc(it, node);
             subGraphField.addArc(node, it);
         }
