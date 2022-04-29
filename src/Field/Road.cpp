@@ -44,6 +44,8 @@ Road::Road(Field &field): Graph{field}{
 void Road::update(){
     for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc)
         subGraphField.erase(arc);
+	for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt node(subGraphField); node != lemon::INVALID; ++node)
+        nodeFilter[node] = false;
     for(int col = 0; col < FIELD_LENGTH; col++)
         for(int row = 0; row < FIELD_WIDTH; row++)
 			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; field.get({col, row}).fieldCellType != FieldCell::FieldCellType::empty){

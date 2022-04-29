@@ -1,4 +1,5 @@
 #include "Building/Mine.hpp"
+#include "Building/Building.hpp"
 #include "Game.hpp"
 #include "Resource/ResourceBalls.hpp"
 #include "Resource/ResourceBall.hpp"
@@ -7,6 +8,7 @@ Mine::Mine(Field &field, const FieldCoord &fieldCoord, double miningRate_, Resou
     buildingType = BuildingType::mine;
 }
 void Mine::update(){
+    Building::update();
     if(isTimeToMine() && road.mineHasResource(getCoord(), compatibleResource))
         mine();
 }
