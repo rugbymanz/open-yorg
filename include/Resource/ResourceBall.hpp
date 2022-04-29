@@ -45,5 +45,5 @@ private:
     void move_()override;
     void fade();
     bool reachedDestination(FieldCoord &fieldCoord);
-    void findNextNode() override;
+    void findNextNode();
 };

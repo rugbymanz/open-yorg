@@ -14,7 +14,6 @@ protected:
     void setMovementAzimuth(const FieldCoord spawnPosition, const FieldCoord aim);
     void setMovementAzimuth(const sf::Vector2f spawnPosition, const sf::Vector2f aim);
     void setRandomMovementAzimuth();
-    virtual void findNextNode() = 0;
 
     double speed = NONE;
 };
