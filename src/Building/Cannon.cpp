@@ -37,6 +37,7 @@ void Cannon::draw() {
 
 void Cannon::shootAim() {
     CanShoot::shootAim();
+    storage--;
     bullets.append(new CannonBall{ getCenter(), enemies.findNearest(getCoord(), getDamageRadius<double>()).getCenter(), damage, getDamageRadius<double>(), damageCircles, enemies });
 }
 

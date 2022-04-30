@@ -130,6 +130,8 @@ std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, Resour
         return std::make_pair(NONE_FIELD_CELL, false);
     }
     lemon::ListDigraph::Node source(nodeField[source_.x][source_.y]);
+    if(!nodeFilter[source])
+        return;
 
     lemon::FilterNodes<lemon::ListDigraph>::ArcMap<int> lengthMap(subGraphField);
     for (lemon::ListDigraph::ArcIt it(graphField); it != lemon::INVALID; ++it)
