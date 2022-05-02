@@ -115,7 +115,7 @@ bool Road::canConnect(FieldCoord leftCoord, FieldCoord rightCoord){
             return false;
     if(rightFieldCell.fieldCellType == FieldCell::FieldCellType::resource)
         if(Building &building = static_cast<Building&>( leftFieldCell ); building.buildingType == Building::BuildingType::mine)
-            if(Mine &mine = static_cast<Mine&>(building); mine.compatibleResource == static_cast<Resource&>(leftFieldCell).resourceType)
+            if(Mine &mine = static_cast<Mine&>(building); mine.compatibleResource == static_cast<Resource&>(rightFieldCell).resourceType)
                 return true;
             else
                 return false;
