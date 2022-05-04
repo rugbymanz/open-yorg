@@ -48,10 +48,11 @@ void Field::draw(){
             col->draw();
 }
 
-void Field::set(FieldCell *const fieldCell){
+FieldCell* Field::set(FieldCell *const fieldCell){
     const FieldCoord &fieldCoord = fieldCell->getCoord();
     delete field[fieldCoord.x][fieldCoord.y];
     field[fieldCoord.x][fieldCoord.y] = fieldCell;
+    return fieldCell;
     // field[fieldCoord.x][fieldCoord.y].setCoord(fieldCoord)
     // switch(fieldCell.type){
     // case FieldCellType::building:

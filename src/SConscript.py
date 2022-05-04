@@ -3,9 +3,10 @@ include = ['C:/Code/c++/open-yorg/include/']
 libpath=[r'C:\programs\lemon-debug\lib/', r'C:\Code\c++\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib'] 
 libs = ['sfml-graphics-d', 'sfml-system-d', 'sfml-window-d', 'lemon']
 cppflags = ['/std:c++17', '/MDd', '/EHs', '/Zi', '/Ob0', '/Od', '-Wno-everything']
+# cppflags = ['/std:c++17', '/MDd', '/EHs', '/Zi', '/Ob0', '/Od', '/FS']
 linkflags =[  '/DEBUG:FULL']
 env = Environment(CPPPATH=system_include + include, LIBPATH = libpath, LIBS=libs, LINK = 'lld-link', CXX = 'clang-cl', CXXCOMSTR = "Compiling $SOURCE", LINKCOMSTR = "Linking $TARGET" )
-# env = Environment(CPPPATH=system_include + include, LIBPATH = libpath, LIBS=libs)
+# env = Environment(CPPPATH=system_include + include, LIBPATH = libpath, LIBS=libs, CXXCOMSTR = "Compiling $SOURCE", LINKCOMSTR = "Linking $TARGET" )
 env.Decider('MD5-timestamp')
 env.Tool('compilation_db')
 env.CompilationDatabase()

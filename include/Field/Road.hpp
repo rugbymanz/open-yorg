@@ -5,6 +5,7 @@
 
 #include "ValuesAndTypes.hpp"
 #include "Field/Graph.hpp"
+#include "lemon/adaptors.h"
 
 class FieldCell;
 
@@ -15,9 +16,13 @@ public:
     void draw();
     std::pair<FieldCoord, bool> generatePath(const FieldCoord &source, ResourceType type);
     bool mineHasResource(const FieldCoord &source, ResourceType type);
+    void showFutureRoad(FieldCell *fieldCell);
+    void showRealRoad(bool revert = true);
 
 private:
     void connect(lemon::ListDigraph::NodeIt node);
     void drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt);
     bool canConnect(FieldCoord leftCoord, FieldCoord rightCoord);
+    lemon::ListDigraph::NodeMap<bool> nodeFilterFuture{ graphField};
+    lemon::FilterNodes<lemon::ListDigraph> futureSubGraphField{ graphField, nodeFilterFuture};
 };

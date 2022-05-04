@@ -2,6 +2,8 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include "InputState.hpp"
+#include "InputStateFutureRoad.hpp"
 #include "ValuesAndTypes.hpp"
 
 class Field;
@@ -12,6 +14,7 @@ class Bullets;
 class DamageCircles;
 class Road;
 class ResourceBalls;
+class InputState;
 
 class Input{
 public:
@@ -19,19 +22,9 @@ public:
     void process(const sf::Event &event);
 
 private:
-    Field &field;
-    Interface &interface;
-    Enemies &enemies;
-    PathSearchField &pathSearchField;
-    Bullets &bullets;
-    DamageCircles &damageCircles;
-    ResourceBalls &resourceBalls;
-    Road &road;
+	// state pattern
+    InputState *state = nullptr;
 
-    bool isValidBuildingPosition(const FieldCoord &position);
-    void processMouseWheelScroll(const sf::Event::MouseWheelScrollEvent &mouseWheelScroll);
-    void processMouseClick(const sf::Event::MouseButtonEvent  &mouseButton);
-    void processKeys(const sf::Event::KeyEvent &key);
-    void processMouseLeftClick(const sf::Vector2i &clickPosition);
-    void build(const sf::Keyboard::Key &key);
+    friend class InputStateNormal;
+    friend class InputStateFutureRoad;
 };

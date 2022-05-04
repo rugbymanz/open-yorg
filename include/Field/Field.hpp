@@ -19,7 +19,7 @@ public:
     void tick();
     void update();
     void draw();
-    void set(FieldCell *const fieldCell);
+    FieldCell* set(FieldCell *const fieldCell);
     FieldCell &get(const FieldCoord &fieldCoord);
     ~Field();
 

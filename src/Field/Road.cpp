@@ -32,29 +32,32 @@ Road::Road(Field &field): Graph{field}{
         }
     }
     for (int col = 0; col < FIELD_LENGTH; col++)
-        for (int row = 0; row < FIELD_WIDTH; row++)
+        for (int row = 0; row < FIELD_WIDTH; row++){
             nodeFilter[nodeField[col][row]] = false;
+            nodeFilterFuture[nodeField[col][row]] = false;
+        }
 
     for (int col = 0; col < FIELD_LENGTH; col++)
         for (int row = 0; row < FIELD_WIDTH; row++)
             coordMap[nodeField[col][row]] = { col, row };
 }
 
-
 void Road::update(){
-    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc)
-        subGraphField.erase(arc);
-	for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt node(subGraphField); node != lemon::INVALID; ++node)
-        nodeFilter[node] = false;
+    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(futureSubGraphField); arc != lemon::INVALID; ++arc)
+        futureSubGraphField.erase(arc);
+	for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt node(futureSubGraphField); node != lemon::INVALID; ++node)
+        nodeFilterFuture[node] = false;
     for(int col = 0; col < FIELD_LENGTH; col++)
         for(int row = 0; row < FIELD_WIDTH; row++)
 			if(lemon::ListDigraph::NodeIt node = nodeField[col][row]; field.get({col, row}).fieldCellType != FieldCell::FieldCellType::empty){
-                nodeFilter[node] = true;
+                nodeFilterFuture[node] = true;
                 connect(node);
             }
 }
 
 bool Road::mineHasResource(const FieldCoord &source, ResourceType type){
+    if(!nodeFilter[nodeField[source.x][source.y]])
+        return;
     for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(subGraphField); arc != lemon::INVALID; ++arc){
 		if(FieldCell &fieldCell = field.get(coordMap[subGraphField.source(arc)]); fieldCell.fieldCellType == FieldCell::FieldCellType::resource && static_cast<Resource&>(fieldCell).resourceType == type && Algorithms::belongsToCircle(fieldCell.getCoord(), source, 2))
             return true;
@@ -63,13 +66,13 @@ bool Road::mineHasResource(const FieldCoord &source, ResourceType type){
 }
 
 void Road::draw(){
-    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(subGraphField); it != lemon::INVALID; ++it)
+    for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(futureSubGraphField); it != lemon::INVALID; ++it)
         drawArc(it);
 }
 
 void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt) {
-    lemon::ListDigraph::Node sourceNode = subGraphField.source(arcIt);
-    lemon::ListDigraph::Node targetNode = subGraphField.target(arcIt);
+    lemon::ListDigraph::Node sourceNode = futureSubGraphField.source(arcIt);
+    lemon::ListDigraph::Node targetNode = futureSubGraphField.target(arcIt);
     sf::Vector2f source = Algorithms::fieldCoordToVector2fCentered(coordMap[sourceNode]);
     sf::Vector2f target = Algorithms::fieldCoordToVector2fCentered(coordMap[targetNode]);
     float length = Algorithms::calculateEuclideanDistance(source, target);
@@ -85,15 +88,15 @@ void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt) {
 void Road::connect(lemon::ListDigraph::NodeIt node){
     FieldCoord nodeCoord = {coordMap[node].x, coordMap[node].y};
     int nodeConnectionRadius = field.get({coordMap[node].x, coordMap[node].y}).connectionRadius;
-    for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt it(subGraphField); it != lemon::INVALID; ++it){
+    for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt it(futureSubGraphField); it != lemon::INVALID; ++it){
         if(node == it)
             continue;
 		FieldCoord itCoord = {coordMap[it].x, coordMap[it].y};
         int itConnectionRadius = field.get({coordMap[it].x, coordMap[it].y}).connectionRadius;
         int connectionRadius = std::max(nodeConnectionRadius, itConnectionRadius);
 		if(Algorithms::belongsToCircle(itCoord, nodeCoord, connectionRadius) && canConnect(itCoord, nodeCoord)){
-            subGraphField.addArc(it, node);
-            subGraphField.addArc(node, it);
+            futureSubGraphField.addArc(it, node);
+            futureSubGraphField.addArc(node, it);
         }
     }
 }
@@ -166,4 +169,20 @@ std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, Resour
         FieldCoord fieldCoord = getCoord(it);
         return std::make_pair(fieldCoord, true);
     }
+}
+
+void Road::showFutureRoad(FieldCell *fieldCell){
+    std::cout << "printing future\n";
+    for (lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(subGraphField); it != lemon::INVALID; ++it)
+        std::cout << coordMap[subGraphField.source(it)].x << ' '<< coordMap[subGraphField.source(it)].y << std::endl;
+    std::cout << "ending printing future\n";
+}
+
+void Road::showRealRoad(bool revert){
+    for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt node(futureSubGraphField); node != lemon::INVALID; ++node)
+        nodeFilter[node] = nodeFilterFuture[node];
+    // subGraphField = futureSubGraphField;
+    // for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(futureSubGraphField); arc != lemon::INVALID; ++arc)
+    //     subGraphField.addArc(futureSubGraphField.source(arc), futureSubGraphField.target(arc));
+    // lemon::copy
 }
