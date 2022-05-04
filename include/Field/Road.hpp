@@ -26,4 +26,5 @@ private:
     bool canConnect(FieldCoord leftCoord, FieldCoord rightCoord);
     lemon::ListDigraph::NodeMap<bool> nodeFilterFuture{ graphField};
     lemon::FilterNodes<lemon::ListDigraph> futureSubGraphField{ graphField, nodeFilterFuture};
+    bool isFutureArc(lemon::ListDigraph::Node &source, lemon::ListDigraph::Node &target);
 };

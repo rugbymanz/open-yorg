@@ -81,9 +81,13 @@ void Road::drawArc(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arcIt) {
     sf::RectangleShape line;
     line.setSize({length, thickness});
     line.setPosition(source);
-    line.setFillColor(sf::Color::Green);
+    line.setFillColor(isFutureArc(sourceNode, targetNode)? sf::Color::Black: sf::Color::Green);
     line.setRotation(Algorithms::radiansToDegrees( Algorithms::calculateAzimuth(source, target) ));
     Game::window->draw(line);
+}
+
+bool Road::isFutureArc(lemon::ListDigraph::Node &source, lemon::ListDigraph::Node &target){
+    return nodeFilterFuture[source] != nodeFilter[source] || nodeFilterFuture[target] != nodeFilter[target];
 }
 
 void Road::connect(lemon::ListDigraph::NodeIt node){
