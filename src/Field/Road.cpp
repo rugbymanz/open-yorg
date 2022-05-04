@@ -1,5 +1,6 @@
 #include "Field/Road.hpp"
 #include "Building/Building.hpp"
+#include "Field/EmptyFieldCell.hpp"
 #include "Resource/Resource.hpp"
 #include "SFML/Graphics/Color.hpp"
 #include "SFML/Graphics/PrimitiveType.hpp"
@@ -180,9 +181,20 @@ void Road::showFutureRoad(FieldCell *fieldCell){
 
 void Road::showRealRoad(bool revert){
     for(lemon::FilterNodes<lemon::ListDigraph>::NodeIt node(futureSubGraphField); node != lemon::INVALID; ++node)
-        nodeFilter[node] = nodeFilterFuture[node];
+        if(revert){
+            if( nodeFilter[node] != nodeFilterFuture[node])
+                field.set(new EmptyFieldCell(coordMap[node]));
+        }
+        else
+            nodeFilter[node] = nodeFilterFuture[node];
+
     // subGraphField = futureSubGraphField;
     // for(lemon::FilterNodes<lemon::ListDigraph>::ArcIt arc(futureSubGraphField); arc != lemon::INVALID; ++arc)
     //     subGraphField.addArc(futureSubGraphField.source(arc), futureSubGraphField.target(arc));
     // lemon::copy
+}
+
+bool Road::isFutureCell(FieldCoord &fieldCoord){
+    lemon::ListDigraph::Node &node = nodeField[fieldCoord.x][fieldCoord.y];
+    return nodeFilterFuture[node] != nodeFilter[node];
 }

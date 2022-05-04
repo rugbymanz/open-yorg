@@ -77,3 +77,7 @@ Field::~Field(){
         for(auto &col: row)
             delete col;
 }
+
+bool Field::isFutureCell(FieldCoord &fieldCoord){
+    return road.isFutureCell(fieldCoord);
+}

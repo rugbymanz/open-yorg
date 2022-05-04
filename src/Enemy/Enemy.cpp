@@ -34,6 +34,8 @@ void Enemy::findNextNode(){
         FieldCoord selfCoord = Algorithms::vector2fToFieldCoord(getCenter());
         bool reached = false;
         std::tie(nextMoveFieldCoord, reached) = pathSearchField.generatePath(selfCoord);
+        if(field.isFutureCell(nextMoveFieldCoord))
+            return;
         if(!reached)
             nextMoveFieldCoord = selfCoord;
         setMovementAzimuth(getCenter(), Algorithms::fieldCoordToVector2fCentered(nextMoveFieldCoord));

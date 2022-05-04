@@ -18,6 +18,7 @@ public:
     bool mineHasResource(const FieldCoord &source, ResourceType type);
     void showFutureRoad(FieldCell *fieldCell);
     void showRealRoad(bool revert = true);
+    bool isFutureCell(FieldCoord &fieldCoord);
 
 private:
     void connect(lemon::ListDigraph::NodeIt node);

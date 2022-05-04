@@ -14,8 +14,12 @@ void InputStateFutureRoad::process(const sf::Event &event){
 void InputStateFutureRoad::processKeys(const sf::Event::KeyEvent &key){
     switch(key.code){
     case sf::Keyboard::Key::Enter:
+        road.showRealRoad(false);
+        input.state = new InputStateNormal{field, interface, pathSearchField, enemies, bullets, damageCircles, resourceBalls, road, input};
+        break;
+    case sf::Keyboard::Key::Escape:
         road.showRealRoad(true);
-		input.state = new InputStateNormal{field, interface, pathSearchField, enemies, bullets, damageCircles, resourceBalls, road, input};
+        input.state = new InputStateNormal{field, interface, pathSearchField, enemies, bullets, damageCircles, resourceBalls, road, input};
         break;
 	}
 }

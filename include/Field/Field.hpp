@@ -22,6 +22,7 @@ public:
     FieldCell* set(FieldCell *const fieldCell);
     FieldCell &get(const FieldCoord &fieldCoord);
     ~Field();
+    bool isFutureCell(FieldCoord &fieldCoord);
 
 private:
     std::vector< std::vector<FieldCell*> > field;
