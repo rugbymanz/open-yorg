@@ -1,5 +1,7 @@
 #pragma once
 
+#include "SFML/Graphics/Color.hpp"
+#include "ValuesAndTypes.hpp"
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/RenderTexture.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -18,4 +20,6 @@ protected:
     sf::Text text;
     sf::Font font;
     sf::RenderTexture renderTexture;
+    
+    virtual void setColor(sf::Color color = BACKGROUND);
 };
