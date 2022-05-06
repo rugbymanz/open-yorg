@@ -2,6 +2,8 @@
 
 #include "InputState.hpp"
 
+class Building;
+
 class InputStateNormal:public InputState{
 public:
 	InputStateNormal(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_, ResourceBalls &resourceBalls_, Road &road_, Input &input);
@@ -14,4 +16,5 @@ private:
     void processKeys(const sf::Event::KeyEvent &key) override;
     void processMouseLeftClick(const sf::Vector2i &clickPosition);
     void build(const sf::Keyboard::Key &key);
+    void upgrade(Building &building);
 };

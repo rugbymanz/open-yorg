@@ -177,10 +177,10 @@ std::pair<FieldCoord, bool> Road::generatePath(const FieldCoord &source_, Resour
 }
 
 void Road::showFutureRoad(FieldCell *fieldCell){
-    std::cout << "printing future\n";
-    for (lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(subGraphField); it != lemon::INVALID; ++it)
-        std::cout << coordMap[subGraphField.source(it)].x << ' '<< coordMap[subGraphField.source(it)].y << std::endl;
-    std::cout << "ending printing future\n";
+    // std::cout << "printing future\n";
+    // for (lemon::FilterNodes<lemon::ListDigraph>::ArcIt it(subGraphField); it != lemon::INVALID; ++it)
+    //     std::cout << coordMap[subGraphField.source(it)].x << ' '<< coordMap[subGraphField.source(it)].y << std::endl;
+    // std::cout << "ending printing future\n";
 }
 
 void Road::showRealRoad(bool revert){

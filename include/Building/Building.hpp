@@ -13,7 +13,7 @@ public:
 		none 
 	} buildingType = BuildingType::none;
     Building(const FieldCoord &fieldCoord, int connectionRadius);
-public:
 	void update() override;
+	virtual void upgrade();
 
 };

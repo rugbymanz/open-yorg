@@ -16,6 +16,7 @@
 #include "SFML/Window/Keyboard.hpp"
 #include "Resource/Iron.hpp"
 #include "Building/IronMine.hpp"
+#include "Building/Wall.hpp"
 
 InputStateNormal::InputStateNormal(Field &field, Interface &interface, PathSearchField &pathSearchField, Enemies &enemies, Bullets &bullets, DamageCircles &damageCircles_, ResourceBalls &resourceBalls_, Road &road_, Input &input): InputState{field, interface, pathSearchField, enemies, bullets, damageCircles_, resourceBalls_, road_, input}{};
 
@@ -80,12 +81,20 @@ void InputStateNormal::build(const sf::Keyboard::Key &key){
         case sf::Keyboard::O:
             fieldCell = field.set(new IronMine{ field, interface.selectedCell, resourceBalls, road });
             break;
+        case sf::Keyboard::W:
+            fieldCell = field.set(new Wall{ interface.selectedCell });
+            break;
         }
 		road.showFutureRoad(fieldCell);
 		if(fieldCell)
 			input.state = new InputStateFutureRoad{field, interface, pathSearchField, enemies, bullets, damageCircles, resourceBalls, road, input};
 	}
 }
+
+void InputStateNormal::upgrade(Building &building){
+    building.upgrade();
+}
+
 
 void InputStateNormal::processKeys(const sf::Event::KeyEvent &key){
     sf::View view = Game::window->getView();
@@ -103,6 +112,11 @@ void InputStateNormal::processKeys(const sf::Event::KeyEvent &key){
     case sf::Keyboard::Key::Up:
         view.move(0, -VIEW_MOVE_SPEED);
         break;
+    case sf::Keyboard::Key::F1:
+        if(FieldCell &fieldCell {field.get( interface.selectedCell)}; fieldCell.fieldCellType == FieldCell::FieldCellType::building)
+            upgrade(static_cast<Building&>(fieldCell));
+        else
+            std::cerr << "Cannot be upgraded" << std::endl;
     case sf::Keyboard::Key::B:
     //fall-through
     case sf::Keyboard::Key::R:
@@ -112,6 +126,7 @@ void InputStateNormal::processKeys(const sf::Event::KeyEvent &key){
     case sf::Keyboard::Key::T:
     case sf::Keyboard::I:
     case sf::Keyboard::O:
+    case sf::Keyboard::W:
         build(key.code);
         break;
     default:
