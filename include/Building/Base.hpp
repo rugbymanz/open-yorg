@@ -10,4 +10,5 @@ public:
     Base(Field &field, const FieldCoord &fieldCoord);
 
     void draw()override;
+    void update() override;
 };

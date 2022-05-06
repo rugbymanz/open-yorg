@@ -23,3 +23,8 @@ void Base::draw(){
     Game::window->draw(*this);
     CanStore::draw();
 }
+
+void Base::update(){
+    CanStore::update();
+    Game::crystals = storage;
+}

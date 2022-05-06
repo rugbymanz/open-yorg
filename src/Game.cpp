@@ -1,6 +1,8 @@
 #include "Game.hpp"
+#include "ValuesAndTypes.hpp"
 
 sf::RenderWindow *Game::window = nullptr;
+int Game::crystals = NONE;
 
 void Game::tick(){
     // interface.tick();
